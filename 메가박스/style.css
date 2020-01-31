@@ -1,4 +1,3 @@
-
 /* header */
 header {
   width: 970px;
@@ -46,8 +45,8 @@ main #banner .banner_disc strong {font-size: 36px; font-weight: 100;}
 main #banner .banner_disc em {display: block; font-size: 18px; padding: 10px 0 20px 0; border-bottom: 1px solid #999;}
 main #banner .banner_disc span {font-size: 24px;}
 main #banner .split {margin: 0 12px; border-right: 1px solid #fff; vertical-align: middle; height: 13px;}
-main #banner .timetable {margin: 0 5px 0 20px; background-color: #c5c5c5; color: #32264e; padding: 10px;}
-main #banner .quick {background-color: #351f67; padding: 10px;}
+main #banner .timetable {margin: 0 5px 0 20px; background-color: #c5c5c5; color: #351f67; padding: 10px 20px;}
+main #banner .quick {background-color: #351f67; padding: 10px 20px;}
 main .banner-images {
   display: block;
   width: 100%;
