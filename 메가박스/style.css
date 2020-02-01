@@ -1,30 +1,10 @@
 /* header */
-header {
-  width: 970px;
-  height: 49px;
-  margin: 0 auto;
-}
-
-header img {
-  position: absolute;
-  top: 14px;
-}
-
-header ul {
-  float: right;
-}
-
-header ul li {
-  float: left;
-}
-
-header ul li a {
-  display: inline-block;
-  width: 82px;
-  height: 49px;
-  background: url(images/new2_gnb.png);
-  vertical-align: top;
-}
+header {border-bottom: 1px solid #c6c6c6;}
+header .container {width: 970px; height: 49px; margin: 0 auto;}
+header img {position: absolute; top: 12px;}
+header ul {float: right;}
+header ul li {float: left;}
+header ul li a {display: inline-block; width: 82px; height: 49px; background: url(images/new2_gnb.png); vertical-align: top;}
 
 header ul li a.i1 {background-position: 0 0;}
 header ul li a.i2 {background-position: -82px 0;}
@@ -37,20 +17,78 @@ header ul li a.i7 {background-position: -492px 0;}
 /* banner */
 main #banner .container {position: relative; color: white; width: 970px; margin: 0 auto; font-size: 14px; font-weight: bold;}
 main #banner .bm_left {position: absolute; left: 0; top: 30px;}
-main #banner .bm_left .menu {border: 1px solid; padding: 6px; color: #999; font-size: 12px; margin-right: 10px;}
+main #banner .bm_left .menu {border: 1px solid; padding: 8px; color: #999; font-size: 12px; margin-right: 10px;}
 main #banner .bm_left .menu:hover {color: white;}
 main #banner .bm_right {position: absolute; right: 0; top: 30px;}
-main #banner .banner_disc {position: absolute; top: 200px; text-shadow: 1px 1px 1px #000;}
+main #banner .banner_disc {position: absolute; top: 230px; text-shadow: 1px 1px 1px #000;}
 main #banner .banner_disc strong {font-size: 36px; font-weight: 100;}
-main #banner .banner_disc em {display: block; font-size: 18px; padding: 10px 0 20px 0; border-bottom: 1px solid #999;}
-main #banner .banner_disc span {font-size: 24px;}
+main #banner .banner_disc em {display: block; font-size: 18px; padding: 5px 0 20px 0; border-bottom: 1px solid #999;}
+main #banner .banner_disc span {font-size: 24px; font-weight: 100;}
 main #banner .split {margin: 0 12px; border-right: 1px solid #fff; vertical-align: middle; height: 13px;}
 main #banner .timetable {margin: 0 5px 0 20px; background-color: #c5c5c5; color: #351f67; padding: 10px 20px;}
 main #banner .quick {background-color: #351f67; padding: 10px 20px;}
-main .banner-images {
-  display: block;
-  width: 100%;
-  height: 600px;
-  background: url(images/banner01.jpg);
-}
+main #banner .slider {height: 600px; background: #f2f2f2 url(images/banner01.jpg) 0 -60px no-repeat; background-size: cover;}
 
+/* movies */
+main #movies {background-color: #f2f2f2; padding: 70px 0 80px;}
+main #movies .container {width: 970px; margin: 0 auto;}
+main #movies .tabs {width: 640px; height: 50px; margin: 0 auto; text-align: center; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc;}
+main #movies .tabs a {float: left; width: 160px; line-height: 50px; border-right: 1px solid #ccc; box-sizing: border-box;}
+main #movies .tabs .tab01 {background-color: #666; color: white;}
+main #movies .tabs a:hover {background-color: #666; color: white;}
+
+main #movies .movie {margin: 0 -10px; margin-top: 50px;}
+main #movies .movie > div {float: left; width: 25%; padding: 0 8px; box-sizing: border-box;}
+main #movies .movie a {display: inline-block;}
+main #movies .movie a img {width: 100%; vertical-align: top;}
+main #movies .movie .disc {background-color: #fff; padding: 15px; position: relative; border-style: solid; border-color: #ccc; border-width: 0 1px 1px 1px;}
+main #movies .movie .disc h3 {font-size: 20px; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 10px 0 15px 0;}
+main #movies .movie .disc a {display: inline-block; width: 97px; height: 46px; background: url(images/btn_movie.png);}
+main #movies .movie .disc .reserve {background-position: -150px 0; position: absolute; right: 15px;}
+main #movies .movie .disc .detail:hover {background-position: 0 -50px;}
+main #movies .movie .disc .reserve:hover {background-position: -150px -50px;}
+main #movies .movie span {display: inline-block; width: 21px; height: 21px; background: url(images/btn_movie.png); margin-right: 15px;}
+main #movies .movie .age_15 {background-position: -90px -200px;}
+main #movies .movie .age_all {background-position: 0 -200px;}
+
+/* event */
+main #event {padding: 70px 0 80px;}
+main #event .container {width: 970px; margin: 0 auto; position: relative;}
+main #event .container h3 {font-size: 20px; margin-bottom: 20px;}
+main #event .event_left, .event_right {display: inline-block; font-size: 0; vertical-align: top;}
+main #event .event_right {position: absolute; right: 0;}
+
+/* new_open */
+main #new_open {height: 500px; background: url(images/open_bg.jpg) center center; overflow: hidden; background-attachment: fixed;}
+main #new_open img {display: block; margin: 0 auto; margin-top: 100px;}
+/* main #new_open .container {display: inline-block;} */
+
+/* alliance_event */
+main #alliance_event {padding: 70px 0 80px;}
+main #alliance_event .container {position: relative; width: 970px; margin: 0 auto;}
+main #alliance_event .container h3 {font-size: 20px; margin-bottom: 20px;}
+main #alliance_event .left, .right {display: inline-block; font-size: 0;}
+main #alliance_event .right {position: absolute; right: 0;}
+
+/* service */
+main #service {padding: 0 0 80px 0;}
+main #service .container {width: 970px; margin: 0 auto;}
+main #service .container .row {margin: 0 -20px;}
+main #service .container .col {float: left; width: 33.333333%; padding: 0 20px; box-sizing: border-box;}
+main #service .container h3 {display: inline-block; margin-bottom: 15px;}
+main #service .container .plus {float: right;}
+main #service .container .underline {border-bottom: 1px solid #ccc;}
+main #service .container .card {width: 100px; height: 58px; vertical-align: top; margin-right: 10px;}
+main #service .container .disc {display: inline-block;}
+main #service .container .disc h5 {font-size: 14px; margin-bottom: 10px;}
+main #service .container .disc p {margin-bottom: -4px;}
+main #service .container .disc p, span {font-size: 12px;}
+main #service .container .padding_t_b_18 {padding: 18px 0;}
+
+/* footer */
+footer {padding: 30px 0 40px; background-color: #221f1f; color: #999; font-size: 12px;}
+footer .container {width: 970px; margin: 0 auto;}
+footer .container .logo {margin-bottom: 20px;}
+footer .container .sub_category {margin-bottom: 20px;}
+footer .container .company {line-height: 18px;}
+footer .split {margin: 0 6px; border-right: 1px solid #999; vertical-align: middle;}
