@@ -15,19 +15,26 @@ header ul li a.i6 {background-position: -410px 0;}
 header ul li a.i7 {background-position: -492px 0;}
 
 /* banner */
-main #banner .container {position: relative; color: white; width: 970px; margin: 0 auto; font-size: 14px; font-weight: bold;}
+main #banner .container {position: relative; color: white; width: 970px; margin: 0 auto; font-size: 14px; font-weight: bold; z-index: 1;}
 main #banner .bm_left {position: absolute; left: 0; top: 30px;}
 main #banner .bm_left .menu {border: 1px solid; padding: 8px; color: #999; font-size: 12px; margin-right: 10px;}
 main #banner .bm_left .menu:hover {color: white;}
 main #banner .bm_right {position: absolute; right: 0; top: 30px;}
-main #banner .banner_disc {position: absolute; top: 230px; text-shadow: 1px 1px 1px #000;}
-main #banner .banner_disc strong {font-size: 36px; font-weight: 100;}
-main #banner .banner_disc em {display: block; font-size: 18px; padding: 5px 0 20px 0; border-bottom: 1px solid #999;}
-main #banner .banner_disc span {font-size: 24px; font-weight: 100;}
 main #banner .split {margin: 0 12px; border-right: 1px solid #fff; vertical-align: middle; height: 13px;}
 main #banner .timetable {margin: 0 5px 0 20px; background-color: #c5c5c5; color: #351f67; padding: 10px 20px;}
 main #banner .quick {background-color: #351f67; padding: 10px 20px;}
-main #banner .slider {height: 600px; background: #f2f2f2 url(images/banner01.jpg) 0 -60px no-repeat; background-size: cover;}
+
+main #banner .banner_disc {position: absolute; top: 200px; text-shadow: 1px 1px 1px #000;}
+main #banner .banner_disc strong {font-size: 36px; font-weight: 100;}
+main #banner .banner_disc em {display: block; font-size: 18px; padding: 5px 0 20px 0; border-bottom: 1px solid #999;}
+main #banner .banner_disc span {font-size: 24px; font-weight: 100;}
+
+main #banner .slider {position: relative; overflow: hidden; width: 100vw;}
+
+.slide:nth-child { background: url(images/banner01.jpg);}
+.slide:nth-child(2) { background: url(images/banner02.jpg);}
+.slide:nth-child(3) { background: url(images/banner03jpg);}
+.slide:nth-child(4) { background: url(images/banner04.jpg);}
 
 /* movies */
 main #movies {background-color: #f2f2f2; padding: 70px 0 80px;}
