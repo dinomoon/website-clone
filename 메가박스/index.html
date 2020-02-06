@@ -22,7 +22,9 @@
   <!-- header -->
   <header>
     <div class="container clearfix">
-      <a href=""><img src="images/logo_slogan.png" alt=""></a>
+      <a href="">
+        <img src="images/logo_slogan.png" alt="">
+      </a>
       <ul class="clearfix">
         <li><a href="" class="i1"></a></li>
         <li><a href="" class="i2"></a></li>
@@ -134,12 +136,12 @@
     <section id="movies">
       <div class="container">
         <div class="tabs">
-          <span class="clicked tab tab01">박스오피스</span>
-          <span class="tab tab02">최신개봉작</span>
-          <span class="tab tab03">상영예정작</span>
-          <span class="tab tab04">큐레이션</span>
+          <span id="moviesDefaultOpen" class="tablinks" onclick="openContent(event, 'boxOffice')">박스오피스</span>
+          <span class="tablinks" onclick="openContent(event, 'recent')">최신개봉작</span>
+          <span class="tablinks" onclick="openContent(event, 'scheduled')">상영예정작</span>
+          <span class="tablinks" onclick="openContent(event, 'curation')">큐레이션</span>
         </div>
-        <div class="movie content clearfix">
+        <div id="boxOffice" class="movie tabcontent clearfix">
           <div class="movie01">
             <a href=""><img src="images/movie01.jpg" alt=""></a>
             <div class="disc">
@@ -173,9 +175,9 @@
             </div>
           </div>
         </div>
-        <div class="movie content clearfix">
-          <div class="movie01">
-            <a href=""><img src="images/movie01.jpg" alt=""></a>
+        <div id="recent" class="movie tabcontent clearfix">
+          <div class="movie04">
+            <a href=""><img src="images/movie04.jpg" alt=""></a>
             <div class="disc">
               <h3><span class="ir_so2 age_15">15세 관람가</span>남산의 부장들</h3>
               <a href="" class="detail ir_so2">상세정보</a>
@@ -183,7 +185,7 @@
             </div>
           </div>
           <div class="movie02">
-            <a href=""><img src="images/movie02.jpg" alt=""></a>
+            <a href=""><img src="images/movie03.jpg" alt=""></a>
             <div class="disc">
               <h3><span class="ir_so2 age_15">15세 관람가</span>히트맨</h3>
               <a href="" class="detail ir_so2">상세정보</a>
@@ -191,7 +193,75 @@
             </div>
           </div>
           <div class="movie03">
+            <a href=""><img src="images/movie02.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_all">전체 관람가</span>스파이 비지니스</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie04">
+            <a href=""><img src="images/movie01.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>버즈 오브 프레이(할리 퀸의 황홀한 해방)</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+        </div>
+        <div id="scheduled" class="movie tabcontent clearfix">
+          <div class="movie01">
+            <a href=""><img src="images/movie04.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>남산의 부장들</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie04">
             <a href=""><img src="images/movie03.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>히트맨</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie02">
+            <a href=""><img src="images/movie02.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_all">전체 관람가</span>스파이 비지니스</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie03">
+            <a href=""><img src="images/movie01.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>버즈 오브 프레이(할리 퀸의 황홀한 해방)</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+        </div>
+        <div id="curation" class="movie tabcontent clearfix">
+          <div class="movie01">
+            <a href=""><img src="images/movie03.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>남산의 부장들</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie02">
+            <a href=""><img src="images/movie01.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>히트맨</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie03">
+            <a href=""><img src="images/movie02.jpg" alt=""></a>
             <div class="disc">
               <h3><span class="ir_so2 age_all">전체 관람가</span>스파이 비지니스</h3>
               <a href="" class="detail ir_so2">상세정보</a>
@@ -273,9 +343,53 @@
           <div class="col">
             <h3>공지사항</h3>
             <a href="#"><img src="images/plus.png" alt="" class="plus"></a>
-            <div>
-              <a href="#">전체공지</a>
-              <a href="#">영화관 공지</a>
+            <div class="clearfix noticeBtnWrapper">
+              <button id="noticeDefaultOpen" class="tablinks" onclick="openNotice(event, 'fullNotice')">전체공지</button>
+              <button class="tablinks" onclick="openNotice(event, 'movieNotice')">영화관 공지</button>
+            </div>
+            <div id="fullNotice" class="tabcontent">
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>[무대인사]남산의 부장들 무대인사 보러 오세요.</p>
+              </div>
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>[무대인사]남산의 부장들 무대인사 보러 오세요.</p>
+              </div>
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>[무대인사]남산의 부장들 무대인사 보러 오세요.</p>
+              </div>
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>[무대인사]남산의 부장들 무대인사 보러 오세요.</p>
+              </div>
+            </div>
+            <div id="movieNotice" class="tabcontent">
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>영화관 공지입니다.</p>
+              </div>
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>영화관 공지입니다.</p>
+              </div>
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>영화관 공지입니다.</p>
+              </div>
+              <div>
+                <strong>전체</strong>
+                <span>2020.02.02</span>
+                <p>영화관 공지입니다.</p>
+              </div>
             </div>
           </div>
           <div class="col">
@@ -340,7 +454,9 @@
         대표자명 김진선 | 개인정보보호 책임자 BP본부 본부장 박영진</br>
         사업자등록번호 211-86-59478 | 통신판매업신고번호 제 833호
       </div>
-      
+      <div>
+        Copyright 2014 by MegaboxJoongAng Inc. All right reserved
+      </div>
     </div>
   </footer>
   <!-- footer -->
@@ -370,6 +486,38 @@
         delay: 5000,
       },
     })
+    function openContent(evt, content) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.querySelectorAll("#movies .tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.querySelectorAll("#movies .tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" clicked", "");
+      }
+      document.getElementById(content).style.display = "block";
+      evt.currentTarget.className += " clicked";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("moviesDefaultOpen").click();
+
+    function openNotice(evt, content) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.querySelectorAll("#service .tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.querySelectorAll("#service .tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("clicked");
+      }
+      document.getElementById(content).style.display = "block";
+      evt.currentTarget.classList.add('clicked');
+    }
+    document.getElementById("noticeDefaultOpen").click();
+    
     </script>
 </body>
 </html>

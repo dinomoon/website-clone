@@ -44,6 +44,7 @@ main #movies .tabs {width: 640px; height: 50px; margin: 0 auto; text-align: cent
 main #movies .tabs span {float: left; width: 160px; font-size: 15px; line-height: 50px; border-right: 1px solid #ccc; box-sizing: border-box;}
 main #movies .tabs .clicked {background-color: #666; color: white;}
 main #movies .tabs span:hover {background-color: #666; color: white; cursor: pointer;}
+main #movies .tabcontent {display: none;}
 
 main #movies .movie {margin: 0 -10px; margin-top: 50px;}
 main #movies .movie > div {float: left; width: 25%; padding: 0 8px; box-sizing: border-box;}
@@ -58,6 +59,7 @@ main #movies .movie .disc .reserve:hover {background-position: -150px -50px;}
 main #movies .movie span {display: inline-block; width: 21px; height: 21px; background: url(images/btn_movie.png); margin-right: 15px; vertical-align: middle;}
 main #movies .movie .age_15 {background-position: -90px -200px;}
 main #movies .movie .age_all {background-position: 0 -200px;}
+main #movies .movie.content {display: block;}
 
 /* event */
 main #event {padding: 70px 0 80px;}
@@ -81,6 +83,12 @@ main #alliance_event .right {position: absolute; right: 0;}
 /* service */
 main #service {padding: 0 0 80px 0;}
 main #service .container {width: 970px; margin: 0 auto;}
+main #service .container .tabcontent {font-size: 14px;}
+main #service .container .tabcontent div {margin: 10px 0;}
+main #service .container .tabcontent span {color: #666;}
+main #service .container .noticeBtnWrapper {border-bottom: 1px solid #ddd;}
+main #service .container button {float: left; border: none; outline: none; padding: 8px 16px; cursor: pointer;}
+main #service .container button.clicked {background-color: #ddd;}
 main #service .container .row {margin: 0 -20px;}
 main #service .container .col {float: left; width: 33.333333%; padding: 0 20px; box-sizing: border-box;}
 main #service .container h3 {display: inline-block; margin-bottom: 15px;}
@@ -98,5 +106,5 @@ footer {padding: 30px 0 40px; background-color: #221f1f; color: #999; font-size:
 footer .container {width: 970px; margin: 0 auto;}
 footer .container .logo {margin-bottom: 20px;}
 footer .container .sub_category {margin-bottom: 20px;}
-footer .container .company {line-height: 18px;}
+footer .container .company {line-height: 18px; margin-bottom: 20px;}
 footer .split {margin: 0 6px; border-right: 1px solid #999; vertical-align: middle;}
