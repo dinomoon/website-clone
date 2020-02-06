@@ -15,7 +15,7 @@ header ul li a.i6 {background-position: -410px 0;}
 header ul li a.i7 {background-position: -492px 0;}
 
 /* banner */
-main #banner .container {position: relative; color: white; width: 970px; margin: 0 auto; font-size: 14px; font-weight: bold; z-index: 1;}
+main #banner .container {position: relative; color: white; width: 970px; margin: 0 auto; font-size: 14px; font-weight: bold; z-index: 2;}
 main #banner .bm_left {position: absolute; left: 0; top: 30px;}
 main #banner .bm_left .menu {border: 1px solid; padding: 8px; color: #999; font-size: 12px; margin-right: 10px;}
 main #banner .bm_left .menu:hover {color: white;}
@@ -24,25 +24,26 @@ main #banner .split {margin: 0 12px; border-right: 1px solid #fff; vertical-alig
 main #banner .timetable {margin: 0 5px 0 20px; background-color: #c5c5c5; color: #351f67; padding: 10px 20px;}
 main #banner .quick {background-color: #351f67; padding: 10px 20px;}
 
-main #banner .banner_disc {position: absolute; top: 200px; text-shadow: 1px 1px 1px #000;}
-main #banner .banner_disc strong {font-size: 36px; font-weight: 100;}
-main #banner .banner_disc em {display: block; font-size: 18px; padding: 5px 0 20px 0; border-bottom: 1px solid #999;}
-main #banner .banner_disc span {font-size: 24px; font-weight: 100;}
+main #banner .banner-disc-wrapper {width: 970px; margin: 200px auto; color: white; text-shadow: 1px 1px 1px #000;}
+main #banner .banner-disc-wrapper .content {display: inline-block;}
+main #banner .banner-disc-wrapper .content strong {font-size: 36px; font-weight: 100;}
+main #banner .banner-disc-wrapper .content em {display: block; font-size: 18px; padding: 5px 0 20px 0; border-bottom: 1px solid #999;}
+main #banner .banner-disc-wrapper .content span {font-size: 24px; font-weight: 100;}
 
-main #banner .slider {position: relative; overflow: hidden; width: 100vw;}
-
-.slide:nth-child { background: url(images/banner01.jpg);}
-.slide:nth-child(2) { background: url(images/banner02.jpg);}
-.slide:nth-child(3) { background: url(images/banner03jpg);}
-.slide:nth-child(4) { background: url(images/banner04.jpg);}
+main #banner .swiper-container {width: 100%; height: 600px;}
+/* main #banner .swiper-container .swiper-slide {position: relative; width: 970px;} */
+main #banner .swiper-container .banner01 {background: url(images/banner01.jpg) no-repeat 0 -60px; background-size: cover;}
+main #banner .swiper-container .banner02 {background: url(images/banner02.jpg); background-size: cover;}
+main #banner .swiper-container .banner03 {background: url(images/banner03.jpg); background-size: cover;}
+main #banner .swiper-container .banner04 {background: url(images/banner04.jpg); background-size: cover;}
 
 /* movies */
 main #movies {background-color: #f2f2f2; padding: 70px 0 80px;}
 main #movies .container {width: 970px; margin: 0 auto;}
 main #movies .tabs {width: 640px; height: 50px; margin: 0 auto; text-align: center; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc;}
-main #movies .tabs a {float: left; width: 160px; line-height: 50px; border-right: 1px solid #ccc; box-sizing: border-box;}
-main #movies .tabs .tab01 {background-color: #666; color: white;}
-main #movies .tabs a:hover {background-color: #666; color: white;}
+main #movies .tabs span {float: left; width: 160px; font-size: 15px; line-height: 50px; border-right: 1px solid #ccc; box-sizing: border-box;}
+main #movies .tabs .clicked {background-color: #666; color: white;}
+main #movies .tabs span:hover {background-color: #666; color: white; cursor: pointer;}
 
 main #movies .movie {margin: 0 -10px; margin-top: 50px;}
 main #movies .movie > div {float: left; width: 25%; padding: 0 8px; box-sizing: border-box;}
@@ -54,7 +55,7 @@ main #movies .movie .disc a {display: inline-block; width: 97px; height: 46px; b
 main #movies .movie .disc .reserve {background-position: -150px 0; position: absolute; right: 15px;}
 main #movies .movie .disc .detail:hover {background-position: 0 -50px;}
 main #movies .movie .disc .reserve:hover {background-position: -150px -50px;}
-main #movies .movie span {display: inline-block; width: 21px; height: 21px; background: url(images/btn_movie.png); margin-right: 15px;}
+main #movies .movie span {display: inline-block; width: 21px; height: 21px; background: url(images/btn_movie.png); margin-right: 15px; vertical-align: middle;}
 main #movies .movie .age_15 {background-position: -90px -200px;}
 main #movies .movie .age_all {background-position: 0 -200px;}
 

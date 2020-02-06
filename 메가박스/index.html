@@ -4,11 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- <link rel="shortcut icon" href="/path/faviconimagename.ico"> -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap&subset=korean" rel="stylesheet">
+
+  <!-- swiper.js -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+  <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script src="app.js"></script>
   <title>라이프시어터, 메가박스</title>
 </head>
 <body>
@@ -60,66 +67,113 @@
           </div>
         </div>
       </div>
-      <div class="slider">
-        <ul class="slider-list">
-          <li class="slide current">
-            <a href="">
-              <div class="banner_disc">
-                <strong>
-                  메가박스 오리지널 티켓 No.13
-                  <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
-                </strong>
-                <span>1월 22일(수) 출시</span>
+      <!-- Slider main container -->
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide banner01">
+              <div class="banner-disc-wrapper">
+                <div class="content">
+                  <strong>
+                    메가박스 오리지널 티켓 No.13
+                    <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
+                  </strong>
+                  <span>1월 22일(수) 출시</span>
+                </div>
               </div>
-            </a>
-          </li>
-          <li class="slide">
-            <a href="">
-              <div class="banner_disc">
-                <strong>
-                  메가박스 오리지널 티켓 No.13
-                  <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
-                </strong>
-                <span>1월 22일(수) 출시</span>
+            </div>
+            <div class="swiper-slide banner02">
+              <div class="banner-disc-wrapper">
+                <div class="content">
+                  <strong>
+                    메가박스 오리지널 티켓 No.13
+                    <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
+                  </strong>
+                  <span>1월 22일(수) 출시</span>
+                </div>
               </div>
-            </a>
-          </li>
-          <li class="slide">
-            <a href="">
-              <div class="banner_disc">
-                <strong>
-                  메가박스 오리지널 티켓 No.13
-                  <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
-                </strong>
-                <span>1월 22일(수) 출시</span>
+            </div>
+            <div class="swiper-slide banner03">
+              <div class="banner-disc-wrapper">
+                <div class="content">
+                  <strong>
+                    메가박스 오리지널 티켓 No.13
+                    <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
+                  </strong>
+                  <span>1월 22일(수) 출시</span>
+                </div>
               </div>
-            </a>
-          </li>
-          <li class="slide">
-            <a href="">
-              <div class="banner_disc">
-                <strong>
-                  메가박스 오리지널 티켓 No.13
-                  <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
-                </strong>
-                <span>1월 22일(수) 출시</span>
+            </div>
+            <div class="swiper-slide banner04">
+              <div class="banner-disc-wrapper">
+                <div class="content">
+                  <strong>
+                    메가박스 오리지널 티켓 No.13
+                    <em>&lt;남산의 부장&gt;들을 가장 잘 간직하는 방법</em>
+                  </strong>
+                  <span>1월 22일(수) 출시</span>
+                </div>
               </div>
-            </a>
-          </li>
-        </ul>
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
       </div>
+      
     </section>
     <!-- //banner -->
     <!-- movies -->
     <section id="movies">
       <div class="container">
         <div class="tabs">
-          <a href="#" class="tab01">박스오피스</a>
-          <a href="#" class="tab02">최신개봉작</a>
-          <a href="#" class="tab03">상영예정작</a>
-          <a href="#" class="tab04">큐레이션</a>
+          <span class="clicked tab tab01">박스오피스</span>
+          <span class="tab tab02">최신개봉작</span>
+          <span class="tab tab03">상영예정작</span>
+          <span class="tab tab04">큐레이션</span>
         </div>
-        <div class="movie clearfix">
+        <div class="movie content clearfix">
+          <div class="movie01">
+            <a href=""><img src="images/movie01.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>남산의 부장들</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie02">
+            <a href=""><img src="images/movie02.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>히트맨</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie03">
+            <a href=""><img src="images/movie03.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_all">전체 관람가</span>스파이 비지니스</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+          <div class="movie04">
+            <a href=""><img src="images/movie04.jpg" alt=""></a>
+            <div class="disc">
+              <h3><span class="ir_so2 age_15">15세 관람가</span>버즈 오브 프레이(할리 퀸의 황홀한 해방)</h3>
+              <a href="" class="detail ir_so2">상세정보</a>
+              <a href="" class="reserve ir_so2">예매하기</a>
+            </div>
+          </div>
+        </div>
+        <div class="movie content clearfix">
           <div class="movie01">
             <a href=""><img src="images/movie01.jpg" alt=""></a>
             <div class="disc">
@@ -290,5 +344,32 @@
     </div>
   </footer>
   <!-- footer -->
+  <script>
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+  
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+  
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+  
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+
+      autoplay: {
+        delay: 5000,
+      },
+    })
+    </script>
 </body>
 </html>
