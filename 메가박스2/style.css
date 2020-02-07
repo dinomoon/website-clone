@@ -21,10 +21,39 @@
 #header .link-area .timetable {background-image: url(images/ico-schedule-white.png); right: 40px;}
 #header .link-area .mymega {background-image: url(images/ico-mymega-white.png); right: 0;}
 
-#header #gnb ul li a {display: block; position: absolute; top: 56px; height: 38px; text-indent: -9999px; background-repeat: no-repeat; background-position: center 0;}
-#header #gnb .movie {background-image: url(images/gnb-txt-movie-white.png); left: 166px; width: 30px;}
-#header #gnb .reserve {background-image: url(images/gnb-txt-reserve-white.png); left: 256px; width: 30px;}
-#header #gnb .theater {background-image: url(images/gnb-txt-theater-white.png); left: 345px; width: 30px;}
+#header #gnb ul li a {display: block; position: absolute; top: 47px; height: 38px; text-indent: -9999px; background-repeat: no-repeat; background-position: center;}
+#header #gnb .movie {background-image: url(images/gnb-txt-movie-white.png); left: 166px; width: 31px;}
+#header #gnb .reserve {background-image: url(images/gnb-txt-reserve-white.png); left: 256px; width: 31px;}
+#header #gnb .theater {background-image: url(images/gnb-txt-theater-white.png); left: 345px; width: 31px;}
 #header #gnb .event {background-image: url(images/gnb-txt-event-white.png); right: 347px; width: 45px;}
 #header #gnb .store {background-image: url(images/gnb-txt-store-white.png); right: 241px; width: 45px;}
-#header #gnb .benefit {background-image: url(images/gnb-txt-benefit-white.png); right: 150px; width: 30px;}
+#header #gnb .benefit {background-image: url(images/gnb-txt-benefit-white.png); right: 150px; width: 31px;}
+
+/* footer */
+#footer {position: relative; min-width: 1100px; width: 100%; height: 200px; margin: 0; padding: 0; background-color: #f8f8fa; font-size: 13px;}
+#footer .footer-top {width: 1100px; margin: 0 auto; padding: 30px 0; color: #666;}
+#footer .inner-wrap:after, .inner-wrap:before {content: ''; display: table; clear: both;}
+#footer .fnb {float: left;}
+#footer .fnb li {float: left; margin-right: 14px; line-height: 30px;}
+#footer .fnb li.privacy {font-weight: 700; color: #222;}
+#footer .footer-top .looking-theather {overflow: hidden; float: right; display: block; width: 106px; height: 30px; line-height: 28px; text-align: center; border: 1px solid #d8d9db; border-radius: 30px;}
+#footer .footer-top .iconset {display: inline-block; vertical-align: middle; margin-right: 4px;}
+#footer .footer-top .ico-footer-search {width: 15px; height: 15px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-footer-search.png);}
+#footer .footer-top .fnb a:hover {text-decoration: underline;}
+
+#footer .footer-bottom {color: #444;}
+#footer .footer-bottom {width: 1100px; margin: 0 auto; line-height: 1.5;}
+#footer .footer-bottom .ci {overflow: hidden; float: left; margin-right: 20px; width: 150px; height: 50px; text-indent: -9999px; background: url(https://img.megabox.co.kr/static/pc/images/common/ci/logo-opacity.png);}
+#footer .footer-bottom .footer-info {float: left;}
+#footer .footer-bottom address {display: inline-block;}
+#footer .footer-bottom p {display: inline-block;}
+#footer .footer-bottom p.copy {display: block;}
+#footer .footer-bottom .footer-sns {float: right;}
+#footer .footer-bottom .footer-sns a {float: left; display: block; width: 32px; height: 30px; margin-left: 5px; font-size: 0; line-height: 0;}
+#footer .footer-bottom .footer-sns a i {display: block; width: 32px; height: 30px;}
+#footer .footer-bottom .footer-sns .iconset {background-repeat: no-repeat; background-position: 0 0;}
+#footer .footer-bottom .footer-sns .ico-twitter {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-twitter.png);}
+#footer .footer-bottom .footer-sns .ico-facebook {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-facebook.png);}
+#footer .footer-bottom .footer-sns .ico-instagram {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-instagram.png);}
+#footer .footer-bottom .footer-sns .ico-googleplay {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-googleplay.png);}
+#footer .footer-bottom .footer-sns .ico-appstore {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-appstore.png);}
