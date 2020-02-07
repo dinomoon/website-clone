@@ -1,0 +1,4 @@
+/* 스킵 네비게이션 */
+.skip {position: relative;}
+.skip a {position: absolute; left: 0; top: -40px; width: 140px; background: #333; text-align: center; color: #fff; padding: 8px;}
+.skip a:focus {top: 0;}
