@@ -26,8 +26,9 @@
   <meta property="og:image" id="fbImg" content="https://img.megabox.co.kr/SharedImg/metaTag/2020/02/04/gFfTzMwwiCxhBwcUV5TRGMFX9Cmoj64W.jpg">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/d7f530ec10.js" crossorigin="anonymous"></script>
 </head>
-<body style="background-color: #000;">
+<body>
   <!-- 스킵 네비게이션 -->
   <div class="skip" title="스킵 네비게이션">
     <a href="#contents" title="본문 바로가기">본문 바로가기</a>
@@ -83,8 +84,88 @@
     </div>
   </header>
   <!-- //헤더 -->
-  <main>
-    
+  <main id="main">
+    <!-- section01 -->
+    <section id="section01" class="section main-movie">
+      <div class="cont-area">
+        <!-- tab-sorting -->
+        <div class="tab-sorting">
+          <button type="button" class="on" sort="boxRankList" name="btnSort">박스오피스순</button>
+          <button type="button" sort="accmAdncList" name="btnSort">누적관객순</button>
+          <button type="button" sort="megaScoreList" name="btnSort">메가스코어순</button>
+        </div>
+        <!-- //tab-sorting -->
+        <a href="#" class="more-movie" title="더 많은 영화보기">
+          더 많은 영화보기
+          <i class="iconset ico-more-corss gray"></i>
+        </a>
+        <!-- main-movie-list -->
+        <div class="main-movie-list">
+          <ol class="list">
+            <li>
+              <a href="#" class="movie-list-info" title="영화상세 보기">
+                <p class="rank">1</p>
+                <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/76/FBE76F-02F5-4061-A4C4-40EC14210B46.large.jpg" alt="클로젯" class="poster">
+              </a>
+              <div class="btn-util">
+                <button type="button" class="button btn-like">
+                  <i class="far fa-heart"></i>1.2k
+                </button>
+                <div class="case">
+                  <a href="" class="button">예매</a>
+                  <a href="" class="button">MX</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="movie-list-info" title="영화상세 보기">
+                <p class="rank">2</p>
+                <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/27/D46298-4010-43BD-9419-D1ED4FD245C1.large.jpg" alt="버즈 오브 프레이(할리 퀸의 황홀한 해방)" class="poster">
+              </a>
+              <div class="btn-util">
+                <button type="button" class="button btn-like">
+                  <i class="far fa-heart"></i>1.1k
+                </button>
+                <div class="case">
+                  <a href="" class="button">예매</a>
+                  <a href="" class="button">MX</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="movie-list-info" title="영화상세 보기">
+                <p class="rank">3</p>
+                <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/45/7CC62E-B845-44D8-AC0A-7E994F91F506.large.jpg" alt="남산의 부장들" class="poster">
+              </a>
+              <div class="btn-util">
+                <button type="button" class="button btn-like">
+                  <i class="far fa-heart"></i>6.2k
+                </button>
+                <div class="case">
+                  <a href="" class="button">예매</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a href="#" class="movie-list-info" title="영화상세 보기">
+                <p class="rank">4</p>
+                <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/C0/3B7BB2-7663-4AF8-AFBC-B433C4140906.large.jpg" alt="조조 래빗" class="poster">
+              </a>
+              <div class="btn-util">
+                <button type="button" class="button btn-like">
+                  <i class="far fa-heart"></i>424
+                </button>
+                <div class="case">
+                  <a href="" class="button">예매</a>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <!-- //main-movie-list -->
+      </div>
+    </section>
+    <!-- //section01 -->
   </main>
   <!-- footer -->
   <footer id="footer">

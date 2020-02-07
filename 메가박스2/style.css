@@ -8,26 +8,51 @@
 #header .container {width: 1100px; height: 91px; margin: 0 auto; position: relative;}
 #header .logo a {position: absolute; left: 50%; top: 23px; transform: translateX(-50%); display: block; width: 140px; height: 47px; text-indent: -9999px; background: url(images/logo-white.png);}
 
-#header .util-area {font-size: 14px;}
-#header .util-area .left-link {position: absolute; left: 0; top: 15px;}
+#header .util-area {font-size: 13px;}
+#header .util-area .left-link {position: absolute; left: 0; top: 17px;}
 #header .util-area .left-link a {float: left; margin-right: 20px; color: #888;}
-#header .util-area .right-link {position: absolute; right: 0; top: 15px;}
+#header .util-area .right-link {position: absolute; right: 0; top: 17px;}
 #header .util-area .right-link a {float: left; margin-left: 20px; color: #888}
 #header .util-area .left-link a:hover, #header .util-area .right-link a:hover {text-decoration: underline;}
 
-#header .link-area a {display: block; position: absolute; top: 47px; width: 36px; height: 36px; font-size: 0; line-height: 0; background-position: center; background-repeat: no-repeat;}
+#header .link-area a {display: block; position: absolute; top: 42px; width: 36px; height: 36px; font-size: 0; line-height: 0; background-position: center; background-repeat: no-repeat;}
 #header .link-area .sitemap {background-image: url(images/ico-sitemap-white.png);}
 #header .link-area .search {background-image: url(images/ico-search-white.png); left: 40px;}
 #header .link-area .timetable {background-image: url(images/ico-schedule-white.png); right: 40px;}
 #header .link-area .mymega {background-image: url(images/ico-mymega-white.png); right: 0;}
 
-#header #gnb ul li a {display: block; position: absolute; top: 47px; height: 38px; text-indent: -9999px; background-repeat: no-repeat; background-position: center;}
+#header #gnb ul li a {display: block; position: absolute; top: 42px; height: 38px; text-indent: -9999px; background-repeat: no-repeat; background-position: center;}
 #header #gnb .movie {background-image: url(images/gnb-txt-movie-white.png); left: 166px; width: 31px;}
 #header #gnb .reserve {background-image: url(images/gnb-txt-reserve-white.png); left: 256px; width: 31px;}
 #header #gnb .theater {background-image: url(images/gnb-txt-theater-white.png); left: 345px; width: 31px;}
 #header #gnb .event {background-image: url(images/gnb-txt-event-white.png); right: 347px; width: 45px;}
 #header #gnb .store {background-image: url(images/gnb-txt-store-white.png); right: 241px; width: 45px;}
 #header #gnb .benefit {background-image: url(images/gnb-txt-benefit-white.png); right: 150px; width: 31px;}
+
+/* main */
+/* section01 */
+#main #section01 {position: relative; height: 880px; padding: 0 0 80px 0; background-color: #000;}
+#main #section01 .cont-area {position: relative; overflow: hidden; display: block; width: 1100px; margin: 0 auto;}
+/* #main #section01 .cont-area {position: relative; overflow: hidden; display: block; z-index: 3; width: 1100px; height: auto; margin: 0 auto; padding: 0 0 50px 0;} */
+#main #section01 .cont-area .tab-sorting {margin: 74px 0 20px 0; text-align: center;}
+#main #section01 .cont-area .tab-sorting button {border: 0; margin: 0 18px; padding: 0 0 5px 0; background-color: transparent; color: #aaa; font-size: 16px;}
+#main #section01 .cont-area .tab-sorting button:hover {color: #fff; border-bottom: 2px solid rgba(255,255,255,0.2);}
+#main #section01 .cont-area .tab-sorting button:focus {outline: 1px dotted #000;}
+#main #section01 .cont-area .tab-sorting button.on {color: #fff; border-bottom: 2px solid rgba(255,255,255,0.2);}
+#main #section01 .cont-area .more-movie {position: absolute; right: 0; top: 82px; color: #aaa; font-size: 15px;}
+#main #section01 .cont-area .more-movie:hover {text-decoration: underline;}
+#main #section01 .cont-area .more-movie .ico-more-corss {display: inline-block; width: 16px; height: 16px; margin-left: 4px; vertical-align: middle; background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-more-cross-gray.png);}
+#main #section01 .cont-area .main-movie-list ol {margin: 0 -20px;}
+#main #section01 .cont-area .main-movie-list ol li {float: left; width: 25%; padding: 0 20px;}
+#main #section01 .cont-area .main-movie-list .movie-list-info {position: relative; width: 100%; height: 352px; border-radius: 5px;}
+#main #section01 .cont-area .main-movie-list .movie-list-info .rank {position: absolute; left: 0; top: 0; z-index: 1; color: white; padding: 10px 0 0 15px; font-size: 2em; font-style: italic; text-shadow: 2px 2px 2px rgba(0,0,0,0.8);}
+#main #section01 .cont-area .main-movie-list .movie-list-info img.poster {width: 100%; height: 352px; border-radius: 5px;}
+#main #section01 .cont-area .main-movie-list .btn-util {margin-top: 10px;}
+#main #section01 .cont-area .main-movie-list .btn-util .btn-like {float: left; width: 30%; height: 36px; color: #fff; border: 1px solid #555; border-radius: 5px; background-color: #000;}
+#main #section01 .cont-area .main-movie-list .btn-util .btn-like:focus {outline: none;}
+#main #section01 .cont-area .main-movie-list .btn-util .btn-like i {margin-right: 5px;}
+#main #section01 .cont-area .main-movie-list .btn-util .case {float: right; width: 66%; height:36px; background-color: orange;}
+#main #section01 .cont-area .main-movie-list .btn-util .case .button {text-align: center; line-height: 36px; width: 50%;}
 
 /* footer */
 #footer {position: relative; min-width: 1100px; width: 100%; height: 200px; margin: 0; padding: 0; background-color: #f8f8fa; font-size: 13px;}
