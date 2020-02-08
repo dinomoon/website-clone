@@ -45,7 +45,7 @@
 #main #section01 .cont-area .main-movie-list ol {margin: 0 -20px;}
 #main #section01 .cont-area .main-movie-list ol li {float: left; width: 25%; padding: 0 20px;}
 #main #section01 .cont-area .main-movie-list .movie-list-info {position: relative; width: 100%; height: 352px; border-radius: 5px;}
-#main #section01 .cont-area .main-movie-list .movie-list-info .rank {position: absolute; left: 0; top: 0; z-index: 1; color: white; padding: 10px 0 0 15px; font-size: 2em; font-style: italic; text-shadow: 2px 2px 2px rgba(0,0,0,0.8);}
+#main #section01 .cont-area .main-movie-list .movie-list-info .rank {position: absolute; z-index: 1; color: white; padding: 10px 0 0 15px; font-size: 2em; font-style: italic; text-shadow: 2px 2px 2px rgba(0,0,0,0.8);}
 #main #section01 .cont-area .main-movie-list .movie-list-info img.poster {width: 100%; height: 352px; border-radius: 5px;}
 #main #section01 .cont-area .main-movie-list .btn-util .btn-like {float: left; width: 30%; height: 36px; color: #fff; border: 1px solid #555; border-radius: 5px; background-color: #000;}
 #main #section01 .cont-area .main-movie-list .btn-util .btn-like:focus {outline: none;}
@@ -66,6 +66,51 @@
 #main #section01 .cont-area .search-link .schedule {display: inline-block; width: 24px; height: 26px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-schedule-main.png); vertical-align: middle; margin-right: 6px;}
 #main #section01 .cont-area .search-link .boxoffice {display: inline-block; width: 26px; height: 24px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-boxoffice-main.png); vertical-align: middle; margin-right: 6px;}
 #main #section01 .cont-area .search-link .quickreserve {display: inline-block; width: 29px; height: 25px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-quick-reserve-main.png); vertical-align: middle; margin-right: 6px;}
+
+#main #section02.main-benefit {overflow: hidden; position: relative; min-height: 1148px; padding: 0 0 100px 0;}
+#main #section02.main-benefit:before {content: ''; display: block; position: absolute; left: 0; right: 0; top: 513px; bottom: 0; background-color: #503396;}
+#main #section02.main-benefit .wrap {position: relative; width: 1100px; margin: 0 auto; padding: 0;}
+#main #section02.main-benefit .tit-util {padding: 50px 0 0 0;}
+#main #section02.main-benefit .tit-util .tit {float: left;}
+#main #section02.main-benefit .tit-util .btn-more {float: right; display: block; width: 16px; height: 16px; background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-more-cross-purple.png) no-repeat; font-size: 0; line-height: 0; margin-top: 14px;}
+
+#main #section03 {position: relative; min-height: 840px; background-color: #252451;}
+
+#main #section04.main-info {padding: 0 0 50px 0;}
+#main #section04.main-info h2.tit {width: 1100px; margin: 0 auto; padding: 50px 0 40px 0;}
+#main #section04.main-info .info-special {width: 1100px; margin: 0 auto; text-align: center;}
+#main #section04.main-info .info-special a {vertical-align: top; font-size: 0; line-height: 0; display: inline-block; width: 170px; height: 170px; background-position: 0 0; background-repeat: no-repeat; background-size: 170px 340px; box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.2); border-radius: 10px; margin: 0 0 0 16px}
+#main #section04.main-info .info-special a:hover {background-position: 0 -170px;}
+#main #section04.main-info .info-special .butique {background-image: url(images/bg-main-megainfo-boutique.png);}
+#main #section04.main-info .info-special .mx {background-image: url(images/bg-main-megainfo-mx.png);}
+#main #section04.main-info .info-special .comfort {background-image: url(images/bg-main-megainfo-comfort.png);}
+#main #section04.main-info .info-special .mega-kids-box {background-image: url(images/bg-main-megainfo-kids.png);}
+#main #section04.main-info .info-special .the-first-club {background-image: url(images/bg-main-megainfo-first.png);}
+#main #section04.main-info .info-notice {margin-top: 50px; border: 1px solid #e2e2e2; border-width: 1px 0;}
+#main #section04.main-info .info-notice .wrap {display: block; width: 1100px; position: relative; margin: 0 auto; padding: 0 175px 0 95px;}
+#main #section04.main-info .info-notice .wrap .tit {position: absolute; left: 0; top: 0;}
+#main #section04.main-info .info-notice .wrap .link {position: relative;}
+#main #section04.main-info .info-notice .wrap .link:before {content: ''; display: block; position: absolute; left: -20px; top: 50%; margin-top: -7px; width: 1px; height: 14px; background-color: #e2e2e2;}
+#main #section04.main-info .info-notice .wrap .link a {display: inline-block;}
+#main #section04.main-info .info-notice .wrap .link a strong {color: #01738b}
+#main #section04.main-info .info-notice .wrap .date {position: absolute; right: 95px; top: 0; color: #666;}
+#main #section04.main-info .info-notice .wrap .more {position: absolute; right: 0; top: 0; width: 85px; text-align: center;}
+#main #section04.main-info .info-notice .wrap .more:before {content: ''; display: block; position: absolute; left: 0; top: 50%; margin-top: -7px; width: 1px; height: 14px; background-color: #e2e2e2;}
+#main #section04.main-info .info-notice .wrap .more i {margin-left: 5px;}
+#main #section04.main-info .info-notice .wrap > p {height: 60px; line-height: 60px;}
+#main #section04.main-info .info-notice .wrap:before, #main #section04.main-info .info-notice .wrap:after {content: ''; display: table;}
+#main #section04.main-info .info-notice a:hover {text-decoration: underline;}
+#main #section04.main-info .info-link {width: 1100px; padding: 50px 0; margin: 0 auto;}
+#main #section04.main-info .info-link .table {display: table; width: 100%;}
+#main #section04.main-info .info-link .table .cell {display: table-cell; width: 16.6%; text-align: center;}
+#main #section04.main-info .info-link .iconset {display: block; margin: 0 auto; margin-bottom: 8px;}
+#main #section04.main-info .info-link .ico-main-customer {width: 46px; height: 46px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-customer.png);}
+#main #section04.main-info .info-link .ico-main-faq {width: 50px; height: 46px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-faq.png);}
+#main #section04.main-info .info-link .ico-main-qna {width: 43px; height: 43px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-qna.png);}
+#main #section04.main-info .info-link .ico-main-group {width: 50px; height: 38px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-group.png);}
+#main #section04.main-info .info-link .ico-main-lost {width: 51px; height: 39px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-lost.png);}
+#main #section04.main-info .info-link .ico-main-boutique {width: 48px; height: 40px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-boutique.png);}
+
 
 /* footer */
 #footer {position: relative; min-width: 1100px; width: 100%; height: 200px; margin: 0; padding: 0; background-color: #f8f8fa; font-size: 13px;}
@@ -95,3 +140,6 @@
 #footer .footer-bottom .footer-sns .ico-instagram {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-instagram.png);}
 #footer .footer-bottom .footer-sns .ico-googleplay {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-googleplay.png);}
 #footer .footer-bottom .footer-sns .ico-appstore {background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-appstore.png);}
+
+/* 기타 */
+h2.tit { font-weight: 400; color: #351f66; font-size: 2em;}
