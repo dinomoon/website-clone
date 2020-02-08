@@ -87,6 +87,7 @@
   <main id="main">
     <!-- section01 -->
     <section id="section01" class="section main-movie">
+      <!-- cont-area -->
       <div class="cont-area">
         <!-- tab-sorting -->
         <div class="tab-sorting">
@@ -101,7 +102,7 @@
         </a>
         <!-- main-movie-list -->
         <div class="main-movie-list">
-          <ol class="list">
+          <ol class="list clearfix">
             <li>
               <a href="#" class="movie-list-info" title="영화상세 보기">
                 <p class="rank">1</p>
@@ -111,9 +112,9 @@
                 <button type="button" class="button btn-like">
                   <i class="far fa-heart"></i>1.2k
                 </button>
-                <div class="case">
-                  <a href="" class="button">예매</a>
-                  <a href="" class="button">MX</a>
+                <div class="case col2">
+                  <a href="" class="button btn1" title="영화 예매하기">예매</a>
+                  <a href="" class="button btn2" title="MX관 예매하기">MX</a>
                 </div>
               </div>
             </li>
@@ -126,9 +127,9 @@
                 <button type="button" class="button btn-like">
                   <i class="far fa-heart"></i>1.1k
                 </button>
-                <div class="case">
-                  <a href="" class="button">예매</a>
-                  <a href="" class="button">MX</a>
+                <div class="case col2">
+                  <a href="" class="button btn1" title="영화 예매하기">예매</a>
+                  <a href="" class="button btn2" title="MX관 예매하기">MX</a>
                 </div>
               </div>
             </li>
@@ -142,7 +143,7 @@
                   <i class="far fa-heart"></i>6.2k
                 </button>
                 <div class="case">
-                  <a href="" class="button">예매</a>
+                  <a href="" class="button btn1" title="영화 예매하기">예매</a>
                 </div>
               </div>
             </li>
@@ -156,14 +157,44 @@
                   <i class="far fa-heart"></i>424
                 </button>
                 <div class="case">
-                  <a href="" class="button">예매</a>
+                  <a href="" class="button btn1" title="영화 예매하기">예매</a>
                 </div>
               </div>
             </li>
           </ol>
         </div>
         <!-- //main-movie-list -->
+        <div class="search-link clearfix">
+          <div class="cell">
+            <div class="search">
+              <input type="text" placeholder="영화명을 입력해 주세요" title="영화 검색" class="input-text">
+              <button class="btn">
+                <i class="ico-search"></i>
+                검색
+              </button>
+            </div>
+          </div>
+          <div class="cell">
+            <a href="#" title="상영시간표 보기">
+              <i class="schedule"></i>
+              상영시간표
+            </a>
+          </div>
+          <div class="cell">
+            <a href="#" title="박스오피스 보기">
+              <i class="boxoffice"></i>
+              박스오피스
+            </a>
+          </div>
+          <div class="cell">
+            <a href="#" title="빠른예매 보기">
+              <i class="quickreserve"></i>
+              빠른예매
+            </a>
+          </div>
+        </div>
       </div>
+      <!-- //cont-area -->
     </section>
     <!-- //section01 -->
   </main>
