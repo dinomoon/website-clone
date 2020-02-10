@@ -109,18 +109,29 @@
 #main #section03 .wrap .curr-img .bage.film {background: url(https://www.megabox.co.kr/static/pc/images/main/bg-bage-curation-film.png) no-repeat 0 0;}
 #main #section03 .wrap .curr-img .bage {position: absolute; width: 123px; height: 135px; font-size: 0; line-height: 0; top: -10px;}
 #main #section03 .wrap .curr-img .img {padding-left: 20px;}
-#main #section03 .wrap .curr-img .img a {display: block; width: 300px; height: 430px;;}
+#main #section03 .wrap .curr-img .img a {display: block; width: 300px; height: 430px;}
 #main #section03 .wrap .curr-img .img a img {width: 100%; height: 100%; border-radius: 15px}
 #main #section03 .wrap .curr-img .btn-group {width: 300px; padding: 10px 0 0 0; text-align: center; margin: 0 0 0 20px; font-size: 1.3em;}
 #main #section03 .wrap .curr-img .btn-group .left {float: left; width: calc(50% - 5px);}
-#main #section03 .wrap .curr-img .btn-group .left .button {color: #fff; background-color: transparent; border: 1px solid #fff; border-radius: 4px;}
+#main #section03 .wrap .curr-img .btn-group .left .button {background-color: transparent; border: 1px solid #fff; border-radius: 4px;}
 #main #section03 .wrap .curr-img .btn-group .right {float: right; width: calc(50% - 5px);}
-#main #section03 .wrap .curr-img .btn-group .right .button {color: #fff; background-color: #037b94; border-radius: 4px;}
-#main #section03 .wrap .curr-img .btn-group .button {display: block; width: 100%; height: 50px; line-height: 48px;}
+#main #section03 .wrap .curr-img .btn-group .right .button {background-color: #037b94; border-radius: 4px;}
+#main #section03 .wrap .curr-img .btn-group .button {display: block; height: 50px; line-height: 48px; color: #fff;}
 #main #section03 .wrap .curr-img .info {position: absolute; left: 370px; top:0; color: #fff; width: calc(100% - 370px);}
 #main #section03 .wrap .curr-img .info .txt {font-size: 1.3em; padding-bottom: 10px;}
 #main #section03 .wrap .curr-img .info .tit {font-size: 2.2em; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2);}
 #main #section03 .wrap .curr-img .info .summary {padding-top: 20px; line-height: 1.4;}
+/* #main #section03 .wrap .curr-img .list {padding: 310px 0 0 370px; background-color: orange;} */
+#main #section03 .wrap .curr-img .list {position: absolute; left: 370px; top: 324px;}
+#main #section03 .wrap .curr-img .list ul {position: relative; margin: 0 -10px;}
+#main #section03 .wrap .curr-img .list ul li {float: left; width: 25%; padding: 0 8px;}
+#main #section03 .wrap .curr-img .list ul li a {position: relative; color: #fff; text-align: center;}
+#main #section03 .wrap .curr-img .list ul li a .bage {position: absolute; left: 10px; top: -5px; display: block; width: 35px; height: 50px; font-size: 0; line-height: 0; z-index: 3; background-repeat: no-repeat;}
+#main #section03 .wrap .curr-img .list ul li a .bage.film {background-image: url(https://www.megabox.co.kr/static/pc/images/main/bg-bage-curation-film-m.png);}
+#main #section03 .wrap .curr-img .list ul li a .bage.classic {background-image: url(https://www.megabox.co.kr/static/pc/images/main/bg-bage-curation-classic-m.png);}
+#main #section03 .wrap .curr-img .list ul li .img {padding: 0; height: 244px;}
+#main #section03 .wrap .curr-img .list ul li .img img {border-radius: 10px; width: 100%; height: 100%;}
+#main #section03 .wrap .curr-img .list ul li a .tit {white-space: nowrap; text-overflow: ellipsis; overflow: hidden; padding-top: 10px;}
 
 #main #section04.main-info {padding: 0 0 50px 0;}
 #main #section04.main-info h2.tit {width: 1100px; margin: 0 auto; padding: 50px 0 40px 0;}
