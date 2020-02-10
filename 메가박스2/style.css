@@ -8,11 +8,11 @@
 #header .container {width: 1100px; height: 91px; margin: 0 auto; position: relative;}
 #header .logo a {position: absolute; left: 50%; top: 23px; transform: translateX(-50%); display: block; width: 140px; height: 47px; text-indent: -9999px; background: url(images/logo-white.png);}
 
-#header .util-area {font-size: 13px;}
+#header .util-area {font-size: 13px; color: #888;}
 #header .util-area .left-link {position: absolute; left: 0; top: 17px;}
-#header .util-area .left-link a {float: left; margin-right: 20px; color: #888;}
+#header .util-area .left-link a {float: left; margin-right: 20px; }
 #header .util-area .right-link {position: absolute; right: 0; top: 17px;}
-#header .util-area .right-link a {float: left; margin-left: 20px; color: #888}
+#header .util-area .right-link a {float: left; margin-left: 20px;}
 #header .util-area .left-link a:hover, #header .util-area .right-link a:hover {text-decoration: underline;}
 
 #header .link-area a {display: block; position: absolute; top: 42px; width: 36px; height: 36px; font-size: 0; line-height: 0; background-position: center; background-repeat: no-repeat;}
@@ -43,7 +43,7 @@
 #main #section01 .cont-area .more-movie:hover {text-decoration: underline;}
 #main #section01 .cont-area .main-movie-list ol {margin: 0 -20px;}
 #main #section01 .cont-area .main-movie-list ol li {float: left; width: 25%; padding: 0 20px;}
-#main #section01 .cont-area .main-movie-list .movie-list-info {position: relative; width: 100%; height: 352px; border-radius: 5px;}
+#main #section01 .cont-area .main-movie-list .movie-list-info {position: relative; width: 100%; height: 352px;}
 #main #section01 .cont-area .main-movie-list .movie-list-info .rank {position: absolute; z-index: 1; color: white; padding: 10px 0 0 15px; font-size: 2em; font-style: italic; text-shadow: 2px 2px 2px rgba(0,0,0,0.8);}
 #main #section01 .cont-area .main-movie-list .movie-list-info img.poster {width: 100%; height: 352px; border-radius: 5px;}
 #main #section01 .cont-area .main-movie-list .btn-util .btn-like {float: left; width: 30%; height: 36px; color: #fff; border: 1px solid #555; border-radius: 5px; background-color: #000;}
@@ -58,7 +58,7 @@
 #main #section01 .cont-area .search-link .cell {float: left; width: 25%; color: white; text-align: center; border-left: 1px solid #423e3e;}
 #main #section01 .cont-area .search-link .cell:first-child {border: none;}
 #main #section01 .cont-area .search-link .search {border-bottom: 1px solid #423e3e; display: inline-block; position: relative; width: 200px; height: 30px;}
-#main #section01 .cont-area .search-link .search .input-text {background-color: transparent; border: 0; color: #fff; line-height: 30px; font-size: 16px;}
+#main #section01 .cont-area .search-link .search .input-text {background-color: transparent; border: 0; color: #fff; line-height: 25px; font-size: 16px;}
 #main #section01 .cont-area .search-link .search .input-text:active {border: 1px solid #000;}
 #main #section01 .cont-area .search-link .search .btn {display: block; width: 30px; height: 100%; position: absolute; right: 0; top: 0; font-size: 0; line-height: 0; border: 0; background-color: transparent;}
 #main #section01 .cont-area .search-link .search .btn .ico-search {display: inline-block; width: 18px; height: 18px; background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-search-white.png); vertical-align: middle;}
@@ -74,16 +74,33 @@
 #main #section02.main-benefit .tit-util .btn-more {float: right; display: block; width: 16px; height: 16px; background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-more-cross-purple.png) no-repeat; font-size: 0; line-height: 0; margin-top: 14px;}
 #main #section02.main-benefit .slider {overflow: hidden; position: relative; width: 687px; height: 325px; background-color: #fff;}
 #main #section02.main-benefit .slider .slider-view {position: absolute; height: 325px; font-size: 0; line-height: 0;}
+#main #section02.main-benefit .slider .slider-view .cell {width: 934px; height: 325px;}
 #main #section02.main-benefit .slider .slider-view .cell .position {overflow: hidden; position: relative; width: 100%; height: 100%;}
 #main #section02.main-benefit .slider .slider-view .cell .position a {display: block;}
 #main #section02.main-benefit .slider .slider-view .cell .position .txt {position: absolute; left: 0;}
 #main #section02.main-benefit .slider .slider-view .cell .position .txt a {width: 300px; height: 230px;}
 #main #section02.main-benefit .slider .slider-view .cell .position .txt a img {max-width: 300px; max-height: 230px;}
 #main #section02.main-benefit .slider .slider-view .cell .position .bg {position: absolute; top: 0;}
+#main #section02.main-benefit .slider .slider-control {position: absolute; left: 0; bottom: 42px;}
+#main #section02.main-benefit .slider .slider-control .page {float: left; width: 190px; height: 2px; background-color: #ebebeb; margin-top: 5px;}
+#main #section02.main-benefit .slider .slider-control .page span {float: left; height: 100%;}
+#main #section02.main-benefit .slider .slider-control .page .on {background-color: #503396;}
+#main #section02.main-benefit .slider .slider-control .util {float: left; padding: 0 10px 0 15px;}
+#main #section02.main-benefit .slider .slider-control button {float: left; border: 0; background-color: transparent; background-repeat: no-repeat; font-size: 0; line-height: 0; height: 12px; margin-left: 8px;}
+#main #section02.main-benefit .slider .slider-control .util .btn-prev {width: 7px; background-image: url(images/btn-benefit-slider-prev.png);}
+#main #section02.main-benefit .slider .slider-control .util .btn-next {width: 7px; background-image: url(images/btn-benefit-slider-next.png);}
+#main #section02.main-benefit .slider .slider-control .util .btn-play {display: none; width: 6px; background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-slider-play.png);}
+#main #section02.main-benefit .slider .slider-control .util .btn-pause {width: 6px; background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-slider-pause.png);}
+#main #section02.main-benefit .slider .slider-control .util .btn-play.on {display: block;}
+#main #section02.main-benefit .slider .slider-control .util .btn-pause.on {display: block;}
+#main #section02.main-benefit .slider .slider-control .page-count {float: left; line-height: 14px; color: #444;}
+
 #main #section02.main-benefit .brn-ad {position: relative; min-width: 1100px;}
 #main #section02.main-benefit .brn-ad .banner .size {float: left; width: 441px; height: 204px; font-size: 0; line-height: 0; border-radius: 5px; margin-right: 20px; box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2);}
 #main #section02.main-benefit .brn-ad .banner .size.small {width: 204px; height: 204px;}
 #main #section02.main-benefit .brn-ad .banner .size img {width: 100%; height: 100%;}
+#main #section02.main-benefit .brn-ad .ad-img {position: absolute; right: 0; bottom: 0;}
+#main #section02.main-benefit .brn-ad .ad-img img {vertical-align: top; border-radius: 5px;}
 #main #section02.main-benefit .menu-link {padding: 50px 0 0 0; color: #fff;}
 #main #section02.main-benefit .menu-link .cell {float: left; width: 20%; display: block;}
 #main #section02.main-benefit .menu-link .cell a {display: block; padding: 60px 0 0 0; text-align: center; background-repeat: no-repeat;}
@@ -92,13 +109,29 @@
 #main #section02.main-benefit .menu-link .cell.card a {background-image: url(images/ico-card-main.png); background-position: center 2px;}
 #main #section02.main-benefit .menu-link .cell.event a {background-image: url(images/ico-event-main.png); background-position: center 2px;}
 #main #section02.main-benefit .menu-link .cell.store a {background-image: url(images/ico-store-main.png); background-position: center 2px;}
-#main #section02.main-benefit .grand-open {overflow: hidden; position: relative; min-width: 1100px; height:335px; margin: 50px 0 0 0; border-top: 1px solid #5c419d;}
+#main #section02.main-benefit .grand-open {overflow: hidden; position: relative; min-width: 1100px; margin: 50px 0 0 0; border-top: 1px solid #5c419d;}
 #main #section02.main-benefit .grand-open .tit {position: absolute; left: 0; top: 50px; color: #fff;}
 #main #section02.main-benefit .grand-open .tit span {display: block;}
 #main #section02.main-benefit .grand-open .tit strong {font-size: 1.6em; padding: 15px 0 0 0; line-height: 1.1; display: block;}
-#main #section02.main-benefit .grand-open .open-cont {padding: 50px 0 0 373px; background-color: orange;}
-#main #section02.main-benefit .grand-open .open-cont .open-pagination {overflow: hidden; position: absolute; left: 0; top: 170px; width: 160px; color: #fff; background-color: #333;}
+#main #section02.main-benefit .grand-open .open-cont {padding: 50px 0 0 373px; color: #fff;}
+#main #section02.main-benefit .grand-open .open-cont .open-pagination {overflow: hidden; position: absolute; left: 0; top: 190px; width: 160px; color: #fff;}
 .main-benefit .grand-open:before, .main-benefit .grand-open:after {content: ''; display: table;} 
+#main #section02.main-benefit .grand-open .open-pagination .swiper-pagination-bullet {float: left; width: 20%; height: 2px;}
+#main #section02.main-benefit .grand-open .open-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {background-color: #fff;}
+#main #section02.main-benefit .grand-open .open-cont .open-control {position: absolute; left: 175px; top: 184px;}
+#main #section02.main-benefit .grand-open .open-cont .open-control button {background-color: transparent; border: 0; text-indent: -9999px; display: block; height: 12px; float: left;}
+#main #section02.main-benefit .grand-open .open-cont .open-control .open-prev {width: 20px; background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-theater-prev.png); background-repeat: no-repeat;}
+#main #section02.main-benefit .grand-open .open-cont .open-control .open-next {width: 20px; background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-theater-next.png); background-repeat: no-repeat;}
+#main #section02.main-benefit .grand-open .open-cont .open-control .open-pause {width: 20px; background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-theater-pause.png); background-repeat: no-repeat;}
+#main #section02.main-benefit .grand-open .open-cont .count-num {position: absolute; left: 240px; top: 180px;}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper a {display: block; position: relative; width: 204px; height: 204px; background-image: url(images/bg-theater-new.jpg); border-radius: 50%; box-shadow: 5px 5px 10px 0 rgba(0,0,0,0.25);}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper a:hover {background-color: #fff; background-image: none; color: #01738b;}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper a:hover img {opacity: 0;}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .label {z-index: 2; display: block; position: absolute; left: 50%; transform: translateX(-50%); top: 40px; background-color: #01738b; padding: 5px 10px; font-size: 14px; color: #fff;}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .area {z-index: 2; position: absolute; left: 50%; transform: translateX(-50%); top: 80px; text-align: center;}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .area strong {font-size: 1.4em;}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .date {z-index: 2; position: absolute; left: 50%; transform: translateX(-50%); top: 150px;}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper img {position: absolute; left:0; top:0; width: 204px; height: 204px; opacity: 0.6; border-radius: 50%; z-index: 1;}
 
 #main #section03 {position: relative; min-height: 840px; background-color: #252451;}
 #main #section03 .wrap {position: relative; width: 1100px; margin: 0 auto;}
@@ -171,7 +204,7 @@
 
 
 /* footer */
-#footer {position: relative; min-width: 1100px; width: 100%; height: 200px; margin: 0; padding: 0; background-color: #f8f8fa; font-size: 13px;}
+#footer {position: relative; height: 200px; margin: 0; padding: 0; background-color: #f8f8fa; font-size: 13px;}
 #footer .footer-top {width: 1100px; margin: 0 auto; padding: 30px 0; color: #666;}
 #footer .inner-wrap:after, .inner-wrap:before {content: ''; display: table; clear: both;}
 #footer .fnb {float: left;}
