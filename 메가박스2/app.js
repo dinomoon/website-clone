@@ -14,6 +14,12 @@ window.addEventListener('load', function(){
       gnbDepth2[index].addEventListener('mouseout', function(){
         previous[index].style.borderBottom = "none";
       })
+      previous[index].addEventListener('mouseover', function(){
+        previous[index].style.borderBottom = "3px solid #fff";
+      })
+      previous[index].addEventListener('mouseout', function(){
+        previous[index].style.borderBottom = "none";
+      })
     })(i);
   }
 })
