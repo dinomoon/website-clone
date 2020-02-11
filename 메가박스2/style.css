@@ -5,9 +5,10 @@
 
 /* 헤더 */
 #header {background-color: #000; border-bottom: 1px solid rgba(255,255,255,0.2);}
-#header .container {width: 1100px; height: 91px; margin: 0 auto; position: relative;}
+#header .container {position: relative; width: 1100px; height: 91px; margin: 0 auto;}
 #header .logo a {position: absolute; left: 50%; top: 23px; transform: translateX(-50%); display: block; width: 140px; height: 47px; text-indent: -9999px; background: url(images/logo-white.png);}
 
+#header .util-area {position: relative; width: 1100px; margin: 0 auto;}
 #header .util-area {font-size: 13px; color: #888;}
 #header .util-area .left-link {position: absolute; left: 0; top: 17px;}
 #header .util-area .left-link a {float: left; margin-right: 20px; }
@@ -15,19 +16,37 @@
 #header .util-area .right-link a {float: left; margin-left: 20px;}
 #header .util-area .left-link a:hover, #header .util-area .right-link a:hover {text-decoration: underline;}
 
+#header .link-area {position: relative; width: 1100px; margin: 0 auto;}
 #header .link-area a {display: block; position: absolute; top: 42px; width: 36px; height: 36px; font-size: 0; line-height: 0; background-position: center; background-repeat: no-repeat;}
 #header .link-area .sitemap {background-image: url(images/ico-sitemap-white.png);}
 #header .link-area .search {background-image: url(images/ico-search-white.png); left: 40px;}
 #header .link-area .timetable {background-image: url(images/ico-schedule-white.png); right: 40px;}
 #header .link-area .mymega {background-image: url(images/ico-mymega-white.png); right: 0;}
 
-#header #gnb ul li a {display: block; position: absolute; top: 42px; height: 38px; text-indent: -9999px; background-repeat: no-repeat; background-position: center;}
+#header #gnb>ul {position: relative; width: 1100px;}
+#header #gnb>ul>li>a {display: block; position: absolute; top: 54px; height: 38px; text-indent: -9999px; background-repeat: no-repeat;}
+#header #gnb>ul>li>a:hover {border-bottom: 3px solid #fff;}
+#header #gnb>ul>li>a:hover+.gnb-depth2 {display: block;}
 #header #gnb .movie {background-image: url(images/gnb-txt-movie-white.png); left: 166px; width: 31px;}
 #header #gnb .reserve {background-image: url(images/gnb-txt-reserve-white.png); left: 256px; width: 31px;}
 #header #gnb .theater {background-image: url(images/gnb-txt-theater-white.png); left: 345px; width: 31px;}
 #header #gnb .event {background-image: url(images/gnb-txt-event-white.png); right: 347px; width: 45px;}
 #header #gnb .store {background-image: url(images/gnb-txt-store-white.png); right: 241px; width: 45px;}
 #header #gnb .benefit {background-image: url(images/gnb-txt-benefit-white.png); right: 150px; width: 31px;}
+#header #gnb .gnb-depth2 {position: absolute; top: 90px; z-index: 10; color: #fff; font-size: 14px; display: none; height: 40px; padding: 10px;}
+#header #gnb .gnb-depth2.movie-snb {left: 80px;}
+#header #gnb .gnb-depth2.movie-snb:hover {display: block;}
+#header #gnb .gnb-depth2.reserve-snb {left: 150px;}
+#header #gnb .gnb-depth2.reserve-snb:hover {display: block;}
+#header #gnb .gnb-depth2.theater-snb {left: 300px;}
+#header #gnb .gnb-depth2.theater-snb:hover {display: block;}
+#header #gnb .gnb-depth2.event-snb {right: 220px;}
+#header #gnb .gnb-depth2.event-snb:hover {display: block;}
+#header #gnb .gnb-depth2.benefit-snb {right: 80px;}
+#header #gnb .gnb-depth2.benefit-snb:hover {display: block;}
+#header #gnb .gnb-depth2 ul li {float: left; margin-right: 10px;}
+#header #gnb .gnb-depth2 ul li a:hover {text-decoration: underline;}
+
 
 /* main */
 /* section01 */
@@ -43,9 +62,16 @@
 #main #section01 .cont-area .more-movie:hover {text-decoration: underline;}
 #main #section01 .cont-area .main-movie-list ol {margin: 0 -20px;}
 #main #section01 .cont-area .main-movie-list ol li {float: left; width: 25%; padding: 0 20px;}
-#main #section01 .cont-area .main-movie-list .movie-list-info {position: relative; width: 100%; height: 352px;}
+#main #section01 .cont-area .main-movie-list .movie-list-info {position: relative; display: block; width: 100%; height: 352px;}
+#main #section01 .cont-area .main-movie-list .movie-list-info .wrap {position: absolute; left: 0; right: 0; top: 0; bottom: 0; color: #fff; padding: 25px; display: none; font-size: 15px; transition: all 0.2s ease-in-out;}
+#main #section01 .cont-area .main-movie-list .movie-list-info .wrap .summary {height: 150px; overflow: hidden;}
 #main #section01 .cont-area .main-movie-list .movie-list-info .rank {position: absolute; z-index: 1; color: white; padding: 10px 0 0 15px; font-size: 2em; font-style: italic; text-shadow: 2px 2px 2px rgba(0,0,0,0.8);}
+#main #section01 .cont-area .main-movie-list .movie-list-info img {transition: all 0.2s ease-in-out;}
 #main #section01 .cont-area .main-movie-list .movie-list-info img.poster {width: 100%; height: 352px; border-radius: 5px;}
+#main #section01 .cont-area .main-movie-list .movie-list-info:hover img{opacity: 0.2;}
+#main #section01 .cont-area .main-movie-list .movie-list-info:hover .rank {opacity: 0.2;}
+#main #section01 .cont-area .main-movie-list .movie-list-info:hover .wrap {display: block;}
+#main #section01 .cont-area .main-movie-list .btn-util {margin-top: 6px;}
 #main #section01 .cont-area .main-movie-list .btn-util .btn-like {float: left; width: 30%; height: 36px; color: #fff; border: 1px solid #555; border-radius: 5px; background-color: #000;}
 #main #section01 .cont-area .main-movie-list .btn-util .btn-like:focus {outline: none;}
 #main #section01 .cont-area .main-movie-list .btn-util .btn-like i {margin-right: 5px;}

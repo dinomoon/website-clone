@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/d7f530ec10.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 </head>
 <body>
   <!-- 스킵 네비게이션 -->
@@ -66,12 +67,58 @@
       <!-- gnb -->
       <nav id="gnb">
         <ul class="gnb-depth1">
-          <li title="영화"><a href="#" class="movie">영화</a></li>
-          <li title="예매"><a href="#" class="reserve">예매</a></li>
-          <li title="극장"><a href="#" class="theater">극장</a></li>
-          <li title="이벤트"><a href="#" class="event">이벤트</a></li>
-          <li title="스토어"><a href="#" class="store">스토어</a></li>
-          <li title="혜택"><a href="#" class="benefit">혜택</a></li>
+          <li title="영화">
+            <a href="#" class="movie">영화</a>
+            <div class="gnb-depth2 movie-snb">
+              <ul class="clearfix">
+                <li><a href="" title="전체영화">전체영화</a></li>
+                <li><a href="" title="큐레이션">큐레이션</a></li>
+                <li><a href="" title="영화제">영화제</a></li>
+                <li><a href="" title="무비포스트">무비포스트</a></li>
+              </ul>
+            </div>
+          </li>
+          <li title="예매">
+            <a href="#" class="reserve">예매</a>
+            <div class="gnb-depth2 reserve-snb">
+              <ul>
+                <li><a href="">빠른예매</a></li>
+                <li><a href="">상영시간표</a></li>
+                <li><a href="">더 부티크 프라이빗 예매</a></li>
+              </ul>
+            </div>
+          </li>
+          <li title="극장">
+            <a href="#" class="theater">극장</a>
+            <div class="gnb-depth2 theater-snb">
+              <ul>
+                <li><a href="">전체극장</a></li>
+                <li><a href="">특별관</a></li>
+              </ul>
+            </div>
+          </li>
+          <li title="이벤트">
+            <a href="#" class="event">이벤트</a>
+            <div class="gnb-depth2 event-snb">
+              <ul>
+                <li><a href="">진행중 이벤트</a></li>
+                <li><a href="">지난 이벤트</a></li>
+                <li><a href="">당첨자발표</a></li>
+              </ul>
+            </div>
+          </li>
+          <li title="스토어">
+            <a href="#" class="store">스토어</a>
+          </li>
+          <li title="혜택">
+            <a href="#" class="benefit">혜택</a>
+            <div class="gnb-depth2 benefit-snb">
+              <ul>
+                <li><a href="">메가박스 멤버십</a></li>
+                <li><a href="">제휴/할인</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
       <!-- //gnb -->
@@ -107,6 +154,18 @@
               <a href="#" class="movie-list-info" title="영화상세 보기">
                 <p class="rank">1</p>
                 <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/76/FBE76F-02F5-4061-A4C4-40EC14210B46.large.jpg" alt="클로젯" class="poster">
+                <div class="wrap">
+                  <div class="summary">
+                    벽장 문이 열리고, 아이가 사라졌다!<br><br>
+                    갑작스러운 사고로 아내를 잃은 상원(하정우)과 그의 딸 이나(허율)<br>
+                    상원은 소원해진 이나와의 관계를 회복하기 위해 새집으로 이사를 간다.<br><br>
+                    상원은 이나와 가까워지기 위해 노력하지만 어긋난 사이는 좀처럼 회복되지 않는다.<br>
+                    그러던 어느 날 이나가 새로운 친구가 생겼다며 웃기 시작한다.<br>
+                    하지만 평온도 잠시, 이나의 방 안에 있는 벽장에서 기이한 소리들이 들려오고<br>
+                    이나에게 이상 증세가 나타난다.<br>
+                    그리고 상원마저 이상한 꿈을 꾸기 시작한 지 얼마 후, 이나가 흔적도 없이 사라진다.
+                  </div>
+                </div>
               </a>
               <div class="btn-util">
                 <button type="button" class="button btn-like">
@@ -122,6 +181,13 @@
               <a href="#" class="movie-list-info" title="영화상세 보기">
                 <p class="rank">2</p>
                 <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/27/D46298-4010-43BD-9419-D1ED4FD245C1.large.jpg" alt="버즈 오브 프레이(할리 퀸의 황홀한 해방)" class="poster">
+                <div class="wrap">
+                  <div class="summary">
+                    똑같으면 재미없지<br>
+                    깨부수고 벗어 던져, 너답게!<br><br>
+                    오랜 연인이던 조커와 헤어진 ‘할리 퀸(마고 로비)’은 처음 맞이한 해방에 황홀함을 느낀다. 하지만 조커라는 방패막이 사라지자 평생 처음 무방비 상태에 놓인 할리 퀸을 고담시에서 가장 비열한 범죄왕 로만 시오니스(이완 맥그리거)와 고담의 모든 갱들이 노린다.<br>
+                  </div>
+                </div>
               </a>
               <div class="btn-util">
                 <button type="button" class="button btn-like">
@@ -137,6 +203,14 @@
               <a href="#" class="movie-list-info" title="영화상세 보기">
                 <p class="rank">3</p>
                 <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/45/7CC62E-B845-44D8-AC0A-7E994F91F506.large.jpg" alt="남산의 부장들" class="poster">
+                <div class="wrap">
+                  <div class="summary">
+                    “각하, 제가 어떻게 하길 원하십니까”<br><br>
+                    1979년 10월 26일, 중앙정보부장 김규평(이병헌)이 대한민국 대통령을 암살한다.<br><br>
+                    이 사건의 40일전, 미국에서는 전 중앙정보부장 박용각(곽도원)이<br>
+                    청문회를 통해 전 세계에 정권의 실체를 고발하며 파란을 일으킨다.
+                  </div>
+                </div>
               </a>
               <div class="btn-util">
                 <button type="button" class="button btn-like">
@@ -151,6 +225,11 @@
               <a href="#" class="movie-list-info" title="영화상세 보기">
                 <p class="rank">4</p>
                 <img src="https://img.megabox.co.kr/SharedImg/asis/system/mop/poster/2020/C0/3B7BB2-7663-4AF8-AFBC-B433C4140906.large.jpg" alt="조조 래빗" class="poster">
+                <div class="wrap">
+                  <div class="summary">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis cumque excepturi harum dolorem eveniet, iste nam labore deleniti quasi ab modi culpa officiis, enim iure, laborum explicabo nulla fugit rerum!
+                  </div>
+                </div>
               </a>
               <div class="btn-util">
                 <button type="button" class="button btn-like">
