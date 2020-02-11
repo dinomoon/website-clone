@@ -35,6 +35,10 @@ button {
   line-height: 1.2;
 }
 
+button:focus, input:focus {
+  outline: none;
+}
+
 .clearfix:after {
   content: '';
   display: block;
