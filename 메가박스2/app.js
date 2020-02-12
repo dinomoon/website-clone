@@ -41,9 +41,7 @@ window.addEventListener('load', function(){
     })(i);
   }
 
-  // section02 slider-constrol
-  
-
+  // section02 slider-control
   const lastIdx = 2;
   var currentIdx = 0;
   var cell = document.querySelectorAll('#section02 .cell');
@@ -53,8 +51,33 @@ window.addEventListener('load', function(){
   var pageCount = document.querySelector('#section02 .page-count');
   var txt = document.querySelectorAll('#section02 .position .txt');
   var bg = document.querySelectorAll('#section02 .position .bg');
+  var autoPlay = true;
 
+  function buttonOpacity() {
+    if (currentIdx === 0) {
+      btnNext.disabled = false;
+      btnPrev.disabled = true;
+      btnNext.style.opacity = "1";
+      btnPrev.style.opacity = "0.5";
+    } else if (currentIdx === lastIdx) {
+      btnNext.disabled = true;
+      btnPrev.disabled = false;
+      btnNext.style.opacity = "0.5";
+      btnPrev.style.opacity = "1";      
+    } else {
+      btnNext.disabled = false;
+      btnPrev.disabled = false;
+      btnNext.style.opacity = "1";
+      btnPrev.style.opacity = "1";
+    }
+  }
+
+  //btnNext
   btnNext.addEventListener('click', function(){
+    // if (btnPause.classList.contains('on')) {
+    //   btnPause.classList.remove('on');
+    //   btnPlay.classList.add('on');
+    // }
     if (currentIdx < lastIdx) {
       currentIdx++;
       for (var i=0; i<=lastIdx; i++) {
@@ -69,20 +92,16 @@ window.addEventListener('load', function(){
       bg[currentIdx].style.left = '300px';
       pageCount.textContent = currentIdx + 1 + " / 3";
     }
-    if (currentIdx === lastIdx) {
-      // btnNext 비활성화, btnPrev opacity: 1
-      btnNext.disabled = true;
-      btnNext.style.opacity = "0.5";
-      btnPrev.style.opacity = "1";
-      // btnPrev 활성화, btnNext opacity: 1
-      btnPrev.disabled = false;
-      btnPrev.style.opacity = "1";
-      btnNext.style.opacity = "0.5";
+    if (currentIdx === lastIdx && btnPause.classList.contains('on')) {
+      buttonOpacity();
+      currentIdx = -1;
+      btnNext.disabled = false;
+    } else {
+      buttonOpacity();
     }
   })
   
-  
-
+  //btnPrev
   btnPrev.addEventListener('click', function(){
     if (currentIdx > 0) {
       currentIdx--;
@@ -97,39 +116,27 @@ window.addEventListener('load', function(){
       pageCount.textContent = currentIdx + 1 + " / 3";
       txt[currentIdx].style.top = '0px';
       bg[currentIdx].style.left = '300px';
-    } 
-    if (currentIdx === 0) {
-      // btnNext 활성화, btnPrev opacity: 1
-      btnNext.disabled = false;
-      btnNext.style.opacity = "1";
-      btnPrev.style.opacity = "0.5";
-      // btnPrev 비활성화, btnNext opacity: 1
-      btnPrev.disabled = true;
-      btnPrev.style.opacity = "0.5";
-      btnNext.style.opacity = "1";
     }
+    buttonOpacity();
   })
   var btnPause = document.querySelector('#section02 .slider-control .btn-pause');
   var btnPlay = document.querySelector('#section02 .slider-control .btn-play');
 
+  //btnPause
   btnPause.addEventListener('click', function(){
     btnPause.classList.remove('on');
     btnPlay.classList.add('on');
     clearInterval(clickInterval);
   })
 
+  //btnPlay
   btnPlay.addEventListener('click', function(){
     btnPlay.classList.remove('on');
     btnPause.classList.add('on');
-    setInterval(function(){
-      btnNext.click();
-    }, 3000);
+    setInterval(clickInterval);
   })
   
   var clickInterval = setInterval(function(){
-    if (currentIdx === lastIdx) {
-      currentIdx = 0;
-    }
     btnNext.click();
-  }, 3000);
+  }, 2000);
 })
