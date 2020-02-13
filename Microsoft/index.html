@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="common.css">
+  <script src="app.js"></script>
   <title>Microsoft</title>
 </head>
 <body>
@@ -19,6 +21,7 @@
             <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="Microsoft">
           </a>
           <!-- main-menu -->
+          
           <ul class="main-menu">
             <li><a href="#">Office</a></li>
             <li><a href="#">Windows</a></li>
@@ -29,11 +32,14 @@
           <!-- //main-menu -->
           <!-- right-menu -->
           <ul class="right-menu">
-            <li><a href="#">Microsoft 전체</a><i class="fas fa-chevron-down"></i></li>
-            <li><a href="#">검색</a><i class="fas fa-search fa-rotate-90"></i></li>
-            <li><a href="#">카트</a><i class="fas fa-shopping-cart"></i></li>
-            <li><a href="#" class="login">로그인<i class="far fa-user-circle large"></i></a></li>
+            <li><a href="#" class="sitemap">Microsoft 전체</a><i class="fas fa-chevron-down"></i></li>
+            <li><a href="#" class="search">검색</a><i class="fas fa-search fa-rotate-90"></i></li>
+            <li><a href="#" class="cart">카트</a><i class="fas fa-shopping-cart"></i></li>
+            <li><a href="#" class="login">로그인</a><i class="far fa-user-circle large"></i></li>
           </ul>
+          <div class="menu-btn">
+            <i class="fas fa-bars fa-2x"></i>
+          </div>
           <!-- //right-menu -->
         </nav>
         <!-- //Nav -->
@@ -41,11 +47,140 @@
       <!-- //container -->
     </header>
     <main>
+      <!-- section01 -->
       <section id="section01">
         <div class="container">
-          <img src="images/banner01.webp" alt="" style="width: 100%;">
+          <!-- banner01 -->
+          <div class="banner01">
+            <div class="banner-info">
+              <h2>새로운 Surface Pro 7</h2>
+              <p>초경량의 다재다능함</p>
+              <a href="#" class="btn">
+                <span>지금쇼핑하기</span>
+                <i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+            <!-- <picture>
+              <source media="(max-width: 539px)" srcset="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NR20?ver=7bd2&q=90&m=8&h=303&w=539&b=%23FFFFFFFF&l=f&x=861&y=302&s=1119&d=629&aim=true">
+              <source media="(min-width: 540px) and (max-width: 767px)" srcset="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NR20?ver=7bd2&q=90&m=8&h=431&w=767&b=%23FFFFFFFF&l=f&x=849&y=291&s=1165&d=655&aim=true">
+              <source media="(min-width: 768px) and (max-width: 1083px)" srcset="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NR20?ver=7bd2&q=90&m=8&h=609&w=1083&b=%23FFFFFFFF&l=f&x=188&y=78&s=1834&d=1031&aim=true">
+              <source media="(min-width: 1084px) and (max-width: 1399px)" srcset="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NR20?ver=7bd2&q=90&m=8&h=472&w=1259&b=%23FFFFFFFF&l=f&x=0&y=226&s=2120&d=795&aim=true">
+              <source media="(min-width: 1400px) and (max-width: 1778px)" srcset="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NR20?ver=7bd2&q=90&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=0&y=213&s=2103&d=789&aim=true">
+              <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3NR20?ver=7bd2&q=90&m=8&h=600&w=1600&b=%23FFFFFFFF&l=f&x=0&y=213&s=2103&d=789&aim=true" alt="">
+            </picture> -->
+          </div>
+          <!-- //banner01 -->
+          <!-- banner02 -->
+          <div class="banner02" style="display: none;">
+            <div class="banner-info">
+              <h2>여러분을 위한 365</h2>
+              <p>날마다 Office 365로 할 수 있는 일들을 찾아보세요.</p>
+              <a href="">최대 6명 사용 가능<i class="fas fa-chevron-right"></i></a>
+              <a href="">1명 사용 가능<i class="fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+          <!-- //banner02 -->
         </div>
       </section>
+      <!-- //section01 -->
+      <!-- section02 -->
+      <section id="section02">
+        <div class="container">
+          <ul class="row">
+            <li class="col">
+              <a href="#">
+                <img src="images/card01.webp" alt="">
+                <h2>새로운 Surface Laptop 3</h2>
+                <p>얇고 가벼우며 우아한 디자인과 더 빠른 성능, 그리고 최대 11.5시간의 배터리 사용 시간으로 강력한 개성을 뽐내세요.</p>
+              </a>
+              <a href="" class="shopNow">지금 쇼핑하기</a><i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="col">
+              <a href="#">
+                <img src="images/card02.webp" alt="">
+                <h2>Surface Book 2</h2>
+                <p>최상의 노트북에서 경험하는 최고의 성능.</p>
+              </a>
+              <a href="" class="shopNow">지금 쇼핑하기</a><i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="col">
+              <a href="#">
+                <img src="images/card03.webp" alt="">
+                <h2>Xbox One X</h2>
+                <p>현존하는 가장 강력한 콘솔</p>
+              </a>
+              <a href="" class="shopNow">지금 쇼핑하기</a><i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="col">
+              <a href="#">
+                <img src="images/card04.jpeg" alt="">
+                <h2>Xbox Game Pass Ultimate</h2>
+                <p>Xbox Live Gold와 100개 이상의 고품질 콘솔 및 PC 게임. 친구들과 함께 플레이하고 다음에 즐길 게임을 찾아보세요.</p>
+              </a>
+              <a href="" class="shopNow">지금 쇼핑하기</a><i class="fas fa-chevron-right"></i>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- //section02 -->
+      <!-- section03 -->
+      <section id="section03">
+        <div class="container">
+          <div class="banner">
+            <div class="banner-info">
+              <h2>Xbox One S</h2>
+              <p>최고의 게임 시스템이자 4K 울트라 HD 엔터테인먼트 시스템.</p>
+              <a href="" class="btn">
+                <span>자세히 보기</span><i class="fas fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //section03 -->
+      <!-- section04 -->
+      <section id="section04">
+        <div class="container">
+          <ul class="row">
+            <li class="col">
+              <a href="#">
+                <img src="images/section04-img01.webp" alt="">
+                <h2>Windows 10 Enterprise</h2>
+                <p>IT 전문가용 90일 무료 평가판을 다운로드하세요.</p>
+              </a>
+              <a href="" class="shopNow">지금 다운로드</a><i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="col">
+              <a href="#">
+                <img src="images/section04-img02.webp" alt="">
+                <h2>비즈니스용 Office 365</h2>
+                <p>온라인, 오프라인에 상관없이 어디서나 파일에 액세스하세요.</p>
+              </a>
+              <a href="" class="shopNow">지금 쇼핑하기</a><i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="col">
+              <a href="#">
+                <img src="images/section04-img03.webp" alt="">
+                <h2>Kubernetes 살펴보기</h2>
+                <p>Kubernetes가 어떻게 작동하는지 알아보고 클라우드 네이티브 앱 개발을 바로 시작하세요.</p>
+              </a>
+              <a href="" class="shopNow">시작하기</a><i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="col">
+              <a href="#">
+                <img src="images/section04-img04.webp" alt="">
+                <h2>Visual Studio 2019 받기</h2>
+                <p>생산적이고 현대적이며 혁신적인 IDE인 Visual Studio 2019를 다운로드하세요.</p>
+              </a>
+              <a href="" class="shopNow">지금 다운로드하기</a><i class="fas fa-chevron-right"></i>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- //section04 -->
     </main>
+    <footer>
+
+    </footer>
 </body>
 </html>

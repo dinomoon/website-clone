@@ -1,12 +1,73 @@
-.container {width: 90%; max-width: 1100px; margin: 0 auto; }
+.container {width: 84%; margin: 0 auto; }
 
-/* Nav */
+/* header */
 .main-nav {display: flex; align-items: center; justify-content: space-between; height: 56px; font-size: 13px;}
-.main-nav .logo img{width: 110px; margin-top: 3px;}
+.main-nav .logo img{width: 110px; margin: 3px 0 0 10px;}
 .main-nav ul {display: flex;}
-.main-nav ul li {padding: 20px 10px;}
-.main-nav ul li a {padding-bottom: 2px;}
+.main-nav ul li {padding: 20px 16px;}
+.main-nav ul li a {padding-bottom: 2px; color: #262626;}
 .main-nav ul li a:hover {border-bottom: 2px solid #262626;}
 .main-nav ul li a.login:hover {border-bottom: none;}
 .main-nav ul.main-menu {flex: 1; margin-left: 20px;}
 .main-nav ul.right-menu i {margin-left: 3px; font-size: 16px;}
+.main-nav .menu-btn {display: none; cursor: pointer;}
+
+/* main */
+#section01 .banner01 {position: relative; height: 600px; background: url(images/banner01.webp) center;}
+/* #section01 .banner01 picture {position: absolute; left: 0; right: 0; top: 0; bottom: 0; width: 100%; overflow: hidden;} */
+#section01 .banner01 .banner-info {position: absolute; top: 50%; transform: translateY(-50%); left: 100px;}
+#section01 .banner01 .banner-info h2 {font-size: 3em;}
+#section01 .banner01 .banner-info .btn {display: inline-block; color: #fff; background-color: #262626; padding: 10px 20px; margin-top: 20px;}
+#section01 .banner01 .banner-info .btn a {color: #fff; margin-right: 10px;}
+#section01 .banner01 .banner-info .btn:hover span {border-bottom: 2px solid #fff;}
+
+#section02 {padding: 60px 0 80px 0;}
+
+#section03 .banner {position: relative; height: 600px; background: url(images/section03-banner.webp);}
+#section03 .banner .banner-info {position: absolute; left: 100px; top: 50%; transform: translateY(-50%);}
+#section03 .banner .banner-info h2 {font-size: 3em;}
+#section03 .banner .banner-info .btn {display: inline-block; color: #fff; background-color: #262626; padding: 10px 20px; margin-top: 20px;}
+#section03 .banner .banner-info .btn span {margin-right: 10px;}
+
+#section04 {padding: 60px 0 80px 0;}
+
+/* common */
+.row {display: grid; grid-template-columns: repeat(4, 1fr); grid-gap: 30px;}
+.row .col a {color: #000;}
+.row .col a h2 {padding-top: 20px; font-size: 1.2em;}
+.row .col a img {width: 100%;}
+.row .col .shopNow {display: inline-block; color: #4a83c6; font-weight: bold; margin: 10px 5px 0 0;}
+.row .col i {color: #4a83c6;}
+
+/* media query */
+@media screen and (max-width: 1400px) {
+  #section01 .banner01 {background-position: -400px;}
+  /* header에 right-menu 글씨 사라짐(아이콘만 남음) */
+  .main-nav ul.right-menu a.search {display: none;}
+  .main-nav ul.right-menu a.cart {display: none;}
+  .main-nav ul.right-menu a.login {display: none;}
+}
+
+@media screen and (max-width: 1080px) {
+  header .container {width: 100%;}
+  #section01 .container {width: 100%;}
+  .row {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media screen and (max-width: 860px) {
+  .main-nav {position: relative;}
+  .main-nav .logo img {position: absolute; left: 50%; transform: translateX(-50%); bottom: 14px;}
+  .main-nav ul.main-menu {display: block; position: absolute; top: 56px; left:-20px; right: 0; background-color: #fff; z-index: 2; transform: translateX(-10000px); opacity: 0.9;}
+  .main-nav ul.main-menu li {border-bottom: 1px solid #ccc;}
+  .main-nav ul.main-menu.show {transform: translateX(0);}
+  .main-nav ul.right-menu a.sitemap {display: none;}
+  .main-nav ul.right-menu a.sitemap+i {display: none;}
+  .main-nav ul.right-menu a.search+i {position: absolute; left: 60px;}
+
+  .main-nav .menu-btn {display: block; position: absolute; left: 20px;}
+}
+
+@media screen and (max-width: 540px) {
+  /* gird 2칸 */
+  .row {grid-template-columns: repeat(1, 1fr);}
+}
