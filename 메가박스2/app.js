@@ -51,7 +51,6 @@ window.addEventListener('load', function(){
   var pageCount = document.querySelector('#section02 .page-count');
   var txt = document.querySelectorAll('#section02 .position .txt');
   var bg = document.querySelectorAll('#section02 .position .bg');
-  var autoPlay = true;
 
   function buttonOpacity() {
     if (currentIdx === 0) {
@@ -74,10 +73,6 @@ window.addEventListener('load', function(){
 
   //btnNext
   btnNext.addEventListener('click', function(){
-    // if (btnPause.classList.contains('on')) {
-    //   btnPause.classList.remove('on');
-    //   btnPlay.classList.add('on');
-    // }
     if (currentIdx < lastIdx) {
       currentIdx++;
       for (var i=0; i<=lastIdx; i++) {
@@ -126,17 +121,29 @@ window.addEventListener('load', function(){
   btnPause.addEventListener('click', function(){
     btnPause.classList.remove('on');
     btnPlay.classList.add('on');
-    clearInterval(clickInterval);
+    pause();
   })
 
   //btnPlay
   btnPlay.addEventListener('click', function(){
     btnPlay.classList.remove('on');
     btnPause.classList.add('on');
-    setInterval(clickInterval);
+    play();
   })
   
-  var clickInterval = setInterval(function(){
-    btnNext.click();
-  }, 2000);
+  
+  var clickInterval;
+  function play() {
+    if(btnPause.classList.contains('on')) {
+        clickInterval= setInterval(function(){
+        btnNext.click();
+      }, 2000);
+    }
+  }
+
+  function pause() {
+    clearInterval(clickInterval);
+  }
+
+  play();
 })
