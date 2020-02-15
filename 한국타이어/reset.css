@@ -7,3 +7,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+img {
+  vertical-align: top;
+}
+
+body {
+  font-family: 'Roboto', 'Nanum Gothic', sans-serif;
+}
