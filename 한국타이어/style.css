@@ -36,5 +36,11 @@ header .iconScroll {position: absolute; left: 50%; transform: translateX(-50%); 
 #section02 .text-area .text {margin-top: 25px; line-height: 1.9;}
 #section02 .text-area .more {border-color: #fff;}
 
+/* section03 */
+#section03 {position: relative; height: 730px; background: url(https://cdn.hankook-precisionworks.com/static/assets/img/ko/pc/main/bg_main_vision.jpg) 50% 50%; background-size: cover; background-attachment: fixed;}
+#section03 .text-area {position: absolute; left: 400px; top: 300px;}
+#section03 .tit {display: block; font-size: 18px; color: #f37938;}
+#section03 .text { display: block; font-size: 60px; margin-top: 35px; color: #fff;}
+
 /* common */
 .more {display: inline-block; margin-top: 50px; font-size: 18px; border-bottom: 1px solid #000; font-weight: 500;}
