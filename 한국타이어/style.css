@@ -1,0 +1,12 @@
+/* header */
+header {position: relative; height: 100vh; background: url(image/main_visual.jpg) center;}
+header .header-top {position: relative; height: 96px;}
+header .header-top .area-logo {position: absolute; left: 50px; top: 50%; transform: translateY(-50%);}
+header .header-top .area-logo .logo {display: block; width: 246px; height: 29px; font-size: 0; line-height: 0; background: url(https://cdn.hankook-precisionworks.com/static/assets/img/ko/pc/common/img_logo_w.png);}
+header .gnb {text-align: right; color: #fff; padding: 0 180px 0 0; font-size: 18px;}
+header .gnb ul li {display: inline-block; text-align: center; margin-right: 25px;}
+header .gnb ul li:last-child {margin-right: 0;}
+header .gnb ul li a {display: block; height: 96px; line-height: 96px; padding: 0 15px;}
+header .gnb .motion {position: absolute; display: block; right: 50px; top: 50%; transform: translateY(-50%); width: 96px; height: 33px; background: url(https://cdn.hankook-precisionworks.com/static/assets/img/ko/pc/common/ico_innovation_main_w.png); font-size: 0;}
+header .txt {position: absolute; left: 380px; bottom: 230px; font-size: 80px; color: #fff;}
+header .iconScroll {position: absolute; left: 50%; transform: translateX(-50%); bottom: 60px; width: 22px; height: 32px; box-shadow: inset 0 0 0 1px #fff; border-radius: 20px;}
