@@ -27,4 +27,14 @@ header .iconScroll {position: absolute; left: 50%; transform: translateX(-50%); 
 #section01 .cont-wrap .text-area .cont-title {font-size: 60px; display: block; line-height: 1;}
 #section01 .cont-wrap .text-area .tit {display: block; margin-top: 75px; font-size: 32px; line-height: 1.4;}
 #section01 .cont-wrap .text-area .text {margin-top: 32px; line-height: 1.9;}
-#section01 .cont-wrap .text-area .more {display: inline-block; margin-top: 50px; font-size: 18px; border-bottom: 1px solid #000; font-weight: 500;}
+
+/* section02 */
+#section02 {position: relative; height: 700px; background: url(https://cdn.hankook-precisionworks.com/static/assets/img/ko/pc/main/bg_maincont02.jpg) 50% 0; background-size: cover;}
+#section02 .text-area {position: absolute; left: 1000px; top: 130px; color: #fff;}
+#section02 .text-area .cont-title {display: block; font-size: 60px;}
+#section02 .text-area .tit {display: block; font-size: 20px; margin-top: 80px;}
+#section02 .text-area .text {margin-top: 25px; line-height: 1.9;}
+#section02 .text-area .more {border-color: #fff;}
+
+/* common */
+.more {display: inline-block; margin-top: 50px; font-size: 18px; border-bottom: 1px solid #000; font-weight: 500;}
