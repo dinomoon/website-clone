@@ -11,7 +11,8 @@
   2. 영어, 한글 폰트 동시에 적용시키는 방법: font-family: 영문폰트, 한글폰트 순서로 하면 된다.
   3. gnb에 hover를 했을 때, 가운데를 기준으로 길어지기 시작해서 다시 짧아지는 데 어떻게? => 가상선택자 after를 사용! + 마진 오토를 사용해 가운데에서 시작할 수 있게 함.
 
-## 잘안되는 것
+## 생소한 것
   1. scroll snap
   2. image가 슬라이드 되면서 들어오는 것
   3. image transform:scale(1.1); transition
+  4. dropdown list
