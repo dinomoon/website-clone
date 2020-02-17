@@ -44,5 +44,22 @@ header .iconScroll {position: absolute; left: 50%; transform: translateX(-50%); 
 #section03 .tit {display: block; font-size: 18px; color: #f37938;}
 #section03 .text { display: block; font-size: 60px; margin-top: 35px; color: #fff;}
 
+/* section04 */
+#section04 .container {width: 1180px; padding: 80px 0 140px 0; margin: 0 auto;}
+#section04 .container .tit-area {position: relative; height: 30px;}
+#section04 .container .tit-area strong {position: absolute; display: block; width: 302px; height: 30px; text-indent: -99999px; background: url(https://cdn.hankook-precisionworks.com/static/assets/img/ko/pc/main/tit_tim.png);}
+#section04 .container .tit-area .more {position: absolute; right: 0; margin: 0; height: 45px; border-bottom: 0;}
+#section04 .container .list {margin-top: 20px; position: relative; height: 1120px;}
+#section04 .container .list li {position: relative; overflow: hidden;}
+#section04 .container .list li a img {transition: 0.3 ease-out;}
+#section04 .container .list li:hover img {transform: scale(1.1);}
+#section04 .container .list .tit {position: absolute; left: 30px; bottom: 42px; color: #fff; font-size: 24px; font-weight: 500; line-height: 34px;}
+
+#section04 .container .list .type01 {position: absolute; left: 0; top: 0;}
+#section04 .container .list .type02 {position: absolute; left: 400px; top: 0;}
+#section04 .container .list .type03 {position: absolute; left: 800px; top: 0;}
+#section04 .container .list .type04 {position: absolute; left: 0; top: 650px;}
+#section04 .container .list .type05 {position: absolute; left: 400px; top: 510px;}
+#section04 .container .list .type06 {position: absolute; left: 800px; top: 650px;}
 /* common */
 .more {display: inline-block; margin-top: 50px; font-size: 18px; border-bottom: 1px solid #000; font-weight: 500;}

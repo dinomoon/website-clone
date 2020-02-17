@@ -15,3 +15,7 @@ img {
 body {
   font-family: 'Roboto', 'Nanum Gothic', sans-serif;
 }
+
+ul {
+  list-style: none;
+}
