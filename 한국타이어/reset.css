@@ -19,3 +19,13 @@ body {
 ul {
   list-style: none;
 }
+
+em {
+  font-style: normal;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
