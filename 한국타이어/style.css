@@ -13,6 +13,15 @@ header .gnb .motion {position: absolute; display: block; right: 50px; top: 50%; 
 header .txt {position: absolute; left: 380px; bottom: 230px; font-size: 80px; color: #fff;}
 header .iconScroll {position: absolute; left: 50%; transform: translateX(-50%); bottom: 60px; width: 22px; height: 32px; box-shadow: inset 0 0 0 1px #fff; border-radius: 20px;}
 
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section {
+  scroll-snap-align: start;
+}
 /* main */
 /* section01 */
 #section01 {padding: 180px 0 200px 0}
@@ -51,8 +60,9 @@ header .iconScroll {position: absolute; left: 50%; transform: translateX(-50%); 
 #section04 .container .tit-area .more {position: absolute; right: 0; margin: 0; height: 45px; border-bottom: 0;}
 #section04 .container .list {margin-top: 20px; position: relative; height: 1120px;}
 #section04 .container .list li {position: relative; overflow: hidden;}
+#section04 .container .list li a {display: block;}
 #section04 .container .list li a img {transition: 0.3 ease-out;}
-#section04 .container .list li:hover img {transform: scale(1.1);}
+#section04 .container .list li a:hover img {transform: scale(1.1);}
 #section04 .container .list .tit {position: absolute; left: 30px; bottom: 42px; color: #fff; font-size: 24px; font-weight: 500; line-height: 34px;}
 
 #section04 .container .list .type01 {position: absolute; left: 0; top: 0;}
@@ -64,7 +74,7 @@ header .iconScroll {position: absolute; left: 50%; transform: translateX(-50%); 
 
 /* section05 */
 #section05 .container {height: 220px; background: url(https://cdn.hankook-precisionworks.com/static/assets/img/ko/pc/common/bg_etc.jpg) 50% 0;}
-#section05 .container ul li {float: left; width: 33.333333%; height: 220px; color: #fff; text-align: center;}
+#section05 .container ul li {float: left; width: 33.333333%; height: 220px; color: #fff; text-align: center; transition: all .3s ease-out;}
 #section05 .container ul li:hover {background-color: rgba(0,0,0,0.5)}
 #section05 .container ul li a {display: block; line-height: 220px; font-size: 24px; font-weight: 500;}
 
