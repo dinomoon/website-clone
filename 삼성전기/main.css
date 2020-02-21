@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap');
+body {font-family: 'Nanum Gothic';}
+header .container {display: flex; align-items: center; justify-content: space-between; height: 70px; background-color: antiquewhite;}
+header .container .logo a {display: block; width: 176px; height: 36px; margin-left: 30px; background: url(image/logo.png); text-indent: -9999px;}
+header .gnb ul li {display: inline-block; padding: 0 40px;}
+header .gnb ul li a {display: block; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600;}
+header .util-area > div {display: inline-block;}
+header .util-area  button {border: 0; background-color: transparent; height: 70px;}
+header .util-area .search {position: relative; width: 60px; height: 70px; background-color: #043385; color: white; font-size: 20px;}
+header .util-area .search i {position: absolute; left: 50%; top: 50%; transform: translate(-40%, -40%);}
