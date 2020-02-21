@@ -6,7 +6,7 @@
   2. 2020년 2월 16일 일요일: gnb hover 완성
   3. 2020년 2월 17일 월요일: section04,05 footer 완성
   4. 2020년 2월 18일 화요일: 바닐라 자바스크립트로 scroll snap 구현하려고 했는 데, 잘 안됨..
-  5. 2020년 2월 19일 수요일: show-on-scroll.js 완성
+  5. 2020년 2월 19일 수요일: show-on-scroll.js 완성, dropdown 메뉴 완성! => scroll snap 빼고 모두 완성
 
 ## 알게된 것
   1. 스크롤을 했을 때, 다음 화면으로 자연스럽게 스르륵 넘어가는 것을 'scroll snap'이라고 한다.

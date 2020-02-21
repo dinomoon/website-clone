@@ -63,12 +63,12 @@ header .iconScroll:before {content: ''; width: 2px; height: 6px; background: #ff
 #section04 .container .list li a:hover img {transform: scale(1.1);}
 #section04 .container .list .tit {position: absolute; left: 30px; bottom: 42px; color: #fff; font-size: 24px; font-weight: 500; line-height: 34px;}
 
-#section04 .container .list .type01 {position: absolute; left: 0; top: 60px;}
-#section04 .container .list .type02 {position: absolute; left: 400px; top: 60px;}
-#section04 .container .list .type03 {position: absolute; left: 800px; top: 60px;}
-#section04 .container .list .type04 {position: absolute; left: 0; top: 710px;}
-#section04 .container .list .type05 {position: absolute; left: 400px; top: 570px;}
-#section04 .container .list .type06 {position: absolute; left: 800px; top: 710px;}
+#section04 .container .list .type01 {position: absolute; left: 0; top: 60px; opacity: 0;}
+#section04 .container .list .type02 {position: absolute; left: 400px; top: 60px; opacity: 0;}
+#section04 .container .list .type03 {position: absolute; left: 800px; top: 60px; opacity: 0;}
+#section04 .container .list .type04 {position: absolute; left: 0; top: 710px; opacity: 0;}
+#section04 .container .list .type05 {position: absolute; left: 400px; top: 570px; opacity: 0;}
+#section04 .container .list .type06 {position: absolute; left: 800px; top: 710px; opacity: 0;}
 #section04 .container .list .type01.animate {transform: translateY(-60px);}
 #section04 .container .list .type02.animate {transform: translateY(-60px);}
 #section04 .container .list .type03.animate {transform: translateY(-60px);}
@@ -78,7 +78,8 @@ header .iconScroll:before {content: ''; width: 2px; height: 6px; background: #ff
 
 /* section05 */
 #section05 .container {height: 220px; background: url(https://cdn.hankook-precisionworks.com/static/assets/img/ko/pc/common/bg_etc.jpg) 50% 0;}
-#section05 .container ul li {float: left; width: 33.333333%; height: 220px; color: #fff; text-align: center; transition: all .3s ease-out;}
+#section05 .container ul li {float: left; width: 33.333333%; height: 220px; color: #fff; text-align: center; transition: all .3s ease-out; border-left: 1px solid #efefef;}
+#section05 .container ul li:first-child {border: none;}
 #section05 .container ul li:hover {background-color: rgba(0,0,0,0.5)}
 #section05 .container ul li a {display: block; line-height: 220px; font-size: 24px; font-weight: 500;}
 
@@ -95,7 +96,17 @@ footer .container .etc-link li {display: inline-block; font-size: 14px;}
 footer .container .etc-link li:first-child:after {content: ''; display: inline-block; width: 1px; height: 11px; background-color: #fff; opacity: .4; margin: 0 13px 0 16px;}
 footer .container .etc {position: relative; height: 110px; border-top: 1px solid rgba(255,255,255,0.2)}
 footer .container .etc .copyright {position: absolute; left: 0; top: 40px; font-size: 14px; opacity: 0.4;}
-
+footer .container .etc .drop-down {display: inline-block; position: absolute; right: 0; top: 25px; min-width: 220px;}
+footer .container .etc .drop-down .drop-down-value {position: relative;}
+footer .container .etc .drop-down input[type="text"] {width: 100%; font-size: 12px; color: #999; background-color: #000; border: 1px solid #4d4d4d; height: 36px; padding: 11px 16px; font-weight: 500;}
+footer .container .etc .drop-down .btn-opener {display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; border: 0; cursor: pointer; padding: 1px 6px; background-color: transparent;}
+footer .container .etc .drop-down .btn-opener i {float: right; position: relative; display: block; width: 18px; height: 9px; overflow: hidden;}
+footer .container .etc .drop-down .btn-opener i:before {content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%) rotate(45deg); border-right: 2px solid #999; border-bottom: 2px solid #999; margin-top: -3px;}
+footer .container .etc .drop-down .btn-opener i.open:before {content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%) rotate(225deg); border-right: 2px solid #999; border-bottom: 2px solid #999; margin-top: 3px;}
+footer .container .etc .drop-down .item-list {display: none; position: absolute; bottom: 35px; left: 0; width: 100%; border: 1px solid #4d4d4d; background: #000; padding: 12px 0;}
+footer .container .etc .drop-down .item-list.open {display: block;}
+footer .container .etc .drop-down .item-list a {display: block; width: 100%; padding: 10px 16px; border: 0; background: transparent; font-size: 12px; line-height: 1; text-align: left; cursor: pointer; color: #fff;}
+footer .container .etc .drop-down .item-list a:hover {text-decoration: underline;}
 /* common */
 .more {display: inline-block; margin-top: 50px; font-size: 18px; border-bottom: 1px solid #000; font-weight: 500;}
 .animate {
