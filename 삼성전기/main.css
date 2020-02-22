@@ -26,6 +26,29 @@ header .util-area .util-lang a {display: block; margin: 0 auto; font-size: 12px;
 header .util-area .util-inner:hover ul {display: block;}
 
 /* main */
+
+/* about-us */
+.about-us {padding: 80px 0 120px;}
+.about-us .wrap h2 {margin-bottom: 60px; font-size: 38px; color: #000; text-align: center;}
+.about-us .wrap .info_list {position: relative; width: 1210px; margin: 0 auto;}
+.about-us .wrap .info_list .icon_01 .tit {background-image: url(https://www.samsungsem.com/resources/images/kr/main/icon_aboutus_01.png);}
+.about-us .wrap .info_list .icon_02 .tit {background-image: url(https://www.samsungsem.com/resources/images/kr/main/icon_aboutus_02.png);}
+.about-us .wrap .info_list .icon_03 .tit {background-image: url(https://www.samsungsem.com/resources/images/kr/main/icon_aboutus_03.png);}
+.about-us .wrap .info_list .icon_04 .tit {background-image: url(https://www.samsungsem.com/resources/images/kr/main/icon_aboutus_04.png);}
+.about-us .wrap .info_list .list {overflow: hidden; text-align: center; margin: 0 0 80px 110px;}
+.about-us .wrap .info_list .list li {float: left; width: 250px; padding: 0 10px; border-left: 1px solid #ccc;}
+.about-us .wrap .info_list .list li:first-child {border: none;}
+.about-us .wrap .info_list .list .icon_01 {width: 230px;}
+.about-us .wrap .info_list .list .icon_02 {width: 260px;}
+.about-us .wrap .info_list .list .icon_04 {width: 360px;}
+.about-us .wrap .info_list .list .tit {margin-bottom: 20px; padding-top: 90px; font-size: 18px; color: #000; font-weight: 600; background-position: center top; background-repeat: no-repeat;}
+.about-us .wrap .info_list .list .txt {font-size: 26px;}
+.about-us .wrap .info_list .list .txt .num {font-size: 40px;}
+.about-us .wrap .info_list .btn_wrap {position: relative; text-align: center;}
+.about-us .wrap .info_list .btn_wrap .info_txt {position: absolute; right: 0; top: 10px; font-size: 14px;}
+.about-us .wrap .info_list .btn_wrap .btn {display: inline-block; padding: 12px 40px; background-color: #043285; color: #fff;}
+.about-us .wrap .info_list .btn_wrap .btn:after {display: inlin-block; content: ''; width: 10px; height: 10px; border-bottom: 1px solid #fff;}
+
 /* sitemap */
 .sitemap {padding: 60px 0 120px; background-color: #f3f3f3;}
 .sitemap .inner {width: 1140px; margin: 0 auto;}
@@ -41,10 +64,10 @@ footer .footer_inner {position: relative; width: 1140px; height: 137px; margin: 
 footer .footer_top {overflow: hidden; padding-bottom: 10px; margin-bottom: 20px; border-bottom: 1px solid #6c6f73;}
 footer .menu_area {float: left;}
 footer .link_area {float: right;}
-footer .menu_list1 {padding-top: 5px;}
+footer .menu_list1 {padding-top: 10px;}
 footer .menu_list1 li {position: relative; float: left;}
-footer .menu_list1 li a {display: block; margin-right: 20px; font-size: 14px; color: #fff;}
-footer .menu_list1 li::after {position: absolute; content: ''; left: 0; top: 50%; width: 1px; height: 8px; background-color: #8c8e90; margin-top: -4px; margin-left: -10px;}
+footer .menu_list1 li a {display: block; margin-right: 40px; font-size: 14px; color: #fff;}
+footer .menu_list1 li::after {position: absolute; content: ''; left: 0; top: 50%; width: 1px; height: 10px; background-color: #8c8e90; margin-top: -4px; margin-left: -20px;}
 footer .sns_list {overflow: hidden; float: left; padding-top: 8px;}
 footer .mark {float: right;}
 footer .sns_list li {float: left; margin-right: 20px;}
@@ -57,5 +80,6 @@ footer .menu_area {float: left;}
 footer .menu_list1, footer .menu_list2 {overflow: hidden;}
 footer .menu_list2 li {float: left; margin-right: 30px;}
 footer .menu_list2 li a {display: block; font-size: 14px; color: #ccc;}
+footer .menu_list2 .point a {color: #00ccff;}
 footer .copyright {float: right;}
 footer .copyright small {font-size: 12px; font-weight: 400; color: #ccc;}
