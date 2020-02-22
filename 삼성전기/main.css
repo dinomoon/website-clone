@@ -49,6 +49,31 @@ header .util-area .util-inner:hover ul {display: block;}
 .about-us .wrap .info_list .btn_wrap .btn {display: inline-block; padding: 12px 40px; background-color: #043285; color: #fff;}
 .about-us .wrap .info_list .btn_wrap .btn:after {display: inlin-block; content: ''; width: 10px; height: 10px; border-bottom: 1px solid #fff;}
 
+/* newsroom */
+.news-room {padding: 80px 0 275px; background: url(https://www.samsungsem.com/resources/images/kr/main/bg_newsroom.jpg);}
+.news-room .wrapper {overflow: hidden; padding: 56px 96px 60px; width: 1330px; margin: 0 auto; background-color: #fff;}
+.news-room .wrapper h2 {margin-bottom: 60px; font-size: 38px; text-align: center;}
+.news-room .wrapper .news_list {overflow: hidden; margin-bottom: 60px;}
+.news-room .wrapper .news_list li .tit {margin-bottom: 18px; padding-bottom: 18px; min-height: 92px; font-size: 18px; color: #333; font-weight: 600; line-height: 1.2; border-bottom: 2px solid #d6d6d6;}
+.news-room .wrapper .news_list li {float: left; width: 25%; padding: 0 40px;}
+.news-room .newsletter_wrap {float: left; padding: 30px; width: 600px; background: url(https://www.samsungsem.com/resources/images/kr/main/bg_newsletter.jpg) no-repeat; background-size: cover;}
+.news-room .newsletter_wrap h3 {margin: 10px 0 20px 0; font-size: 30px;}
+.news-room .newsletter_wrap .txt {margin-bottom: 20px;}
+.news-room .newsletter_wrap .btn_wrap a {display: inline-block; padding: 10px 20px; background-color: #fff; margin-right: 10px;}
+.news-room .social_wrap {float: left; margin-left: 60px; padding-top: 20px;}
+.news-room .social_wrap h3 {font-size: 30px; margin-bottom: 20px;}
+.news-room .social_wrap .txt {margin-bottom: 20px;}
+.news-room .social_wrap .list {overflow: hidden;}
+.news-room .social_wrap .list li {float: left; width: 60px; height: 60px; margin-right: 40px;}
+.news-room .social_wrap .list li a {display: inline-block; width: 100%; height: 100%; background: url(image/icon_social.png) no-repeat;}
+.news-room .social_wrap .list li a:hover {background-position: 0 -62px;}
+.news-room .social_wrap .list .blog a {background-position: -62px 0;}
+.news-room .social_wrap .list .blog a:hover {background-position: -62px -62px;}
+.news-room .social_wrap .list .facebook a {background-position: -124px 0;}
+.news-room .social_wrap .list .facebook a:hover {background-position: -124px -62px;}
+.news-room .social_wrap .list .linked-in a {background-position: -186px 0;}
+.news-room .social_wrap .list .linked-in a:hover {background-position: -186px -62px;}
+
 /* sitemap */
 .sitemap {padding: 60px 0 120px; background-color: #f3f3f3;}
 .sitemap .inner {width: 1140px; margin: 0 auto;}
