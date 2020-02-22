@@ -1,10 +1,61 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap');
 body {font-family: 'Nanum Gothic';}
-header .container {display: flex; align-items: center; justify-content: space-between; height: 70px; background-color: antiquewhite;}
-header .container .logo a {display: block; width: 176px; height: 36px; margin-left: 30px; background: url(image/logo.png); text-indent: -9999px;}
+
+/* header */
+header .container {position: relative; height: 70px; text-align: center;}
+header .container .logo {position: absolute; left: 0; top: 18px; display: block; width: 176px; height: 36px; margin-left: 30px; background: url(image/logo.png); text-indent: -9999px;}
 header .gnb ul li {display: inline-block; padding: 0 40px;}
-header .gnb ul li a {display: block; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600;}
-header .util-area > div {display: inline-block;}
-header .util-area  button {border: 0; background-color: transparent; height: 70px;}
+header .gnb ul li a {display: inline-block; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600;}
+header .util-area {position: absolute; right: 0; top: 0; height: 70px;}
+header .util-area .util-inner {position: relative; float: left;}
+header .util-area .util-inner > a {position: relative; display: block; height: 70px; line-height: 80px; padding: 0 20px; font-size: 12px; font-weight: bold;}
+header .util-area .util-inner.lang > a:after {position: absolute; left: 0; top: 50%; content: ''; display: block; width: 1px; height: 10px; background-color: #ddd;}
 header .util-area .search {position: relative; width: 60px; height: 70px; background-color: #043385; color: white; font-size: 20px;}
 header .util-area .search i {position: absolute; left: 50%; top: 50%; transform: translate(-40%, -40%);}
+
+header .util-area .util-sns li {padding: 10px 0;}
+header .util-area .util-sns a {display: block; width: 30px; height: 30px; margin: 0 auto; text-indent: -99999px; background-image: url(image/utill_sns_ico.png); background-color: #ededed; border-radius: 50%;}
+
+header .util-area .util-sns .youtube a {background-position: -30px 0;}
+header .util-area .util-sns .blog a {background-position: -60px 0;}
+header .util-area .util-sns .linkedin a {background-position: -120px 0;}
+header .util-area .util-lang li {padding: 10px 0;}
+header .util-area .util-lang a {display: block; margin: 0 auto; font-size: 12px; color: #333;}
+.util-sns, .util-lang {display: none; position: relative;}
+.util-sns:after, .util-lang:after {position: absolute; left: 5px; top: -4px; content: ''; width: 90%; height: 4px; background-color: #043285;}
+header .util-area .util-inner:hover ul {display: block;}
+
+/* main */
+/* sitemap */
+.sitemap {padding: 60px 0 120px; background-color: #f3f3f3;}
+.sitemap .inner {width: 1140px; margin: 0 auto;}
+.sitemap .inner .sitemap_list {overflow: hidden;}
+.sitemap .inner .sitemap_list strong {display: block; font-size: 18px; color: #333; margin-bottom: 30px;}
+.sitemap .inner .sitemap_list > li {float: left; width: 20%;}
+.sitemap .inner .sitemap_list .depth2 li {margin-bottom: 22px;}
+.sitemap .inner .sitemap_list .depth2 li a {color: #666; font-size: 15px;}
+
+/* footer */
+footer {background: #474b50;}
+footer .footer_inner {position: relative; width: 1140px; height: 137px; margin: 0 auto; padding-top: 20px;}
+footer .footer_top {overflow: hidden; padding-bottom: 10px; margin-bottom: 20px; border-bottom: 1px solid #6c6f73;}
+footer .menu_area {float: left;}
+footer .link_area {float: right;}
+footer .menu_list1 {padding-top: 5px;}
+footer .menu_list1 li {position: relative; float: left;}
+footer .menu_list1 li a {display: block; margin-right: 20px; font-size: 14px; color: #fff;}
+footer .menu_list1 li::after {position: absolute; content: ''; left: 0; top: 50%; width: 1px; height: 8px; background-color: #8c8e90; margin-top: -4px; margin-left: -10px;}
+footer .sns_list {overflow: hidden; float: left; padding-top: 8px;}
+footer .mark {float: right;}
+footer .sns_list li {float: left; margin-right: 20px;}
+footer .sns_list li a {display: block; width: 12px; height: 24px; background-image: url(image/sns_link_ico.png); text-indent: -99999px;}
+footer .sns_list li.youtube a {width: 21px; background-position: -30px 0;}
+footer .sns_list li.facebook a {width: 9px; background-position: -60px 0;}
+footer .sns_list li.linkedin a {width: 17px; background-position: -90px 0;}
+
+footer .menu_area {float: left;}
+footer .menu_list1, footer .menu_list2 {overflow: hidden;}
+footer .menu_list2 li {float: left; margin-right: 30px;}
+footer .menu_list2 li a {display: block; font-size: 14px; color: #ccc;}
+footer .copyright {float: right;}
+footer .copyright small {font-size: 12px; font-weight: 400; color: #ccc;}
