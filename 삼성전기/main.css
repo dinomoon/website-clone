@@ -4,8 +4,9 @@ body {font-family: 'Nanum Gothic';}
 /* header */
 header .container {position: relative; height: 70px; text-align: center;}
 header .container .logo {position: absolute; left: 0; top: 18px; display: block; width: 176px; height: 36px; margin-left: 30px; background: url(image/logo.png); text-indent: -9999px;}
-header .gnb ul li {display: inline-block; padding: 0 40px;}
-header .gnb ul li a {display: inline-block; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600;}
+header .gnb > ul > li {display: inline-block; padding: 0 40px;}
+header .gnb > ul > li > a {display: inline-block; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600;}
+header .gnb > ul > li > a:hover {border-bottom: 3px solid #043285;}
 header .util-area {position: absolute; right: 0; top: 0; height: 70px;}
 header .util-area .util-inner {position: relative; float: left;}
 header .util-area .util-inner > a {position: relative; display: block; height: 70px; line-height: 80px; padding: 0 20px; font-size: 12px; font-weight: bold;}
@@ -21,12 +22,12 @@ header .util-area .util-sns .blog a {background-position: -60px 0;}
 header .util-area .util-sns .linkedin a {background-position: -120px 0;}
 header .util-area .util-lang li {padding: 10px 0;}
 header .util-area .util-lang a {display: block; margin: 0 auto; font-size: 12px; color: #333;}
-.util-sns, .util-lang {display: none; position: relative;}
-.util-sns:after, .util-lang:after {position: absolute; left: 5px; top: -4px; content: ''; width: 90%; height: 4px; background-color: #043285;}
+.util-sns, .util-lang {display: none; position: relative; z-index: 10; background-color: #fff;}
+.util-sns:after, .util-lang:after {position: absolute; left: 0; top: -4px; content: ''; width: 100%; height: 4px; background-color: #043285;}
 header .util-area .util-inner:hover ul {display: block;}
+header .gnb .depth1_list {position: absolute; background-color: orange; z-index: 2;}
 
 /* main */
-
 /* banner */
 .banner .swiper-container {height: 830px;}
 .banner .swiper-container .swiper-slide {position: relative; overflow: hidden; color: #fff; text-align: center; font-size: 40px; line-height: 1.6;}
@@ -81,6 +82,20 @@ header .util-area .util-inner:hover ul {display: block;}
 .news-room .social_wrap .list .facebook a:hover {background-position: -124px -62px;}
 .news-room .social_wrap .list .linked-in a {background-position: -186px 0;}
 .news-room .social_wrap .list .linked-in a:hover {background-position: -186px -62px;}
+
+/* product_info */
+.product_info {margin-top: -160px;}
+.product_info .container > .tit {font-size: 40px; text-align: center; color: #fff; margin-bottom: 40px;}
+.product_info .container .product_list {text-align: center; margin-bottom: 120px;}
+.product_info .container .product_list > li {display: inline-block; width: 350px; text-align: left;}
+.product_info .container .product_list > li:nth-child(1) {background: url(https://www.samsungsem.com/resources/images/kr/main/bg_product_01.jpg) no-repeat;}
+.product_info .container .product_list > li:nth-child(2) {background: url(https://www.samsungsem.com/resources/images/kr/main/bg_product_02.jpg) no-repeat; margin: 0 40px; vertical-align: top;}
+.product_info .container .product_list > li:nth-child(3) {background: url(https://www.samsungsem.com/resources/images/kr/main/bg_product_03.jpg) no-repeat;}
+.product_info .container .product_list > li > .tit {margin: 210px 0 20px 0; font-size: 26px; color: #043285;}
+.product_info .container .product_list > li > .txt {margin-bottom: 20px; color: #333; line-height: 1.4;}
+.product_info .container .product_list .depth2 {border-top: 2px solid #043285;}
+.product_info .container .product_list .depth2 li {border-bottom: 1px solid #ccc; font-size: 18px; font-weight: bold; background: url(https://www.samsungsem.com/resources/images/kr/main/icon_btn_arrow_b.png) no-repeat right;}
+.product_info .container .product_list .depth2 li a {display: block; padding: 30px 0;}
 
 /* sitemap */
 .sitemap {padding: 60px 0 120px; background-color: #f3f3f3;}
