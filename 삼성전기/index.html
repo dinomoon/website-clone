@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  
   <title>삼성전기</title>
 </head>
 <body>
@@ -55,6 +57,34 @@
   <!-- //header -->
   <!-- main -->
   <main>
+    <!-- banner -->
+    <section class="banner">
+      <!-- swiper-container -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://www.samsungsem.com/resources/images/kr/main/main_video_thum1.jpg" alt="">
+            <p>5G 시대를 맞이하여 더 앞선 기술로<br>더 나은 세상을 열어 갑니다</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://www.samsungsem.com/resources/images/kr/main/main_video_thum2.jpg" alt="">
+            <p>최첨단 스마트폰과 다양한 디바이스를 위한<br>최적의 솔루션으로 더 나은 내일을 만들고 있습니다</p>
+          </div>
+          <div class="swiper-slide">
+            <img src="https://www.samsungsem.com/resources/images/kr/main/main_video_thum3.jpg" alt="">
+            <p>4차 산업혁명을 현실로 만드는<br>첨단 융복합 기술을 이끌어 가고 있습니다</p>
+          </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+      </div>
+      <!-- //swiper-container -->
+    </section>
+    <!-- //banner -->
     <!-- about-us -->
     <section class="about-us">
       <!-- wrap -->
@@ -278,5 +308,29 @@
     <!-- //footer_inner -->
   </footer>
   <!-- //footer -->
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script>
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+  
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+  
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+  
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    })
+    </script>
 </body>
 </html>
