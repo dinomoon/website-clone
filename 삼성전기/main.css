@@ -143,3 +143,7 @@ footer .menu_list2 li a {display: block; font-size: 14px; color: #ccc;}
 footer .menu_list2 .point a {color: #00ccff;}
 footer .copyright {float: right;}
 footer .copyright small {font-size: 12px; font-weight: 400; color: #ccc;}
+
+.top a {position: fixed; right: 100px; bottom: 100px; z-index: 100; width: 60px; height: 60px; border: 1px solid #000; text-align: center; line-height: 60px; background-color: #fff; display: none;}
+.top a.on {display: block;}
+.animate {transition: 5s ease-in-out;}
