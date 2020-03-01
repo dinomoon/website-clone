@@ -2,11 +2,23 @@
 body {font-family: 'Nanum Gothic';}
 
 /* header */
-header .container {position: relative; height: 70px; text-align: center;}
+header .container {position: relative; height: 70px; text-align: center; border-bottom: 1px solid #ccc;}
 header .container .logo {position: absolute; left: 0; top: 18px; display: block; width: 176px; height: 36px; margin-left: 30px; background: url(image/logo.png); text-indent: -9999px;}
 header .gnb > ul > li {display: inline-block; padding: 0 40px;}
+header .gnb > ul > li:hover > a {border-bottom: 3px solid #043285;}
 header .gnb > ul > li > a {display: inline-block; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600;}
 header .gnb > ul > li > a:hover {border-bottom: 3px solid #043285;}
+header .gnb > ul > li > a:hover + .gnb_inner {display: block;}
+header .gnb .gnb_inner {position: absolute; top: 70px; left: 0; right: 0; background-color: #ececec; z-index: 2; display: none;}
+header .gnb .gnb_inner:hover {display: block;}
+header .gnb .gnb_inner .depth1_list {width: 660px; margin: 0 auto; text-align: left; padding: 40px 0;}
+header .gnb .gnb_inner .depth1_list > li {position: relative; display: inline-block; vertical-align: top; margin-left: 60px; padding-left: 60px; height: 100%;}
+header .gnb .gnb_inner .depth1_list > li:first-child {margin-left: 0; padding-left: 0;}
+header .gnb .gnb_inner .depth1_list > li:first-child:before {display: none;}
+header .gnb .gnb_inner .depth1_list > li:before {content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 1px; background-color: #ccc;}
+header .gnb .gnb_inner .depth1_list > li > a {display: block; color: #1428a0; font-weight: bold; margin-bottom: 24px; font-size: 18px;}
+header .gnb .gnb_inner .depth1_list .depth2_list_div {float: left; margin-right: 40px;}
+header .gnb .gnb_inner .depth1_list .depth2_list li {margin-bottom: 20px; color: #333;}
 header .util-area {position: absolute; right: 0; top: 0; height: 70px;}
 header .util-area .util-inner {position: relative; float: left;}
 header .util-area .util-inner > a {position: relative; display: block; height: 70px; line-height: 80px; padding: 0 20px; font-size: 12px; font-weight: bold;}
@@ -25,7 +37,7 @@ header .util-area .util-lang a {display: block; margin: 0 auto; font-size: 12px;
 .util-sns, .util-lang {display: none; position: relative; z-index: 10; background-color: #fff;}
 .util-sns:after, .util-lang:after {position: absolute; left: 0; top: -4px; content: ''; width: 100%; height: 4px; background-color: #043285;}
 header .util-area .util-inner:hover ul {display: block;}
-header .gnb .depth1_list {position: absolute; background-color: orange; z-index: 2;}
+/* header .gnb .depth1_list {position: absolute; left: 0; right: 0; background-color: #ececec; z-index: 2; text-align: initial;} */
 
 /* main */
 /* banner */
