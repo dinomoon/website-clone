@@ -3,13 +3,15 @@ header {
 }
 
 header .container {
-  position: relative;
   width: 1280px;
   height: 80px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   line-height: 80px;
 }
 
@@ -23,16 +25,15 @@ header .container .logo a {
 }
 
 header .container .gnb {
-  width: 800px;
-  margin: 0 auto;
+  font-size: 18px;
+  font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  font-size: 18px;
-  font-weight: bold;
+}
+
+header .container .gnb li {
+  margin: 0 50px;
 }
 
 header .container .util span:first-child {

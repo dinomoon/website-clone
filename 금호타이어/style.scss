@@ -1,11 +1,11 @@
 header {
   border-bottom: 1px solid #ccc;
   .container {
-    position: relative;
     width: 1280px;
     height: 80px;
     margin: 0 auto;
     display: flex;
+    justify-content: space-between;
     line-height: 80px;
 
     .logo a {
@@ -17,12 +17,12 @@ header {
       text-indent: -9999px;
     }
     .gnb {
-      width: 800px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
       font-size: 18px;
       font-weight: bold;
+      display: flex;
+      li {
+        margin: 0 50px;
+      }
     }
     .util {
       span:first-child {margin-right: 30px;}
