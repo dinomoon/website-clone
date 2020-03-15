@@ -1,0 +1,40 @@
+header {
+  border-bottom: 1px solid #ccc;
+}
+
+header .container {
+  position: relative;
+  width: 1280px;
+  height: 80px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 80px;
+}
+
+header .container .logo a {
+  display: block;
+  width: 160px;
+  height: 60px;
+  margin-top: 10px;
+  background: url("https://www.kumhotire.com/resources/images/common/menu_logo.png");
+  text-indent: -9999px;
+}
+
+header .container .gnb {
+  width: 800px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+header .container .util span:first-child {
+  margin-right: 30px;
+}
