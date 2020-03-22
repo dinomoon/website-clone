@@ -6,3 +6,4 @@
   4. [Hankook Precision Works](https://dinomoon.github.io/Any-web/Hankook%20Precision%20Works/index.html)
   5. [삼성전기](https://dinomoon.github.io/Any-web/%EC%82%BC%EC%84%B1%EC%A0%84%EA%B8%B0/index.html)
   6. [금호타이어](https://dinomoon.github.io/Any-web/금호타이어/index.html)
+  7. [Youtube](https://dinomoon.github.io/Any-web/Youtube/index.html)
