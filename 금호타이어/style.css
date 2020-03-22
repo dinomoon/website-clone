@@ -39,3 +39,7 @@ header .container .gnb li {
 header .container .util span:first-child {
   margin-right: 30px;
 }
+
+section video {
+  width: 100%;
+}

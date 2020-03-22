@@ -3,7 +3,7 @@ body {font-family: 'Nanum Gothic';}
 
 /* header */
 header .container {position: relative; height: 70px; text-align: center; border-bottom: 1px solid #ccc;}
-header .container .logo {position: absolute; left: 0; top: 18px; display: block; width: 176px; height: 36px; margin-left: 30px; background: url(image/logo.png); text-indent: -9999px;}
+header .container .logo a {position: absolute; left: 0; top: 18px; display: block; width: 176px; height: 36px; margin-left: 30px; background: url(image/logo.png); text-indent: -9999px;}
 header .gnb > ul > li {display: inline-block; padding: 0 40px;}
 header .gnb > ul > li:hover > a {border-bottom: 3px solid #043285;}
 header .gnb > ul > li > a {display: inline-block; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600;}
