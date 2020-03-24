@@ -26,6 +26,16 @@ ul {
   list-style: none;
 }
 
+button {
+  border: none;
+}
+
+/* root */
+:root {
+  --secondary-text: #aaa;
+  --blue: #3ea6ff;
+}
+
 /* header */
 header {display: flex; justify-content: space-between; align-items: center; background-color: #202020; padding: 0 20px; height: 56px;}
 header .menu_bar_logo {font-size: 20px;}
@@ -40,9 +50,26 @@ main .video {position: relative; height: 0; padding-bottom: 56.25%;}
 main .video iframe {position: absolute; width: 100%; height: 100%;}
 
 main .video_info .title {margin: 30px 0 20px 0; font-size: 18px;}
-main .video_info .etc {display: flex; justify-content: space-between; align-items: center; color: #aaa; font-size: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.14);}
+main .video_info .etc {display: flex; justify-content: space-between; align-items: center; color: var(--secondary-text); font-size: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.14);}
 main .video_info .etc_left {padding-bottom: 14px;}
 main .video_info .etc_right i {margin-right: 6px;}
 main .video_info .etc_right li {display: inline-block; padding: 0 10px 14px 10px; margin: 0 -2px;}
-main .video_info .etc_right a.like {color: #32a6ff;}
-main .video_info .etc_right li.upAndDown {border-bottom: 2px solid #32a6ff;}
+main .video_info .etc_right a.like {color: var(--blue);}
+main .video_info .etc_right li.upAndDown {border-bottom: 2px solid var(--blue);}
+
+main .creator_info {border-bottom: 1px solid rgba(255, 255, 255, 0.14); padding: 14px 0;}
+main .creator_info .top {display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;}
+main .creator_info .top .name {flex: 1; padding-left: 14px;}
+main .creator_info .top .name h2 {display: inline-block; font-size: 14px;}
+main .creator_info .top .name span {font-size: 13px; color: var(--secondary-text);}
+main .creator_info .top .subscribe button {padding: 10px 16px; color: var(--secondary-text); background-color: rgba(255,255,255,0.1);}
+main .creator_info .top .subscribe i {color: var(--secondary-text); margin: 0 10px;}
+
+main .creator_info .bottom .disc {margin-left: 64px; font-size: 14px;}
+main .creator_info .bottom .disc .more_txt {display: inline-block; color: var(--secondary-text); margin-top: 14px; cursor: pointer;}
+main .creator_info .bottom .disc .time {color: var(--blue); cursor: pointer;}
+main .creator_info .bottom .disc a {color: var(--blue);}
+main .creator_info .bottom .disc .etc {margin-top: 10px;}
+main .creator_info .bottom .disc .category {display: inline-block; width: 110px; color: var(--secondary-text);}
+main .creator_info .bottom .disc .scienceTech {color: var(--blue);}
+main .creator_info .bottom .more {display: none;}
