@@ -46,9 +46,12 @@ header .util a.user {display: inline-block; width: 32px; height: 32px; backgroun
 
 /* main */
 main {padding: 20px 20px; background-color: #181818;}
+
+/* video */
 main .video {position: relative; height: 0; padding-bottom: 56.25%;}
 main .video iframe {position: absolute; width: 100%; height: 100%;}
 
+/* video_info */
 main .video_info .title {margin: 30px 0 20px 0; font-size: 18px;}
 main .video_info .etc {display: flex; justify-content: space-between; align-items: center; color: var(--secondary-text); font-size: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.14);}
 main .video_info .etc_left {padding-bottom: 14px;}
@@ -73,3 +76,32 @@ main .creator_info .bottom .disc .etc {margin-top: 10px;}
 main .creator_info .bottom .disc .category {display: inline-block; width: 110px; color: var(--secondary-text);}
 main .creator_info .bottom .disc .scienceTech {color: var(--blue);}
 main .creator_info .bottom .more {display: none;}
+
+/* next_video */
+main .next_video {margin-top: 24px;}
+main .next_video .tit_and_util {display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;}
+main .next_video .tit_and_util h2 {font-size: 16px;}
+main .next_video .tit_and_util span {font-size: 13px; color: var(--secondary-text);}
+
+main .next_video .video_and_info {display: flex; margin-bottom: 8px;}
+main .next_video .video_and_info:nth-child(1) {border-bottom: 1px solid #fff;}
+main .next_video .video_and_info img {margin-right: 10px;}
+main .next_video .video_and_info h2 {font-size: 14px; margin-bottom: 4px;}
+main .next_video .video_and_info span {display: block; font-size: 13px; color: var(--secondary-text);}
+main .next_video .moreBtn {width: 100%; color: var(--blue); background-color: transparent; border: 1px solid var(--blue); padding: 10px 0;}
+
+/* comment */
+main .comment {margin-top: 24px;}
+main .comment .util {display: flex; margin-bottom: 24px;}
+main .comment .util h2 {font-size: 16px; margin-right: 30px;}
+main .comment .util span {font-size: 14px; color: var(--secondary-text);}
+main .comment .add_comment {margin-bottom: 20px; display: flex; align-items: flex-start;}
+main .comment .add_comment a {display: inline-block;width: 40px; height: 40px; background-color: orangered; border-radius: 50%; font-size: 15px; text-align: center; line-height: 40px; margin-right: 20px;}
+main .comment .add_comment .right {flex: 1;}
+main .comment .add_comment .right .btn {text-align: right; margin-top: 10px;}
+main .comment .add_comment .right .btn button {padding: 10px 20px; border-radius: 3px; font-size: 14px;}
+main .comment .add_comment .right .btn button:first-child {background-color: transparent; color: var(--secondary-text); margin-right: 10px;}
+main .comment .add_comment .right .btn button:last-child {background-color: var(--secondary-text);}
+main .comment .add_comment .right input {width: 100%; color: var(--secondary-text); background-color: transparent; border: none; border-bottom: 1px solid var(--secondary-text); padding-bottom: 6px;}
+main .comment .add_comment .right input::placeholder {color: var(--secondary-text); font-size: 15px;}
+main .comment .add_comment .right input:focus {outline: none;}
