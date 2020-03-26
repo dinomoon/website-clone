@@ -18,6 +18,9 @@
       <i class="fas fa-bars"></i>
       <h1 class="logo"><a href="" title="YouTube 홈"><i class="fab fa-youtube"></i>YouTube</a></h1>
     </div>
+    <div class="search">
+      <input type="text" placeholder="검색"><button><i class="fas fa-search"></i></button>
+    </div>
     <div class="util">
       <a href="" title="검색"><i class="fas fa-search"></i></a>
       <a href="" title="동영상 또는 게시물 만들기"><i class="fas fa-video"></i></a>
@@ -28,8 +31,10 @@
   </header>
   <main>
     <section class="video">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/67stn7Pu7s4" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="wrap">
+        <iframe src="https://www.youtube.com/embed/67stn7Pu7s4" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </section>
     <section class="video_info">
       <h1 class="title">클론코딩 유튜브 사이트 따라 만들기(HTML+CSS 연습편, 웹 포트폴리오) | 프론트엔드 개발자 입문편: HTML, CSS, Javascript</h1>
@@ -145,10 +150,13 @@
         <h2>다음동영상</h2>
         <span>자동재생</span>
       </div>
-      <div class="video_and_info">
+      <div class="video_and_info first">
         <img src="nextVideo1.png" alt="">
         <div class="info">
-          <h2>프론트엔드 강의, 프론트엔드 개발자가 되고 싶다면? 웹개발 입문자편 강의를 시작합니다 ⭐️ (HTML, CSS, Javascript + 실전 프로젝트)</h2>
+          <div class="top">
+            <h2>프론트엔드 강의, 프론트엔드 개발자가 되고 싶다면? 웹개발 입문자편 강의를 시작합니다 ⭐️ (HTML, CSS, Javascript + 실전 프로젝트)</h2>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
           <span>드림코딩 by 엘리</span>
           <span>조회수 • 32만회 </span>
         </div>
@@ -156,7 +164,10 @@
       <div class="video_and_info">
         <img src="nextVideo2.png" alt="">
         <div class="info">
-          <h2>HTML 기초, React 할때 꼭 필요한 팁! 쉽다고 무시하면 안돼요 | 프론트엔드 개발자 입문편: HTML, CSS, Javascript</h2>
+          <div class="top">
+            <h2>HTML 기초, React 할때 꼭 필요한 팁! 쉽다고 무시하면 안돼요 | 프론트엔드 개발자 입문편: HTML, CSS, Javascript</h2>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
           <span>드림코딩 by 엘리</span>
           <span>조회수 • 62만회 </span>
         </div>
@@ -164,7 +175,10 @@
       <div class="video_and_info">
         <img src="nextVideo3.png" alt="">
         <div class="info">
-          <h2>HTML 태그 완성, 웹 포트폴리오 만들기 전에 꼭 보세요 | 프론트엔드 개발자 입문편: HTML, CSS, Javascript</h2>
+          <div class="top">
+            <h2>HTML 태그 완성, 웹 포트폴리오 만들기 전에 꼭 보세요 | 프론트엔드 개발자 입문편: HTML, CSS, Javascript</h2>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
           <span>드림코딩 by 엘리</span>
           <span>조회수 • 54만회 </span>
         </div>
@@ -186,16 +200,29 @@
           </div>
         </div>
       </div>
-      <div class="user">
+      <div class="user-container">
         <img src="profile.png" alt="">
-        <div class="user-comment">
-          <p>드림코딩 by 엘리님이 고정함</p>
-          <span>드림코딩 by 엘리</span>
-          <span>1주 전(수정됨)</span>
-          <p>50분 영상 현실인가요? 😅 길지만 끝까지 다~ 봐주실꺼죠? 🙏🏼 (하.지.만. 1시간 안에 우리가 멋진 정적인 유튜브 웹사이트를 만든다는것!)
+        <div class="right">
+          <p class="fixed">드림코딩 by 엘리님이 고정함</p>
+          <span class="name creator">드림코딩 by 엘리</span>
+          <span class="modi">1주 전(수정됨)</span>
+          <p class="user-comment">50분 영상 현실인가요? 😅 길지만 끝까지 다~ 봐주실꺼죠? 🙏🏼 (하.지.만. 1시간 안에 우리가 멋진 정적인 유튜브 웹사이트를 만든다는것!)
             강의관련 사이트나 자료는 동영상 정보란에서 확인해 주세요 :)
           </p>
-          <i class="fas fa-thumbs-up"></i>
+          <i class="fas fa-thumbs-up"> 7</i>
+          <i class="fas fa-thumbs-down"></i>
+          <img src="like.png" alt="">
+          <span>답글</span>
+        </div>
+      </div>
+      <div class="user-container">
+        <img src="user1.png" alt="">
+        <div class="right">
+          <span class="name">심해</span>
+          <span class="modi">1주 전</span>
+          <p class="user-comment">알람 뜨자마자 왔어요! 선댓글 후감상 입니다! 감사합니다!!
+          </p>
+          <i class="fas fa-thumbs-up"> 2</i>
           <i class="fas fa-thumbs-down"></i>
           <img src="like.png" alt="">
           <span>답글</span>

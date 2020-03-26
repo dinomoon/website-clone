@@ -15,6 +15,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: #fff;
+  background-color: #181818;
 }
 
 h1 {
@@ -41,15 +42,19 @@ header {display: flex; justify-content: space-between; align-items: center; back
 header .menu_bar_logo {font-size: 20px;}
 header .menu_bar_logo .logo {display: inline-block; margin-left: 14px;}
 header .menu_bar_logo .logo i {color: red; margin-right: 4px;}
+header .search {display: none; width: 35%;}
+header .search input {width: calc(100% - 65px); background-color: #000; border: none; height: 30px; padding: 2px 6px; color: #f0f0f0; font-size: 16px; border: 1px solid rgba(255,255,255,0.2);}
+header .search button {width: 65px; height: 30px; color: rgba(255,255,255,0.5); background-color: rgba(255,255,255,0.08);}
 header .util a {margin-left: 24px;}
+header .util a:first-child {margin-left: 0;}
 header .util a.user {display: inline-block; width: 32px; height: 32px; background-color: orangered; border-radius: 50%; font-size: 13px; text-align: center; line-height: 32px;}
 
 /* main */
-main {padding: 20px 20px; background-color: #181818;}
+main {padding: 20px 20px;}
 
 /* video */
-main .video {position: relative; height: 0; padding-bottom: 56.25%;}
-main .video iframe {position: absolute; width: 100%; height: 100%;}
+main .video .wrap {position: relative; width: 100%; height: 0; overflow: hidden; padding-bottom: 56.25%;}
+main .video iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 
 /* video_info */
 main .video_info .title {margin: 30px 0 20px 0; font-size: 18px;}
@@ -84,9 +89,11 @@ main .next_video .tit_and_util h2 {font-size: 16px;}
 main .next_video .tit_and_util span {font-size: 13px; color: var(--secondary-text);}
 
 main .next_video .video_and_info {display: flex; margin-bottom: 8px;}
-main .next_video .video_and_info:nth-child(1) {border-bottom: 1px solid #fff;}
-main .next_video .video_and_info img {margin-right: 10px;}
-main .next_video .video_and_info h2 {font-size: 14px; margin-bottom: 4px;}
+main .next_video .video_and_info.first {padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.14);}
+main .next_video .video_and_info img {margin-right: 10px; height: 100%;}
+main .next_video .video_and_info .top {display: flex;}
+main .next_video .video_and_info .top i {color: var(--secondary-text); margin: 3px 0 0 10px;}
+main .next_video .video_and_info h2 {font-size: 14px; margin-bottom: 4px; height: 40px; text-overflow: ellipsis; overflow: hidden;}
 main .next_video .video_and_info span {display: block; font-size: 13px; color: var(--secondary-text);}
 main .next_video .moreBtn {width: 100%; color: var(--blue); background-color: transparent; border: 1px solid var(--blue); padding: 10px 0;}
 
@@ -102,6 +109,52 @@ main .comment .add_comment .right .btn {text-align: right; margin-top: 10px;}
 main .comment .add_comment .right .btn button {padding: 10px 20px; border-radius: 3px; font-size: 14px;}
 main .comment .add_comment .right .btn button:first-child {background-color: transparent; color: var(--secondary-text); margin-right: 10px;}
 main .comment .add_comment .right .btn button:last-child {background-color: var(--secondary-text);}
-main .comment .add_comment .right input {width: 100%; color: var(--secondary-text); background-color: transparent; border: none; border-bottom: 1px solid var(--secondary-text); padding-bottom: 6px;}
+main .comment .add_comment .right input {width: 100%; font-size: 15px; color: var(--secondary-text); background-color: transparent; border: none; border-bottom: 1px solid var(--secondary-text); padding-bottom: 6px;}
 main .comment .add_comment .right input::placeholder {color: var(--secondary-text); font-size: 15px;}
 main .comment .add_comment .right input:focus {outline: none;}
+
+main .comment .user-container {display: flex; margin-bottom: 24px;}
+main .comment .user-container > img {width: 40px; height: 40px; margin-right: 20px;}
+main .comment .user-container .right {color: var(--secondary-text);}
+main .comment .user-container .right .fixed {font-size: 13px; color: var(--secondary-text); margin-bottom: 10px;}
+main .comment .user-container .right .name {font-size: 13px; color: #fff; margin-right: 4px;}
+main .comment .user-container .right .name.creator {display: inline-block; background-color: var(--secondary-text); padding: 3px 6px; border-radius: 20px;}
+main .comment .user-container .right .modi {font-size: 13px; color: var(--secondary-text);}
+main .comment .user-container .right .user-comment {font-size: 14px; color: #fff; margin: 4px 0 12px 0;}
+main .comment .user-container .right i {margin-right: 14px; font-size: 13px;}
+main .comment .user-container .right img {vertical-align: top; margin-right: 10px;}
+main .comment .user-container .right span {font-size: 13px;}
+
+/* media query */
+@media screen and (min-width: 660px) {
+  header .util .fa-search {
+    display: none;
+  }
+  header .search {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    display: grid;
+    grid-template-columns: 7.4fr 2.6fr;
+    grid-gap: 0 20px;
+  }
+  main .video_info {
+    grid-row: 2;
+  }
+  main .comment {
+    grid-row: 3;
+  }
+  main .next_video {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
