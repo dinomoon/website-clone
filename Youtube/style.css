@@ -62,7 +62,7 @@ main .video_info .etc {display: flex; justify-content: space-between; align-item
 main .video_info .etc_left {padding-bottom: 14px;}
 main .video_info .etc_right i {margin-right: 6px;}
 main .video_info .etc_right li {display: inline-block; padding: 0 10px 14px 10px; margin: 0 -2px;}
-main .video_info .etc_right a.like {color: var(--blue);}
+main .video_info .etc_right a.selected {color: var(--blue);}
 main .video_info .etc_right li.upAndDown {border-bottom: 2px solid var(--blue);}
 
 main .creator_info {border-bottom: 1px solid rgba(255, 255, 255, 0.14); padding: 14px 0;}
@@ -106,10 +106,10 @@ main .comment .add_comment {margin-bottom: 20px; display: flex; align-items: fle
 main .comment .add_comment a {display: inline-block;width: 40px; height: 40px; background-color: orangered; border-radius: 50%; font-size: 15px; text-align: center; line-height: 40px; margin-right: 20px;}
 main .comment .add_comment .right {flex: 1;}
 main .comment .add_comment .right .btn {text-align: right; margin-top: 10px;}
-main .comment .add_comment .right .btn button {padding: 10px 20px; border-radius: 3px; font-size: 14px;}
+main .comment .add_comment .right .btn button {padding: 10px 24px; border-radius: 3px; font-size: 14px;}
 main .comment .add_comment .right .btn button:first-child {background-color: transparent; color: var(--secondary-text); margin-right: 10px;}
-main .comment .add_comment .right .btn button:last-child {background-color: var(--secondary-text);}
-main .comment .add_comment .right input {width: 100%; font-size: 15px; color: var(--secondary-text); background-color: transparent; border: none; border-bottom: 1px solid var(--secondary-text); padding-bottom: 6px;}
+main .comment .add_comment .right .btn button:last-child {background-color: rgba(255,255,255,0.3);}
+main .comment .add_comment .right input {width: 100%; font-size: 15px; color: var(--secondary-text); background-color: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.14); padding-bottom: 6px;}
 main .comment .add_comment .right input::placeholder {color: var(--secondary-text); font-size: 15px;}
 main .comment .add_comment .right input:focus {outline: none;}
 
@@ -138,7 +138,7 @@ main .comment .user-container .right span {font-size: 13px;}
 @media screen and (min-width: 1024px) {
   main {
     display: grid;
-    grid-template-columns: 7.4fr 2.6fr;
+    grid-template-columns: 7.6fr 2.4fr;
     grid-gap: 0 20px;
   }
   main .video_info {
