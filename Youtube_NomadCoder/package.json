@@ -1,0 +1,14 @@
+{
+  "name": "youtube_nomadcoder",
+  "version": "1.0.0",
+  "description": "- 0.3 Websites vs Webapps\r <br>\r Webapp이 Website보다 더 인터랙티브하다. 예를 들면 넷플릭스나 유튜브는 웹앱이라고 할 수 있다.",
+  "main": "index.js",
+  "author": "dinomun",
+  "dependencies": {
+    "@babel/node": "^7.8.7",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
