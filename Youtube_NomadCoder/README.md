@@ -90,7 +90,7 @@ app.listen(PORT, handleListening);
 
 - 2.6 Express Core: Middlewares
 ```javascript
-// 홈에만 midleware를 쓸 때
+// 홈에만 middleware를 쓸 때
 const betweenHome = (req, res, next) => {
   res.send("Hello");
   next();
@@ -101,7 +101,7 @@ app.get('/profile', handleProfile);
 app.listen(PORT, handleListening);
 
 
-// 모든 연결에 midlleware를 쓰고 싶을 때
+// 모든 연결에 middleware를 쓰고 싶을 때
 const betweenHome = (req, res, next) => {
   res.send("Hello");
   next();
@@ -113,7 +113,7 @@ app.get('/profile', handleProfile);
 app.listen(PORT, handleListening);
 
 
-// 홈 이외의 모든 연결에 midlleware를 쓰고 싶을 때
+// 홈 이외의 모든 연결에 middleware를 쓰고 싶을 때
 const betweenHome = (req, res, next) => {
   res.send("Hello");
   next();
