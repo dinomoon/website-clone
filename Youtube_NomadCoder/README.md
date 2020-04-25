@@ -504,10 +504,31 @@ app.listen(PORT, handleListening);
   import routes from "./routes";
 
   export const localMiddleware = (req, res, next) => {
+    // 로컬에 추가하기
     res.locals.siteName = 'WeTube';
     res.locals.routes = routes
     next();
   };
+
+
+  //header.pug
+  header.header
+  .header__column
+    a(href=routes.home)
+      i.fab.fa-youtube
+  .header__column
+    ul
+      li
+        a(href=routes.join) join
+      li
+        a(href=routes.login) login
+
+
+  //footer.pug
+  footer.footer
+  .footer__icon
+    i.fab.fa-youtube
+  span.footer__text &copy; #{siteName} #{new Date().getFullYear()} 
   ```
 
   <br><br>
@@ -521,4 +542,18 @@ app.listen(PORT, handleListening);
   export const videoDetail = (req, res) => res.render('videoDetail', { pageTitle: 'Video Detail' });
   export const editDetail = (req, res) => res.render('editDetail', { pageTitle: 'Edit Detail' });
   export const deleteVideo = (req, res) => res.render('deleteVideo', { pageTitle: 'Delete Video' });
+
+
+  //main.pug
+  doctype html
+  html
+    head
+      link(rel="stylesheet",href="https://use.fontawesome.com/releases/v5.12.1/css/all.css",
+      integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv",crossorigin="anonymous")
+      title #{pageTitle} | #{siteName}
+    body
+      include ../partials/header
+      main
+        block content
+      include ../partials/footer
   ```
