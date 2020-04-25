@@ -90,23 +90,18 @@ app.listen(PORT, handleListening);
 
 - 2.6 Express Core: Middlewares
 ```javascript
-// 홈에만 middleware를 쓸 때
 const betweenHome = (req, res, next) => {
   res.send("Hello");
   next();
 }
 
+// 홈에만 middleware를 쓸 때
 app.get('/', betweenHome, handleHome);
 app.get('/profile', handleProfile);
 app.listen(PORT, handleListening);
 
 
 // 모든 연결에 middleware를 쓰고 싶을 때
-const betweenHome = (req, res, next) => {
-  res.send("Hello");
-  next();
-}
-
 app.use(betweenHome);
 app.get('/', handleHome);
 app.get('/profile', handleProfile);
@@ -114,11 +109,6 @@ app.listen(PORT, handleListening);
 
 
 // 홈 이외의 모든 연결에 middleware를 쓰고 싶을 때
-const betweenHome = (req, res, next) => {
-  res.send("Hello");
-  next();
-}
-
 app.get('/', handleHome);
 app.use(betweenHome);
 app.get('/profile', handleProfile);
@@ -224,6 +214,7 @@ app.listen(PORT, handleListening);
   1. MVC(Model, View, Controller)
   2. routers라는 폴더를 만들고 거기안에 userRouter, videoRouter, globalRouter를 만듦.
   ```javascript
+  //app.js
   //const express = require("express");
   import express from "express"; //바벨 덕분에 가능!!
   import morgan from "morgan";
@@ -246,12 +237,37 @@ app.listen(PORT, handleListening);
   app.use('/videos', videoRouter);
 
   export default app;
+
+
+  //globalRouter.js
+  import express from "express";
+
+  const globalRouter = express.Router();
+
+  export default globalRouter;
+
+
+  //userRouter.js
+  import express from "express";
+
+  const userRouter = express.Router();
+
+  export default userRouter;
+
+
+  //videoRouter.js
+  import express from "express";
+
+  const videoRouter = express.Router();
+
+  export default videoRouter;
   ```
 
   <br><br>
 
 - 2.10 MVC Pattern Part Two
   1. routes라는 파일을 만들어서 URL을 변수로 저장한다.(모든 URL을 기억하지 않아도 되니까 나중에 redirect할 때 편함)
+  2. /:id는 변하는 값으로 자동으로 인식해준다.
   ```javascript
   //routes.js
   //Global
@@ -302,7 +318,7 @@ app.listen(PORT, handleListening);
   import userRouter from "./routers/userRouter";
   import videoRouter from "./routers/videoRouter";
   import globalRouter from "./routers/globalRouter";
-  import routes from "./routes";
+  import routes from "./routes"; //routes임포트
   const app = express();
 
   app.use(cookieParesr());
@@ -311,6 +327,7 @@ app.listen(PORT, handleListening);
   app.use(helmet());
   app.use(morgan("dev"));
 
+  //routes값들로 URL변경
   app.use(routes.home, globalRouter);
   app.use(routes.users, userRouter);
   app.use(routes.videos, videoRouter);
@@ -532,7 +549,7 @@ app.listen(PORT, handleListening);
   ```
 
   <br><br>
-- 2.16 Template Variables in Pug
+- 2.17 Template Variables in Pug
   1. render함수의 첫 번째 인자는 템플릿이고, 두 번째 인자는 템플릿에 추가할 정보가 담긴 객체이다.
   ```javascript
   export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
