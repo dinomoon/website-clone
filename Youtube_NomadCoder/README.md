@@ -574,3 +574,69 @@ app.listen(PORT, handleListening);
         block content
       include ../partials/footer
   ```
+
+  <br><br>
+- 2.18 Search Controller
+  1. 새로운 ES6문법
+  ```js
+  // videoController.js
+  export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
+
+  export const search = (req, res) => {
+    const { query: { term: searchingBy } } = req;
+    //const searchingBy = req.query.term;과 같음
+    res.render('search', { pageTitle: 'Search', searchingBy });
+    //searchingBy = searchingBy와 같음
+  }
+
+  export const videos = (req, res) => res.render('videos', { pageTitle: 'Videos' });
+  export const upload = (req, res) => res.render('upload', { pageTitle: 'Upload' });
+  export const videoDetail = (req, res) => res.render('videoDetail', { pageTitle: 'Video Detail' });
+  export const editDetail = (req, res) => res.render('editDetail', { pageTitle: 'Edit Detail' });
+  export const deleteVideo = (req, res) => res.render('deleteVideo', { pageTitle: 'Delete Video' });
+
+
+  //search.pug
+  extends layouts/main
+
+  block content
+    .search__header
+      h2 Searching for #{searchingBy}
+  ```
+
+
+<br><br>
+- 2.19 Join, Log in HTML
+  1. join.pug, login.pug 추가
+  2. 클래스명을 지을 때 BEM(Block Element Modifier)사용
+<br><br>
+- 2.20 Change Profile HTML
+  1. editProfile.pug 추가
+  2. editProfile을 userDetail보다 위로 올림(userDetail이 위에 있으면 editProfile이 인식이 안됨(userDetail이 /:id로 되어 있어서 그 뒤에 오는 것은 모두 id로 인식하는 듯))
+  ```ja
+  import express from "express";
+  import routes from "../routes";
+  import { users, userDetail, editProfile, changePassword } from "../controllers/userController";
+
+  const userRouter = express.Router();
+
+  userRouter.get(routes.users, users);
+  userRouter.get(routes.editProfile, editProfile);
+  userRouter.get(routes.userDetail, userDetail);
+  userRouter.get(routes.changePassword, changePassword);
+
+  export default userRouter;
+  ```
+<br><br>
+- 2.21 Home Controller
+  1. 가짜 db.js 생성
+  2. home.pug 수정(db내용 출력)
+  3. upload.put 추가
+<br><br>
+- 2.22 Home Controller Part Two
+<br><br>
+- 2.23 Join Controller
+<br><br>
+- 2.24 Log in and User Profile Controller
+<br><br>
+- 2.25 More Controllers
