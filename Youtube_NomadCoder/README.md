@@ -169,6 +169,15 @@ app.listen(PORT, handleListening);
 - 2.8 Express Core: Routing
   1. index.js를 app.js로 바꾸고 init.js파일을 새로 하나 만듦
   2. router.js를 만들어서 라우터를 만들어줌
+      - router는 많은 route들이 담긴 파일이다.
+  3. export의 방식에 따른 import의 차이
+      - export default app과 export const userRouter = ~~
+      - import app from "./app"
+      - import { userRouter } from "./router"
+  4. use의 의미
+      - middleware를 사용한다.
+      - app.use('/user', userRouter);
+      - /user경로로 들어오면 userRouter를 사용한다.
   ```javascript
 
   // app.js
@@ -184,15 +193,15 @@ app.listen(PORT, handleListening);
   const handleHome = (req, res) => res.send("Hello from Home");
   const handleProfile = (req, res) => res.send("Hello from Profile");
 
+  app.use(helmet());
   app.use(cookieParesr());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(helmet());
   app.use(morgan("dev"));
   app.get('/', handleHome);
   app.get('/profile', handleProfile);
 
-  app.use('/user', userRouter); //라우팅을 사용할 때는 use를 사용한다.(userRouter 전체를 사용한다는 의미)
+  app.use('/user', userRouter);
 
   export default app;
 
