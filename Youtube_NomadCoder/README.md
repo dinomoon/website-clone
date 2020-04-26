@@ -69,8 +69,8 @@ const handleProfile = (req, res) => {
   res.send("Hello from Profile");
 }
 
-app.get('/', handleHome);
-app.get('/profile', handleProfile);
+app.get('/', handleHome); //route
+app.get('/profile', handleProfile); //route
 app.listen(PORT, handleListening);
 ```
 
@@ -122,24 +122,22 @@ app.listen(PORT, handleListening);
 <br><br>
 
 - 2.7 Express Core: Middlewares2
-  1. morgan설치(logging에 도움을 줌)
-    - logging: 웹페이지에서 일어나는 일을 기록하는 것
-  2. morgan import
-    - import morgan from "morgan"
-    - app.use(morgan("dev"))
-  3. helmet설치
-    - 보안에 도움을 준다.
-  4. helmet import
-    - import helmet from "helmet"
-    - app.use(helmet());
-  5. middleware는 중간에 연결을 끊을 수도 있다.
-    - res.send()를 사용한다면!
-  6. body-parser설치
-    - form으로 보내진 정보는 request object가 가지고 있다.
-    - 그리고 그 request object에 접근하도록 해주는 것이 body-parser이다.
-  7. cookie-parser 설치
-    - 쿠키에 유저 정보 저장
-    - 세션을 다루기 위함
+  1. morgan설치와 임포트(logging에 도움을 줌)
+      - logging: 웹페이지에서 일어나는 일을 기록하는 것
+      - import morgan from "morgan"
+      - app.use(morgan("dev"))
+  2. helmet설치와 임포트
+      - 보안에 도움을 준다.
+      - import helmet from "helmet"
+      - app.use(helmet());
+  3. middleware는 중간에 연결을 끊을 수도 있다.
+      - res.send()를 사용한다면!
+  4. body-parser설치
+      - form으로 보내진 정보는 request object가 가지고 있다.
+      - 그리고 그 request object에 접근하도록 해주는 것이 body-parser이다.
+  5. cookie-parser 설치
+      - 쿠키에 유저 정보 저장
+      - 세션을 다루기 위함
 
   ```javascript
   //const express = require("express");
@@ -156,10 +154,10 @@ app.listen(PORT, handleListening);
   const handleHome = (req, res) => res.send("Hello from Home");
   const handleProfile = (req, res) => res.send("Hello from Profile");
 
+  app.use(helmet());
   app.use(cookieParesr());
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(helmet());
   app.use(morgan("dev"));
   app.get('/', handleHome);
   app.get('/profile', handleProfile);
