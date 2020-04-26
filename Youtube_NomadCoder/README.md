@@ -633,10 +633,139 @@ app.listen(PORT, handleListening);
   2. home.pug 수정(db내용 출력)
   3. upload.pug 추가
 <br><br>
+
 - 2.22 Home Controller Part Two
+  1. mixin(코드를 복붙하지 않고 재활용하는 것)폴더 생성
+  2. mixin을 쓰기 위해서 home.pug에서 videoBlock을 include하고 +videoBlock으로 값들을 넘겨준다.
+  ```pug
+  //videoBlock.pug
+  mixin videoBlock(video = {})
+  .videoBlock
+    video.videoBlock__thumbnail(src=video.videoFile, controls=true)
+    h4.videoBlock__title=video.title
+    h6.videoBlock__views=video.views
+
+
+  //home.pug
+  extends layouts/main
+  include mixins/videoBlock
+
+  block content
+    .videos
+      each video in videos
+        +videoBlock({
+          videoFile: video.videoFile,
+          title: video.title,
+          views: video.views
+        })
+  ```
 <br><br>
 - 2.23 Join Controller
+  1. body-parser를 사용하지 않으면 사용자가 입력한 정보를 받을 수 없다.
+  ```js
+  //userController.js
+  import routes from "../routes";
+
+  export const getJoin = (req, res) => {
+    res.render('join', { pageTitle: 'Join' });
+  }
+  export const postJoin = (req, res) => {
+    const {
+      body: { name, email, password, password2 }
+    } = req;
+    if (password !== password2) {
+      res.status(400);
+      res.render('join', { pageTitle: 'Join' });
+    } else {
+      //To Do: Register User
+      //To Do: Log user in
+      res.redirect(routes.home);
+    }
+  }
+  export const login = (req, res) => res.render('login', { pageTitle: 'Login' });
+  export const logout = (req, res) => res.render('logout', { pageTitle: 'Logout' });
+  export const users = (req, res) => res.render('users', { pageTitle: 'Users' });
+  export const userDetail = (req, res) => res.render('userDetail', { pageTitle: 'User Detail' });
+  export const editProfile = (req, res) => res.render('editProfile', { pageTitle: 'Edit Profile' });
+  export const changePassword = (req, res) => res.render('changePassword', { pageTitle: 'Change Password' });
+
+
+  //globalRouter.js
+  import express from "express";
+  import routes from "../routes";
+  import { home, search } from "../controllers/videoController";
+  import { getJoin, postJoin, getLogin, postLogin, logout } from "../controllers/userController";
+
+  const globalRouter = express.Router();
+
+  globalRouter.get(routes.join, getJoin);
+  globalRouter.post(routes.join, postJoin);
+
+  globalRouter.get(routes.login, getLogin);
+  globalRouter.post(routes.login, postLogin);
+
+  globalRouter.get(routes.home, home);
+
+
+  globalRouter.get(routes.logout, logout);
+  globalRouter.get(routes.search, search);
+
+  export default globalRouter;
+  ```
 <br><br>
 - 2.24 Log in and User Profile Controller
+```js
+//routes.js
+//Global
+const HOME = '/';
+const JOIN = '/join';
+const LOGIN = '/login';
+const LOGOUT = '/logout';
+const SEARCH = '/search';
+
+//Users
+const USERS = '/users';
+const USER_DETAIL = '/:id';
+const EDIT_PROFILE = '/edit-profile';
+const CHANGE_PASSWORD = '/change-password';
+
+//Videos
+const VIDEOS = '/videos';
+const UPLOAD = '/upload';
+const VIDEO_DETAIL = '/:id';
+const EDIT_DETAIL = '/:id/edit';
+const DELETE_VIDEO = '/:id/delete';
+
+const routes = {
+  home: HOME,
+  join: JOIN,
+  login: LOGIN,
+  logout: LOGOUT,
+  search: SEARCH,
+  users: USERS,
+  userDetail: id => {
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_DETAIL
+    }
+  },
+  editProfile: EDIT_PROFILE,
+  changePassword: CHANGE_PASSWORD,
+  videos: VIDEOS,
+  upload: UPLOAD,
+  videoDetail: id => {
+    if (id) {
+      return `/videos/${id}`
+    } else {
+      return VIDEO_DETAIL
+    }
+  },
+  editDetail: EDIT_DETAIL,
+  deleteVideo: DELETE_VIDEO,
+};
+
+export default routes;
+```
 <br><br>
 - 2.25 More Controllers
