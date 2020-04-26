@@ -122,11 +122,24 @@ app.listen(PORT, handleListening);
 <br><br>
 
 - 2.7 Express Core: Middlewares2
-  1. logging에 도움을 주는 middleware인 morgan설치 npm install morgan
-  2. import morgan from "morgan", app.use(morgan("dev"))
-  3. 보안을 위해서 helmet이라는 middleware를 사용할 수도 있다. import helmet from "helmet", app.use(helmet());
-  4. middleware가 next()를 쓰지않고 res.send를 사용한다면 중간에 연결을 끊을 수도 있다.
-  5. cookie-parser(세션을 다룰 때 필요)와 body-parser(사용자가 form을 작성해 전송하면 서버에 의해서 받아져야만 하는 데 그것을 도와줌)도 설치해준다.
+  1. morgan설치(logging에 도움을 줌)
+    - logging: 웹페이지에서 일어나는 일을 기록하는 것
+  2. morgan import
+    - import morgan from "morgan"
+    - app.use(morgan("dev"))
+  3. helmet설치
+    - 보안에 도움을 준다.
+  4. helmet import
+    - import helmet from "helmet"
+    - app.use(helmet());
+  5. middleware는 중간에 연결을 끊을 수도 있다.
+    - res.send()를 사용한다면!
+  6. body-parser설치
+    - form으로 보내진 정보는 request object가 가지고 있다.
+    - 그리고 그 request object에 접근하도록 해주는 것이 body-parser이다.
+  7. cookie-parser 설치
+    - 쿠키에 유저 정보 저장
+    - 세션을 다루기 위함
 
   ```javascript
   //const express = require("express");
