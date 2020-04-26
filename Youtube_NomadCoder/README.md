@@ -232,7 +232,11 @@ app.listen(PORT, handleListening);
 
 - 2.9 MVC Pattern Part One
   1. MVC(Model, View, Controller)
-  2. routers라는 폴더를 만들고 거기안에 userRouter, videoRouter, globalRouter를 만듦.
+      - Model -> data
+      - View -> how does the data look
+      - Controller -> function that looks for the data
+      - 세 가지를 모두 분리해야함
+  2. routers라는 폴더를 만들고 안에 userRouter, videoRouter, globalRouter를 만듦.
   ```javascript
   //app.js
   //const express = require("express");
@@ -329,23 +333,7 @@ app.listen(PORT, handleListening);
 
 
   //app.js
-  //const express = require("express");
-  import express from "express"; //바벨 덕분에 가능!!
-  import morgan from "morgan";
-  import helmet from "helmet";
-  import cookieParesr from "cookie-parser";
-  import bodyParser from "body-parser";
-  import userRouter from "./routers/userRouter";
-  import videoRouter from "./routers/videoRouter";
-  import globalRouter from "./routers/globalRouter";
   import routes from "./routes"; //routes임포트
-  const app = express();
-
-  app.use(cookieParesr());
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(helmet());
-  app.use(morgan("dev"));
 
   //routes값들로 URL변경
   app.use(routes.home, globalRouter);
@@ -368,8 +356,11 @@ app.listen(PORT, handleListening);
 
   <br><br>
 
-- 2.11 MVC Pattern Part Three
+- 2.11 MVC Pattern Part Three (Controller만들기 그리고 완성)
   1. controllers폴더 만들고 안에 userController.js와 videoController.js만듦
+      - route에서 실행부분을 따로 정리하기 위해서!
+      - 따로 정리하는 이유? 복잡해질 수 있기 때문에!
+      - controller -> function that look for the data!
   2. controller를 사용해서 router를 수정함
   ```javascript
   //videoController.js
@@ -402,38 +393,22 @@ app.listen(PORT, handleListening);
 
 - 2.12 Recap
 - 2.13 Installing Pug
-  - Pug: 템플릿 언어, express의 view engine, html파일들이 더 아름답게 보이도록 해준다.
-  1. 설치: npm install pug
-  2. app.set('view engine', 'pug'); 추가
-  3. views폴더를 만들고 그 안에 pug파일 만들기
-  4. controller에서 res.send를 res.render로 바꾸기
+  1. Pug란?
+      - express에서 View를 다루는 방식 중 하나
+      - template language
+      - view engine for express
+  2. pug 설치
+      - npm install pug
+  3. 설정 추가
+      - app.set('view engine', 'pug');
+  4. views폴더를 만들고 그 안에 pug파일 만들기
+  5. controller에서 res.send를 res.render로 바꾸기
+      - render의 인자로 템플릿 파일의 이름을 입력하기
+      - 그럼 controller가 views폴더에서 인자의 파일명을 가지고 확장자가 pug인 템플릿 파일을 찾은 후 보여준다.
   ```javascript
   //app.js
-  //const express = require("express");
-  import express from "express"; //바벨 덕분에 가능!!
-  import morgan from "morgan";
-  import helmet from "helmet";
-  import cookieParesr from "cookie-parser";
-  import bodyParser from "body-parser";
-  import userRouter from "./routers/userRouter";
-  import videoRouter from "./routers/videoRouter";
-  import globalRouter from "./routers/globalRouter";
-  import routes from "./routes";
-  const app = express();
-
-  //app.set추가!
+  //추가 코드
   app.set('view engine', 'pug');
-  app.use(cookieParesr());
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(helmet());
-  app.use(morgan("dev"));
-
-  app.use(routes.home, globalRouter);
-  app.use(routes.users, userRouter);
-  app.use(routes.videos, videoRouter);
-
-  export default app;
   ```
 
   <br><br>
@@ -504,30 +479,15 @@ app.listen(PORT, handleListening);
 
 <br><br>
 - 2.16 Local Variables in Pug
-  1. locals에 변수들을 저장하면 어디서든 사용할 수 있다!
+  1. locals에 변수들을 저장하면 모든 템플릿 파일에서 사용할 수 있다!
+      - middleware를 사용한다.
+      - #{}를 사용해서 locals에 저장한 변수들을 사용할 수 있다.
+  2. One Single source of truth!
+      - 한 곳에서만 정보를 보관하는 것은 더 나은 코딩을 위한 원칙이다.
+
   ```javascript
   //app.js
-  //const express = require("express");
-  import express from "express"; //바벨 덕분에 가능!!
-  import morgan from "morgan";
-  import helmet from "helmet";
-  import cookieParesr from "cookie-parser";
-  import bodyParser from "body-parser";
-  import { localMiddleware } from "./middlewares";
-  import routes from "./routes";
-  import userRouter from "./routers/userRouter";
-  import videoRouter from "./routers/videoRouter";
-  import globalRouter from "./routers/globalRouter";
-  const app = express();
-
-  app.use(helmet());
-  app.set('view engine', 'pug');
-  app.use(cookieParesr());
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(morgan("dev"));
-
-  //미들웨어 추가
+  //localMiddleware 추가
   app.use(localMiddleware);
 
   app.use(routes.home, globalRouter);
@@ -571,6 +531,8 @@ app.listen(PORT, handleListening);
   <br><br>
 - 2.17 Template Variables in Pug
   1. render함수의 첫 번째 인자는 템플릿이고, 두 번째 인자는 템플릿에 추가할 정보가 담긴 객체이다.
+    - 템플릿 마다 다른 변수를 전달하고 싶을 때 사용한다.
+  
   ```javascript
   export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
   export const search = (req, res) => res.render('search', { pageTitle: 'Search' });
@@ -598,6 +560,7 @@ app.listen(PORT, handleListening);
   <br><br>
 - 2.18 Search Controller
   1. 새로운 ES6문법
+
   ```javascript
   // videoController.js
   export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
