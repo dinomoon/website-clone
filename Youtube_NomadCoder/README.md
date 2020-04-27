@@ -1110,19 +1110,26 @@ app.listen(PORT, handleListening);
     import Video from "../models/Video";
 
     export const home = async (req, res) => {
-    try {
-      const videos = await Video.find();
-      res.render('home', { pageTitle: 'Home', videos });
-    } catch(error) {
-      console.log(error);
-      res.render('home', { pageTitle: 'Home', videos: [] });
+      try {
+        const videos = await Video.find();
+        res.render('home', { pageTitle: 'Home', videos });
+      } catch(error) {
+        console.log(error);
+        res.render('home', { pageTitle: 'Home', videos: [] });
+      }
     }
-  }
     ```
   <br><br>
-  - 3.6 MongoDB and Mongoose
+  - 3.6 Uploading and Creating a Video
+    1. 파일 자체를 저장하는 것이 아니라 파일의 위치를 저장하는 것이다.
+    2. 비디오만 업로드 할 수 있게 하기
+        - input(type="file", id="file", name="file", required=true, accept="video/*")
+    3. multer
+        - file을 upload하고 URL을 반환하는 middleware
+
+        
   <br><br>
-  - 3.7 MongoDB and Mongoose
+  - 3.7 Uploading and Creating a Video Part Two
   <br><br>
   - 3.8 MongoDB and Mongoose
   <br><br>
