@@ -559,24 +559,26 @@ app.listen(PORT, handleListening);
 
   <br><br>
 - 2.18 Search Controller
-  1. 새로운 ES6문법
+  1. input의 name속성
+      - name속성을 써줘야 URL에 input의 값이 들어간다.
+      - 그리고 method="get"이어야 컨트롤러에서 query에 접근할 수 있다.
+  2. 새로운 ES6문법
+      - const { query: { term: searchingBy } } = req;
+      - const searchingBy = req.query.term;과 같음
+      - searchingBy: searchingBy와 searchingBy는 같음
 
   ```javascript
-  // videoController.js
-  export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
+  //header.pug
+    .header__column
+        form(action=routes.search, method="get")
+            input(type="text", placeholder="Search by term...", name="term")
 
+
+  //videoController.js
   export const search = (req, res) => {
     const { query: { term: searchingBy } } = req;
-    //const searchingBy = req.query.term;과 같음
     res.render('search', { pageTitle: 'Search', searchingBy });
-    //searchingBy = searchingBy와 같음
   }
-
-  export const videos = (req, res) => res.render('videos', { pageTitle: 'Videos' });
-  export const upload = (req, res) => res.render('upload', { pageTitle: 'Upload' });
-  export const videoDetail = (req, res) => res.render('videoDetail', { pageTitle: 'Video Detail' });
-  export const editDetail = (req, res) => res.render('editDetail', { pageTitle: 'Edit Detail' });
-  export const deleteVideo = (req, res) => res.render('deleteVideo', { pageTitle: 'Delete Video' });
 
 
   //search.pug
@@ -588,15 +590,74 @@ app.listen(PORT, handleListening);
   ```
 
 
+
 <br><br>
 - 2.19 Join, Log in HTML
-  1. join.pug, login.pug 추가
+  1. join.pug, login.pug, socialLogin.pug 추가
   2. 클래스명을 지을 때 BEM(Block Element Modifier)사용
+  ```js
+  //join.pug
+  extends layouts/main
+
+  block content
+      p Join 
+      .form__container
+          form(action="routes.join", method="post")
+              input(type="text", name="name", placeholder="Full Name")        
+              input(type="email", name="email", placeholder="Email")
+              input(type="password", name="password", placeholder="Password")
+              input(type="password", name="password2", placeholder="Verify Password")
+              input(type="submit",value="Join Now")
+          include partials/socialLogin
+
+
+  //login.pug
+  extends layouts/main
+
+  block content
+      p Login 
+      .form__container
+          form(action="routes.login", method="post")
+              input(type="email", name="email", placeholder="Email")
+              input(type="password", name="password", placeholder="Password")
+              input(type="submit",value="Log In")
+          include partials/socialLogin
+
+
+  //socialLogin.pug
+  .social-login
+  button.social-login--github
+      span
+          i.fab.fa-github 
+      |Continue with Github
+  button.social-login--facebook
+      span
+          i.fab.fa-facebook 
+      |Continue with Facebook 
+  ```
+
 <br><br>
 - 2.20 Change Profile HTML
   1. editProfile.pug 추가
-  2. editProfile을 userDetail보다 위로 올림(userDetail이 위에 있으면 editProfile이 인식이 안됨(userDetail이 /:id로 되어 있어서 그 뒤에 오는 것은 모두 id로 인식하는 듯))
+  2. editProfile을 userDetail보다 위로 올림
+      - /user/edit-profile로 접속하면 /user/:id로 접속한 것으로 라우터가 이해해서 접속이 안되기 때문에..
   ```js
+  //editProfile.pug
+  extends layouts/main
+
+  block content
+      p Edit Profile 
+      .form-container
+          form(action=`/users${routes.editProfile}`, method="post")
+              label(for="avatar") Avatar
+              input(type="file", id="avatar", name="avatar")
+              input(type="text", placeholder="Name", name="name")
+              input(type="email", placeholder="Email", name="email")
+              input(type="submit", value="Update Profile")
+          a.form-container__link(href=`/users${routes.changePassword}`) Change Password 
+
+
+  //userRouter.js
   import express from "express";
   import routes from "../routes";
   import { users, userDetail, editProfile, changePassword } from "../controllers/userController";
@@ -612,9 +673,108 @@ app.listen(PORT, handleListening);
   ```
 <br><br>
 - 2.21 Home Controller
+  1. editViedo.pug, changePassword.pug추가
   1. 가짜 db.js 생성
   2. home.pug 수정(db내용 출력)
   3. upload.pug 추가
+
+  ```js
+  //editVideo.pug
+  extends layouts/main
+
+  block content
+      p Edit Video 
+      .form-container
+          form(action=`/videos${routes.editVideo}`, method="post")
+              input(type="text", placeholder="Title", name="title")
+              textarea(name="description", placeholder="Description")
+              input(type="submit", value="Update Video")
+          a.form-container__link.form-container__link--delete(href=`/videos${routes.deleteVideo}`) Delete Video 
+    
+    
+  //changePassword.pug
+  extends layouts/main
+
+  block content
+      p Change Password 
+      .form-container
+          form(action=`/users${routes.changePassword}`, method="post")
+              input(type="password", name="oldPasswod", placeholder="Current Password")
+              input(type="password", name="newPassword", placeholder="New Password")
+              input(type="password", name="newPassword1", placeholder="Verify New Password")
+              input(type="submit", value="Change Password")
+
+
+  //db.js
+  export const videos = [
+    {
+      id: 324393,
+      title: "Video awesome",
+      description: "This is something I love",
+      views: 24,
+      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      creator: {
+        id: 121212,
+        name: "Nicolas",
+        email: "nico@las.com"
+      }
+    },
+    {
+      id: 1212121,
+      title: "Video super",
+      description: "This is something I love",
+      views: 24,
+      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      creator: {
+        id: 121212,
+        name: "Nicolas",
+        email: "nico@las.com"
+      }
+    },
+    {
+      id: 55555,
+      title: "Video nice",
+      description: "This is something I love",
+      views: 24,
+      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      creator: {
+        id: 121212,
+        name: "Nicolas",
+        email: "nico@las.com"
+      }
+    },
+    {
+      id: 11111,
+      title: "Video perfect",
+      description: "This is something I love",
+      views: 24,
+      videoFile: "https://archive.org/details/BigBuckBunny_124",
+      creator: {
+        id: 121212,
+        name: "Nicolas",
+        email: "nico@las.com"
+      }
+    }
+  ];
+
+
+  //videoController.js
+  import { videos } from "../db";
+  export const home = (req, res) => {
+    res.render("home", { pageTitle: "Home", videos });
+  };
+
+
+  //home.pug
+  extends layouts/main
+
+  block content
+      .videos
+          h1 Video 
+          each item in videos
+              h1= item.title
+              p= item.description
+  ```
 <br><br>
 
 - 2.22 Home Controller Part Two
