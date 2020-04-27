@@ -595,6 +595,7 @@ app.listen(PORT, handleListening);
 - 2.19 Join, Log in HTML
   1. join.pug, login.pug, socialLogin.pug 추가
   2. 클래스명을 지을 때 BEM(Block Element Modifier)사용
+
   ```js
   //join.pug
   extends layouts/main
@@ -641,6 +642,7 @@ app.listen(PORT, handleListening);
   1. editProfile.pug 추가
   2. editProfile을 userDetail보다 위로 올림
       - /user/edit-profile로 접속하면 /user/:id로 접속한 것으로 라우터가 이해해서 접속이 안되기 때문에..
+
   ```js
   //editProfile.pug
   extends layouts/main
@@ -778,9 +780,11 @@ app.listen(PORT, handleListening);
 <br><br>
 
 - 2.22 Home Controller Part Two
-  1. mixin(코드를 복붙하지 않고 재활용하는 것)폴더 생성
+  1. mixin폴더와 그 안에 videoBlock.pug파일 생성
+      - mixin: 코드를 복붙하지 않고 재활용하는 것, pug의 함수
   2. mixin을 쓰기 위해서 home.pug에서 videoBlock을 include하고 +videoBlock으로 값들을 넘겨준다.
-  ```pug
+
+  ```js
   //videoBlock.pug
   mixin videoBlock(video = {})
   .videoBlock
@@ -802,9 +806,11 @@ app.listen(PORT, handleListening);
           views: video.views
         })
   ```
+
 <br><br>
 - 2.23 Join Controller
   1. body-parser를 사용하지 않으면 사용자가 입력한 정보를 받을 수 없다.
+
   ```js
   //userController.js
   import routes from "../routes";
@@ -825,90 +831,152 @@ app.listen(PORT, handleListening);
       res.redirect(routes.home);
     }
   }
-  export const login = (req, res) => res.render('login', { pageTitle: 'Login' });
-  export const logout = (req, res) => res.render('logout', { pageTitle: 'Logout' });
-  export const users = (req, res) => res.render('users', { pageTitle: 'Users' });
-  export const userDetail = (req, res) => res.render('userDetail', { pageTitle: 'User Detail' });
-  export const editProfile = (req, res) => res.render('editProfile', { pageTitle: 'Edit Profile' });
-  export const changePassword = (req, res) => res.render('changePassword', { pageTitle: 'Change Password' });
 
 
   //globalRouter.js
   import express from "express";
   import routes from "../routes";
   import { home, search } from "../controllers/videoController";
-  import { getJoin, postJoin, getLogin, postLogin, logout } from "../controllers/userController";
+  import { getJoin, postJoin, logout } from "../controllers/userController";
 
   const globalRouter = express.Router();
 
   globalRouter.get(routes.join, getJoin);
   globalRouter.post(routes.join, postJoin);
 
-  globalRouter.get(routes.login, getLogin);
-  globalRouter.post(routes.login, postLogin);
-
-  globalRouter.get(routes.home, home);
-
-
-  globalRouter.get(routes.logout, logout);
-  globalRouter.get(routes.search, search);
-
   export default globalRouter;
   ```
 <br><br>
+
 - 2.24 Log in and User Profile Controller
-```js
-//routes.js
-//Global
-const HOME = '/';
-const JOIN = '/join';
-const LOGIN = '/login';
-const LOGOUT = '/logout';
-const SEARCH = '/search';
+  1. Profile을 클릭했을 때 해당 유저의 아이디를 가진 URL로 가고 싶음
+      - /:id를 express는 이해하지만 HTML이 이해하지 못하기 때문에 routes를 수정해줘야함
+  ```js
+  //routes.js
+  const routes = {
+    userDetail: id => {
+      if (id) {
+        return `/users/${id}`;
+      } else {
+        return USER_DETAIL
+      }
+    },
+    videoDetail: id => {
+      if (id) {
+        return `/videos/${id}`
+      } else {
+        return VIDEO_DETAIL
+      }
+    },
+  };
 
-//Users
-const USERS = '/users';
-const USER_DETAIL = '/:id';
-const EDIT_PROFILE = '/edit-profile';
-const CHANGE_PASSWORD = '/change-password';
+  export default routes;
 
-//Videos
-const VIDEOS = '/videos';
-const UPLOAD = '/upload';
-const VIDEO_DETAIL = '/:id';
-const EDIT_DETAIL = '/:id/edit';
-const DELETE_VIDEO = '/:id/delete';
 
-const routes = {
-  home: HOME,
-  join: JOIN,
-  login: LOGIN,
-  logout: LOGOUT,
-  search: SEARCH,
-  users: USERS,
-  userDetail: id => {
-    if (id) {
-      return `/users/${id}`;
-    } else {
-      return USER_DETAIL
-    }
-  },
-  editProfile: EDIT_PROFILE,
-  changePassword: CHANGE_PASSWORD,
-  videos: VIDEOS,
-  upload: UPLOAD,
-  videoDetail: id => {
-    if (id) {
-      return `/videos/${id}`
-    } else {
-      return VIDEO_DETAIL
-    }
-  },
-  editDetail: EDIT_DETAIL,
-  deleteVideo: DELETE_VIDEO,
-};
+  //userRouter.js
+  userRouter.get(routes.userDetail(), userDetail);
 
-export default routes;
-```
+  export default userRouter;
+
+
+  //header.pug
+  header.header
+    .header__column
+      a(href=routes.home)
+        i.fab.fa-youtube
+    .header__column
+      form(action=routes.search, method='get')
+        input(type='text', placeholder='Search by term...', name='term')
+    .header__column
+      ul
+        if !user.isAuthenticated
+          li
+            a(href=routes.join) join
+          li
+            a(href=routes.login) login
+        else
+          li
+            a(href=`/videos${routes.upload}`) Upload
+          li
+            a(href=routes.userDetail(user.id)) userDetail
+          li
+            a(href=routes.logout) logout
+  ```
 <br><br>
+
 - 2.25 More Controllers
+  1. videoDetail
+  2. log out
+      - log out 누르면 홈페이지로 이동
+      - redirect이용
+  3. upload
+      - upload하면 만든 영상의 상세페이지로 이동
+      - redirect이용
+  4. 정보를 모두 입력하도록 required=true추가
+
+  ```js
+  //videoBlock.pug
+  mixin videoBlock(video = {})
+    .videoBlock
+      a(href=routes.videoDetail(video.id))
+        video.videoBlock__thumbnail(src=video.videoFile, controls=true)
+        h4.videoBlock__title=video.title
+        h6.videoBlock__views=video.views
+
+
+  //userController.js
+  export const logout = (req, res) => {
+    // To Do: Process Log Out
+    res.redirect(routes.home);
+  };
+
+
+  //videoController.js
+  export const postUpload = (req, res) => {
+    const {
+      body: { file, title, description }
+    } = req;
+    // To Do: Upload and save video
+    res.redirect(routes.videoDetail(324393));
+  };
+
+
+  //upload.pug
+  input(type="file", id="file", name="file", required=true)
+  input(type="text", placeholder="Title", name="title", required=true)
+  textarea(name="description", placeholder="Description", required=true)
+  input(type="submit", value="Upload Video")
+  ```
+
+<br><br><br>
+  ## 3. MongoDB
+  
+  <br><br>
+  - 3.0 MongoDB and Mongoose
+
+
+
+  <br><br>
+  - 3.1 Connecting to MongoDB
+  <br><br>
+  - 3.2 Configuring Dot Env
+  <br><br>
+  - 3.3 Video Model
+  <br><br>
+  - 3.4 MongoDB and Mongoose
+  <br><br>
+  - 3.5 MongoDB and Mongoose
+  <br><br>
+  - 3.6 MongoDB and Mongoose
+  <br><br>
+  - 3.7 MongoDB and Mongoose
+  <br><br>
+  - 3.8 MongoDB and Mongoose
+  <br><br>
+  - 3.9 MongoDB and Mongoose
+  <br><br>
+  - 3.10 MongoDB and Mongoose
+  <br><br>
+  - 3.11 MongoDB and Mongoose
+  <br><br>
+  - 3.12 MongoDB and Mongoose
