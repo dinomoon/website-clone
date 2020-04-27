@@ -953,19 +953,172 @@ app.listen(PORT, handleListening);
   
   <br><br>
   - 3.0 MongoDB and Mongoose
-
+    - 데이터 베이스의 종류 2가지
+      - SQL과 NoSQL
+      - MongoDB는 NoSQL이다.
+    - MongoDB
+      - 가볍고 사용하기 편리하다.
+    - Mongoose
+      - elegant MongoDB object modeling for node.js
+      - 자바스크립트에 MongoDB를 연결하기 위한 Adapter의 역할
 
 
   <br><br>
   - 3.1 Connecting to MongoDB
+    1. dotenv설치
+        - 데이터베이스에서 숨기고 싶은 것을 넣는 곳
+    2. db.js작성
+    ```js
+    import mongoose from "mongoose";
+
+    mongoose.connect(
+      //database가 저장되어 있는 곳
+      //"mongodb://localhost:포트번호/Database이름"
+      "mongodb://127.0.0.1:27017/wetube",
+      {
+        //새로운 버전이 나왔을 때 어떻게 할 것인지에 대한 것
+        useNewUrlParser: true,
+        useFindAndModify: false
+      }
+    );
+
+    const db = mongoose.connection;
+
+    const handleOpen = () => console.log("✅ Connected to DB");
+    const handleError = () => console.log("❌")
+
+    db.once("open", handleOpen);
+    db.on("error", handleError);
+    ```
   <br><br>
   - 3.2 Configuring Dot Env
+    1. .env파일 생성
+    2. db.js 수정
+        - dotenv.config()를 사용해 .env파일 안에 있는 정보를 불러올 수 있음.
+    3. init.js 수정
+
+    ```js
+    //.env
+    MONGO_URL = "mongodb://127.0.0.1:27017/wetube"
+    PORT = 4000
+
+
+    //db.js
+    import mongoose from "mongoose";
+    import dotenv from "dotenv";
+    dotenv.config();
+
+    mongoose.connect(
+      process.env.MONGO_URL,
+      {
+        useNewUrlParser: true,
+        useFindAndModify: false
+      }
+    );
+
+    const db = mongoose.connection;
+
+    const handleOpen = () => console.log("✅ Connected to DB");
+    const handleError = () => console.log("❌")
+
+    db.once("open", handleOpen);
+    db.on("error", handleError);
+
+
+    //init.js
+    import "./db";
+    import app from "./app";
+    import dotenv from "dotenv";
+    dotenv.config();
+
+    const PORT = process.env.PORT || 5000;
+
+    const handleListening = () => console.log(`Listening on: http://localhost:${PORT}`);
+
+    app.listen(PORT, handleListening);
+    ```
+
   <br><br>
   - 3.3 Video Model
+    1. models폴더 생성
+    2. Video.js파일 생성
+
+    ```js
+    import mongoose from "mongoose";
+
+    const VideoSchema = new mongoose.Schema({
+      fileUrl: {
+        type: String,
+        required: "File URL is required"
+      },
+      title: {
+        type: String,
+        required: "Title is required"
+      },
+      description: String,
+      views: {
+        type: Number,
+        default: 0
+      },
+      createAt: {
+        type: Date,
+        default: Date.now
+      }
+    });
+
+    const model = mongoose.model("Video", VideoSchema);
+    export default model;
+    ```
   <br><br>
-  - 3.4 MongoDB and Mongoose
+  - 3.4 Comment Model
+    1. Comment.js생성
+    2. Video.js와 Comment.js의 연결
+        - 어떻게 연결할 것인가?
+        - 두 가지 방법
+        - 첫 번째: Comment.js에 Video의 id를 넘겨준다.
+        - 두 번째: Video.js에 Commnet의 id를 넘겨준다.
+
+    ```js
+    import mongoose from "mongoose";
+
+    const CommentSchema = new mongoose.Schema({
+      text: {
+        type: String,
+        required: "Text is required"
+      },
+      createAt: {
+        type: Date,
+        default: Date.now
+      },
+      video: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Video"
+      }
+    })
+
+    const model = mongoose.model("Comment", CommentSchema);
+    export default model;
+    ```
+
   <br><br>
-  - 3.5 MongoDB and Mongoose
+  - 3.5 Home Controller Finished
+    1. videoController.js 수정
+        - async와 await? Video의 모든 내용을 가져올 때까지 다른 것들을 못하게 막는다. (왜냐하면 자바스크립트는 기본적으로 여러일을 동시에 시행하기 때문에 아직 Video들의 정보를 다 가져오지 않았는 데 다른 함수를 실행하다가 Video를 만날 수 있기 때문!)
+        - await는 성공하든 실패하는 끝나면 계속 수행한다. 따라서 try, catch문으로 error를 잡아햐한다. 그리고 에러가 발생하더라도 화면을 보여줄 수 있다.
+
+    ```js
+    import Video from "../models/Video";
+
+    export const home = async (req, res) => {
+    try {
+      const videos = await Video.find();
+      res.render('home', { pageTitle: 'Home', videos });
+    } catch(error) {
+      console.log(error);
+      res.render('home', { pageTitle: 'Home', videos: [] });
+    }
+  }
+    ```
   <br><br>
   - 3.6 MongoDB and Mongoose
   <br><br>
