@@ -1126,17 +1126,103 @@ app.listen(PORT, handleListening);
         - input(type="file", id="file", name="file", required=true, accept="video/*")
     3. multer
         - file을 upload하고 URL을 반환하는 middleware
+        - github 사용법 보고 사용합시다.
+      
+    ```js
+    //middlewares.js
+    import routes from "./routes";
+    import multer from "multer"
+
+    const multerVideo = multer({ dest: 'videos' });
+
+    export const localMiddleware = (req, res, next) => {
+      // 로컬에 추가하기
+      res.locals.siteName = 'WeTube';
+      res.locals.routes = routes;
+      res.locals.user = {
+        isAuthenticated: true,
+        id: 1,
+      }
+      next();
+
+
+    //VideoController.js
+    export const postUpload = async (req, res) => {
+    const {
+      body: { title, description },
+      file: { path }
+    } = req;
+    const newVideo = await Video.create({
+      fileUrl: path,
+      title,
+      description
+    });
+    res.redirect(routes.videoDetail(newVideo.id));
+  }
+    };
+
+    export const uploadVideo = multerVideo.single("videoFile");
+    ```
 
         
   <br><br>
   - 3.7 Uploading and Creating a Video Part Two
+    1. 업로드는 됐지만 재생이 안됨. (link가 망가졌다고 함..)
+        - const multerVideo = multer({ dest: 'uploads/videos' });이렇게 바꿔야함.
+        - 터미널에 mongo를 타이핑하고 엔터
+        - use wetube
+        - show collections
+        - db.videos.remove({})
+        - app.js에 app.use("/uploads", express.static("uploads")); 추가
+        - 의미: /uploads URL로 가면 uploads라는 폴더 안으로 들어간다.
+    2. 지금은 영상을 업로드할 때 영상정보가 우리의 서버로 오는데 매우 좋지 않다. 누군가 용량이 매우 큰 영상을 올리면 서버가 다운될 수 있음.
+        - 나중에 바꿀 것임
+  
   <br><br>
-  - 3.8 MongoDB and Mongoose
+  - 3.8 Getting Video by ID
+    1. Video의 정보 가져오기
+    2. 영상을 클릭했을 때 비디오 정보 보여주기
+
+    ```js
+    //videoController.js
+    export const videoDetail = async (req, res) => {
+      const {
+        params: { id }
+      } = req;
+      try {
+        const video = await Video.findById(id);
+        res.render('videoDetail', { pageTitle: 'Video Detail', video });
+      } catch (error) {
+        console.log(error);
+        res.redirect(routes.home);
+      }
+    }
+
+    
+    //videoDetail.pug
+    extends layouts/main
+
+    block content
+      .video__player
+        video(src=`/${video.fileUrl}`)
+      .video_info
+        a(href=routes.editVideo) Edit video
+        h5.video__title=video.title
+        span.video__views=video.views
+        p.video_description=video.description
+    ```
+
   <br><br>
-  - 3.9 MongoDB and Mongoose
+  - 3.9 Editing a Video
+
+
   <br><br>
   - 3.10 MongoDB and Mongoose
+
+
   <br><br>
   - 3.11 MongoDB and Mongoose
+
+
   <br><br>
   - 3.12 MongoDB and Mongoose

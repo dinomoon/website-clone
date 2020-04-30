@@ -16,7 +16,9 @@
     "mongoose": "^5.9.10",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "scripts": {
     "start": "nodemon --exec babel-node init.js"

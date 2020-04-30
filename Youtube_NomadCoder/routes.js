@@ -15,7 +15,7 @@ const CHANGE_PASSWORD = '/change-password';
 const VIDEOS = '/videos';
 const UPLOAD = '/upload';
 const VIDEO_DETAIL = '/:id';
-const EDIT_DETAIL = '/:id/edit';
+const EDIT_VIDEO = '/:id/edit';
 const DELETE_VIDEO = '/:id/delete';
 
 const routes = {
@@ -29,7 +29,7 @@ const routes = {
     if (id) {
       return `/users/${id}`;
     } else {
-      return USER_DETAIL
+      return USER_DETAIL;
     }
   },
   editProfile: EDIT_PROFILE,
@@ -38,12 +38,12 @@ const routes = {
   upload: UPLOAD,
   videoDetail: id => {
     if (id) {
-      return `/videos/${id}`
+      return `/videos/${id}`;
     } else {
-      return VIDEO_DETAIL
+      return VIDEO_DETAIL;
     }
   },
-  editDetail: EDIT_DETAIL,
+  editVideo: EDIT_VIDEO,
   deleteVideo: DELETE_VIDEO,
 };
 

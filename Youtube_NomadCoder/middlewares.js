@@ -1,7 +1,7 @@
 import routes from "./routes";
 import multer from "multer"
 
-const multerVideo = multer({ dest: 'videos' });
+const multerVideo = multer({ dest: "uploads/videos/" });
 
 export const localMiddleware = (req, res, next) => {
   // 로컬에 추가하기
