@@ -1,22 +1,22 @@
-//global
-const HOME = '/';
-const JOIN = '/join';
-const LOGIN = '/login';
-const LOGOUT = '/logout';
-const SEARCH = '/search';
+// Global
+const HOME = "/";
+const JOIN = "/join";
+const LOGIN = "/login";
+const LOGOUT = "/logout";
+const SEARCH = "/search";
 
-//users
-const USERS = '/users';
-const USER_PROFILE = '/:id';
-const USER_EDIT_PROFILE = '/edit-profile';
-const USER_CHANGE_PASSWORD = '/change-password';
+// Users
+const USERS = "/users";
+const USER_DETAIL = "/:id";
+const EDIT_PROFILE = "/edit-profile";
+const CHANGE_PASSWORD = "/change-password";
 
-//videos
-const VIDEOS = '/videos';
-const UPLOAD = '/upload';
-const VIDEO_DETAIL = '/:id';
-const VIDEO_EDIT = '/edit-video';
-const VIDEO_DELETE = '/delete-video';
+// Videos
+const VIDEOS = "/videos";
+const UPLOAD = "/upload";
+const VIDEO_DETAIL = "/:id";
+const EDIT_VIDEO = "/:id/edit";
+const DELETE_VIDEO = "/:id/delete";
 
 const routes = {
   home: HOME,
@@ -25,15 +25,15 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userProfile: id => {
+  userDetail: id => {
     if (id) {
       return `/users/${id}`;
     } else {
-      return USER_PROFILE;
+      return USER_DETAIL;
     }
   },
-  editProfile: USER_EDIT_PROFILE,
-  changePassword: USER_CHANGE_PASSWORD,
+  editProfile: EDIT_PROFILE,
+  changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
   upload: UPLOAD,
   videoDetail: id => {
@@ -43,8 +43,8 @@ const routes = {
       return VIDEO_DETAIL;
     }
   },
-  editVideo: VIDEO_EDIT,
-  deleteVideo: VIDEO_DELETE,
+  editVideo: EDIT_VIDEO,
+  deleteVideo: DELETE_VIDEO
 };
 
 export default routes;
