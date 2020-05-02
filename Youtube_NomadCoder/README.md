@@ -776,6 +776,20 @@ app.listen(PORT, handleListening);
           each item in videos
               h1= item.title
               p= item.description
+
+
+  //upload.pug
+  extends layouts/main
+
+  block content
+    .form-container
+      form(action=`/videos${routes.upload}`, method="post", enctype="multipart/form-data")
+        label(for="file") Video File
+        input(type="file", id="file", name="videoFile", required=true, accept="video/*")
+        input(type="text", placeholder="Title", name="title", required=true)
+        textarea(name="description", placeholder="Description", required=true)
+        input(type="submit", value="Upload Video")
+
   ```
 <br><br>
 

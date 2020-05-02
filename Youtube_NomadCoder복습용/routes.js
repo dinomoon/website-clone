@@ -8,7 +8,7 @@ const SEARCH = '/search';
 //users
 const USERS = '/users';
 const USER_PROFILE = '/:id';
-const USER_EDIT_PROFILE = 'edit-profile';
+const USER_EDIT_PROFILE = '/edit-profile';
 const USER_CHANGE_PASSWORD = '/change-password';
 
 //videos
@@ -25,14 +25,26 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userProfile: USER_PROFILE,
+  userProfile: id => {
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_PROFILE;
+    }
+  },
   editProfile: USER_EDIT_PROFILE,
   changePassword: USER_CHANGE_PASSWORD,
   videos: VIDEOS,
   upload: UPLOAD,
-  videoDetail: VIDEO_DETAIL,
+  videoDetail: id => {
+    if (id) {
+      return `/videos/${id}`;
+    } else {
+      return VIDEO_DETAIL;
+    }
+  },
   editVideo: VIDEO_EDIT,
   deleteVideo: VIDEO_DELETE,
 };
 
-module.exports = routes;
+export default routes;

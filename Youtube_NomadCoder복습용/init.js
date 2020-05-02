@@ -1,7 +1,6 @@
-const app = require("./app");
+import app from "./app";
 const PORT = 5000;
 
 const handleListening = () => console.log("Hello");
 
-app.get('/', (req, res) => res.send("HEllo"));
 app.listen(PORT, handleListening);
