@@ -1,10 +1,12 @@
 header.header
     .header__column
-        i.fab.fa-youtube
+        a(href=routes.home)
+            i.fab.fa-youtube
     .header__column
       form(action=routes.search, method="get")
           input(type="text", placeholder="Search by term...", name="term")
     .header__column
+        ul
             if !user.isAuthenticated
                 li
                     a(href=routes.join) Join

@@ -3,7 +3,8 @@ extends layouts/main
 block content
   .video__player
     video(src=`/${video.fileUrl}`)
-  .video_info
-    h5.video__title=video.title
-    span.video__views=video.views
-    p.video_description=video.description
+  .video__info
+    a(href=routes.editVideo) Edit Video
+    h2=video.title
+    span=video.views
+    p=video.description

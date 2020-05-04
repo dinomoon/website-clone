@@ -1,7 +1,7 @@
 extends layouts/main
 
 block content
-  form(action=routes.editVideo(video.id), method="post")
+  form(action=`/videos${routes.editVideo}`, method="post")
     input(type="text", placeholder="Title", name="title", value=video.title)
     textarea(name="description", placeholder="Description")=video.description
     input(type="submit", value="Update Video")

@@ -5,14 +5,10 @@ const CommentSchema = new mongoose.Schema({
     type: String,
     required: "Text is required"
   },
-  createAt: {
+  createdAt: {
     type: Date,
     default: Date.now
   }
-  // video: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "Video"
-  // }
 });
 
 const model = mongoose.model("Comment", CommentSchema);

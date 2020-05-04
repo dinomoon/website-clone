@@ -2,7 +2,7 @@ extends layouts/main
 
 block content
   .form-container
-    form(action=routes.editProfile, method='post')
+    form(action=`/users${routes.editProfile}`, method='post')
       label(for='avatar') Avatar
       input(type='file', id='avatar', name='avatar')
       input(type='text', placeholder='Name', name='name')

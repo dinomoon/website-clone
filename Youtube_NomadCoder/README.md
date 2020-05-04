@@ -1118,7 +1118,7 @@ app.listen(PORT, handleListening);
   - 3.5 Home Controller Finished
     1. videoController.js 수정
         - async와 await? Video의 모든 내용을 가져올 때까지 다른 것들을 못하게 막는다. (왜냐하면 자바스크립트는 기본적으로 여러일을 동시에 시행하기 때문에 아직 Video들의 정보를 다 가져오지 않았는 데 다른 함수를 실행하다가 Video를 만날 수 있기 때문!)
-        - await는 성공하든 실패하는 끝나면 계속 수행한다. 따라서 try, catch문으로 error를 잡아햐한다. 그리고 에러가 발생하더라도 화면을 보여줄 수 있다.
+        - await는 성공하든 실패하는 끝나면 계속 수행한다. 따라서 try, catch문으로 error를 잡아햐한다. 그래야 에러가 발생하더라도 화면을 보여줄 수 있다.
 
     ```js
     import Video from "../models/Video";
@@ -1183,13 +1183,15 @@ app.listen(PORT, handleListening);
   - 3.7 Uploading and Creating a Video Part Two
     1. 업로드는 됐지만 재생이 안됨. (link가 망가졌다고 함..)
         - const multerVideo = multer({ dest: 'uploads/videos' });이렇게 바꿔야함.
+        - 참고로 /uploads/videos이렇게 입력하면 C드라이브 바로 밑에 폴더가 생김
+    2. Video 수정하는 방법
         - 터미널에 mongo를 타이핑하고 엔터
         - use wetube
         - show collections
         - db.videos.remove({})
         - app.js에 app.use("/uploads", express.static("uploads")); 추가
         - 의미: /uploads URL로 가면 uploads라는 폴더 안으로 들어간다.
-    2. 지금은 영상을 업로드할 때 영상정보가 우리의 서버로 오는데 매우 좋지 않다. 누군가 용량이 매우 큰 영상을 올리면 서버가 다운될 수 있음.
+    3. 지금은 영상을 업로드할 때 영상정보가 우리의 서버로 오는데 매우 좋지 않다. 누군가 용량이 매우 큰 영상을 올리면 서버가 다운될 수 있음.
         - 나중에 바꿀 것임
   
   <br><br>
