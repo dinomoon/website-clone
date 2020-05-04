@@ -2,9 +2,9 @@ extends layouts/main
 
 block content
   .video__player
-    video(src=`/${video.fileUrl}`)
+    video(src=`/${video.fileUrl}` controls=true)
   .video__info
-    a(href=routes.editVideo) Edit Video
+    a(href=routes.editVideo(video.id)) Edit video
     h2=video.title
     span=video.views
     p=video.description
