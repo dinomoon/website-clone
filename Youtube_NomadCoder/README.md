@@ -214,39 +214,40 @@ app.listen(PORT, handleListening);
   app.use("/user", userRouter);
 
   export default app;
+
+  // init.js
+  import app from "./app";
+
+  const PORT = 4000;
+
+  const handleListening = () =>
+    console.log(`Listening on: http://localhost:${PORT}`);
+
+  app.listen(PORT, handleListening);
+
+  // router.js
+  import express from "express";
+
+  export const userRouter = express.Router(); //userRouter만 export됨
+  //export default userRouter -> router.js전체가 export됨
+
+  userRouter.get("/", (req, res) => res.send("<h1>user Home</h1>"));
+  userRouter.get("/table", (req, res) => res.send("user Table"));
+  userRouter.get("/photo", (req, res) => res.send("user Photo"));
+  userRouter.get("/info/family", (req, res) => res.send("user Family"));
   ```
-
-// init.js
-import app from "./app";
-
-const PORT = 4000;
-
-const handleListening = () => console.log(`Listening on: http://localhost:${PORT}`);
-
-app.listen(PORT, handleListening);
-
-// router.js
-import express from "express";
-
-export const userRouter = express.Router(); //userRouter만 export됨
-//export default userRouter -> router.js전체가 export됨
-
-userRouter.get('/', (req, res) => res.send("<h1>user Home</h1>"));
-userRouter.get('/table', (req, res) => res.send("user Table"));
-userRouter.get('/photo', (req, res) => res.send("user Photo"));
-userRouter.get('/info/family', (req, res) => res.send("user Family"));
-
-````
 
 <br><br>
 
 - 2.9 MVC Pattern Part One
-1. MVC(Model, View, Controller)
-    - Model -> data
-    - View -> how does the data look
-    - Controller -> function that looks for the data
-    - 세 가지를 모두 분리해야함
-2. routers라는 폴더를 만들고 안에 userRouter, videoRouter, globalRouter를 만듦.
+
+  1. MVC(Model, View, Controller)
+     - Model -> data
+     - View -> how does the data look
+     - Controller -> function that looks for the data
+     - 세 가지를 모두 분리해야함
+  2. routers라는 폴더를 만들고 안에 userRouter, videoRouter, globalRouter를 만듦.
+
 ```javascript
 //app.js
 //const express = require("express");
@@ -266,12 +267,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
 app.use(morgan("dev"));
 
-app.use('/', globalRouter);
-app.use('/users', userRouter);
-app.use('/videos', videoRouter);
+app.use("/", globalRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
 
 export default app;
-
 
 //globalRouter.js
 import express from "express";
@@ -280,7 +280,6 @@ const globalRouter = express.Router();
 
 export default globalRouter;
 
-
 //userRouter.js
 import express from "express";
 
@@ -288,14 +287,13 @@ const userRouter = express.Router();
 
 export default userRouter;
 
-
 //videoRouter.js
 import express from "express";
 
 const videoRouter = express.Router();
 
 export default videoRouter;
-````
+```
 
 <br><br>
 
@@ -522,32 +520,32 @@ html
     res.locals.routes = routes;
     next();
   };
+
+  //header.pug
+  header.header
+  .header**column
+  a(href=routes.home)
+  i.fab.fa-youtube
+  .header**column
+  ul
+  li
+  a(href=routes.join) join
+  li
+  a(href=routes.login) login
+
+  //footer.pug
+  footer.footer
+  .footer**icon
+  i.fab.fa-youtube
+  span.footer**text &copy; #{siteName} #{new Date().getFullYear()}
+
   ```
 
-//header.pug
-header.header
-.header**column
-a(href=routes.home)
-i.fab.fa-youtube
-.header**column
-ul
-li
-a(href=routes.join) join
-li
-a(href=routes.login) login
-
-//footer.pug
-footer.footer
-.footer**icon
-i.fab.fa-youtube
-span.footer**text &copy; #{siteName} #{new Date().getFullYear()}
-
-````
-
 <br><br>
+
 - 2.17 Template Variables in Pug
-1. render함수의 첫 번째 인자는 템플릿이고, 두 번째 인자는 템플릿에 추가할 정보가 담긴 객체이다.
-  - 템플릿 마다 다른 변수를 전달하고 싶을 때 사용한다.
+  1. render함수의 첫 번째 인자는 템플릿이고, 두 번째 인자는 템플릿에 추가할 정보가 담긴 객체이다.
+     - 템플릿 마다 다른 변수를 전달하고 싶을 때 사용한다.
 
 ```javascript
 export const home = (req, res) => res.render('home', { pageTitle: 'Home' });
@@ -571,7 +569,7 @@ html
     main
       block content
     include ../partials/footer
-````
+```
 
 <br><br>
 
@@ -590,70 +588,70 @@ html
     .header__column
         form(action=routes.search, method="get")
             input(type="text", placeholder="Search by term...", name="term")
+
+  //videoController.js
+  export const search = (req, res) => {
+  const { query: { term: searchingBy } } = req;
+  res.render('search', { pageTitle: 'Search', searchingBy });
+  }
+
+  //search.pug
+  extends layouts/main
+
+  block content
+  .search\_\_header
+  h2 Searching for #{searchingBy}
+
   ```
 
-//videoController.js
-export const search = (req, res) => {
-const { query: { term: searchingBy } } = req;
-res.render('search', { pageTitle: 'Search', searchingBy });
-}
-
-//search.pug
-extends layouts/main
-
-block content
-.search\_\_header
-h2 Searching for #{searchingBy}
-
-````
-
-
-
 <br><br>
+
 - 2.19 Join, Log in HTML
+
 1. join.pug, login.pug, socialLogin.pug 추가
 2. 클래스명을 지을 때 BEM(Block Element Modifier)사용
 
-```js
-//join.pug
-extends layouts/main
+   ```js
+   //join.pug
+   extends layouts/main
 
-block content
-    p Join
-    .form__container
-        form(action="routes.join", method="post")
-            input(type="text", name="name", placeholder="Full Name")
-            input(type="email", name="email", placeholder="Email")
-            input(type="password", name="password", placeholder="Password")
-            input(type="password", name="password2", placeholder="Verify Password")
-            input(type="submit",value="Join Now")
-        include partials/socialLogin
-
-
-//login.pug
-extends layouts/main
-
-block content
-    p Login
-    .form__container
-        form(action="routes.login", method="post")
-            input(type="email", name="email", placeholder="Email")
-            input(type="password", name="password", placeholder="Password")
-            input(type="submit",value="Log In")
-        include partials/socialLogin
+   block content
+       p Join
+       .form__container
+           form(action="routes.join", method="post")
+               input(type="text", name="name", placeholder="Full Name")
+               input(type="email", name="email", placeholder="Email")
+               input(type="password", name="password", placeholder="Password")
+               input(type="password", name="password2", placeholder="Verify Password")
+               input(type="submit",value="Join Now")
+           include partials/socialLogin
+   ```
 
 
-//socialLogin.pug
-.social-login
-button.social-login--github
-    span
-        i.fab.fa-github
-    |Continue with Github
-button.social-login--facebook
-    span
-        i.fab.fa-facebook
-    |Continue with Facebook
-````
+    //login.pug
+    extends layouts/main
+
+    block content
+        p Login
+        .form__container
+            form(action="routes.login", method="post")
+                input(type="email", name="email", placeholder="Email")
+                input(type="password", name="password", placeholder="Password")
+                input(type="submit",value="Log In")
+            include partials/socialLogin
+
+
+    //socialLogin.pug
+    .social-login
+    button.social-login--github
+        span
+            i.fab.fa-github
+        |Continue with Github
+    button.social-login--facebook
+        span
+            i.fab.fa-facebook
+        |Continue with Facebook
+    ````
 
 <br><br>
 
@@ -677,29 +675,31 @@ button.social-login--facebook
               input(type="email", placeholder="Email", name="email")
               input(type="submit", value="Update Profile")
           a.form-container__link(href=`/users${routes.changePassword}`) Change Password
+
+  //userRouter.js
+  import express from "express";
+  import routes from "../routes";
+  import { users, userDetail, editProfile, changePassword } from "../controllers/userController";
+
+  const userRouter = express.Router();
+
+  userRouter.get(routes.users, users);
+  userRouter.get(routes.editProfile, editProfile);
+  userRouter.get(routes.userDetail, userDetail);
+  userRouter.get(routes.changePassword, changePassword);
+
+  export default userRouter;
+
   ```
 
-//userRouter.js
-import express from "express";
-import routes from "../routes";
-import { users, userDetail, editProfile, changePassword } from "../controllers/userController";
+  <br><br>
 
-const userRouter = express.Router();
-
-userRouter.get(routes.users, users);
-userRouter.get(routes.editProfile, editProfile);
-userRouter.get(routes.userDetail, userDetail);
-userRouter.get(routes.changePassword, changePassword);
-
-export default userRouter;
-
-````
-<br><br>
 - 2.21 Home Controller
+
 1. editViedo.pug, changePassword.pug추가
 1. 가짜 db.js 생성
-2. home.pug 수정(db내용 출력)
-3. upload.pug 추가
+1. home.pug 수정(db내용 출력)
+1. upload.pug 추가
 
 ```js
 //editVideo.pug
@@ -811,24 +811,24 @@ block content
       textarea(name="description", placeholder="Description", required=true)
       input(type="submit", value="Upload Video")
 
-````
+```
 
 <br><br>
 
 - 2.22 Home Controller Part Two
 
-  1. mixin폴더와 그 안에 videoBlock.pug파일 생성
-     - mixin: 코드를 복붙하지 않고 재활용하는 것, pug의 함수
-  2. mixin을 쓰기 위해서 home.pug에서 videoBlock을 include하고 +videoBlock으로 값들을 넘겨준다.
+1. mixin폴더와 그 안에 videoBlock.pug파일 생성
+   - mixin: 코드를 복붙하지 않고 재활용하는 것, pug의 함수
+2. mixin을 쓰기 위해서 home.pug에서 videoBlock을 include하고 +videoBlock으로 값들을 넘겨준다.
 
-  ```js
-  //videoBlock.pug
-  mixin videoBlock(video = {})
-  .videoBlock
-    video.videoBlock__thumbnail(src=video.videoFile, controls=true)
-    h4.videoBlock__title=video.title
-    h6.videoBlock__views=video.views
-  ```
+```js
+//videoBlock.pug
+mixin videoBlock(video = {})
+.videoBlock
+  video.videoBlock__thumbnail(src=video.videoFile, controls=true)
+  h4.videoBlock__title=video.title
+  h6.videoBlock__views=video.views
+
 
 //home.pug
 extends layouts/main
@@ -843,47 +843,50 @@ title: video.title,
 views: video.views
 })
 
-````
+```
 
 <br><br>
+
 - 2.23 Join Controller
+
 1. body-parser를 사용하지 않으면 사용자가 입력한 정보를 받을 수 없다.
 
-```js
-//userController.js
-import routes from "../routes";
+   ```js
+   //userController.js
+   import routes from "../routes";
 
-export const getJoin = (req, res) => {
-  res.render('join', { pageTitle: 'Join' });
-}
-export const postJoin = (req, res) => {
-  const {
-    body: { name, email, password, password2 }
-  } = req;
-  if (password !== password2) {
-    res.status(400);
-    res.render('join', { pageTitle: 'Join' });
-  } else {
-    //To Do: Register User
-    //To Do: Log user in
-    res.redirect(routes.home);
-  }
-}
+   export const getJoin = (req, res) => {
+     res.render("join", { pageTitle: "Join" });
+   };
+   export const postJoin = (req, res) => {
+     const {
+       body: { name, email, password, password2 },
+     } = req;
+     if (password !== password2) {
+       res.status(400);
+       res.render("join", { pageTitle: "Join" });
+     } else {
+       //To Do: Register User
+       //To Do: Log user in
+       res.redirect(routes.home);
+     }
+   };
+   ```
 
 
-//globalRouter.js
-import express from "express";
-import routes from "../routes";
-import { home, search } from "../controllers/videoController";
-import { getJoin, postJoin, logout } from "../controllers/userController";
+    //globalRouter.js
+    import express from "express";
+    import routes from "../routes";
+    import { home, search } from "../controllers/videoController";
+    import { getJoin, postJoin, logout } from "../controllers/userController";
 
-const globalRouter = express.Router();
+    const globalRouter = express.Router();
 
-globalRouter.get(routes.join, getJoin);
-globalRouter.post(routes.join, postJoin);
+    globalRouter.get(routes.join, getJoin);
+    globalRouter.post(routes.join, postJoin);
 
-export default globalRouter;
-````
+    export default globalRouter;
+    ````
 
 <br><br>
 
@@ -912,47 +915,48 @@ export default globalRouter;
   };
 
   export default routes;
+
+  //userRouter.js
+  userRouter.get(routes.userDetail(), userDetail);
+
+  export default userRouter;
+
+  //header.pug
+  header.header
+  .header**column
+  a(href=routes.home)
+  i.fab.fa-youtube
+  .header**column
+  form(action=routes.search, method='get')
+  input(type='text', placeholder='Search by term...', name='term')
+  .header\_\_column
+  ul
+  if !user.isAuthenticated
+  li
+  a(href=routes.join) join
+  li
+  a(href=routes.login) login
+  else
+  li
+  a(href=`/videos${routes.upload}`) Upload
+  li
+  a(href=routes.userDetail(user.id)) userDetail
+  li
+  a(href=routes.logout) logout
+
   ```
 
-//userRouter.js
-userRouter.get(routes.userDetail(), userDetail);
-
-export default userRouter;
-
-//header.pug
-header.header
-.header**column
-a(href=routes.home)
-i.fab.fa-youtube
-.header**column
-form(action=routes.search, method='get')
-input(type='text', placeholder='Search by term...', name='term')
-.header\_\_column
-ul
-if !user.isAuthenticated
-li
-a(href=routes.join) join
-li
-a(href=routes.login) login
-else
-li
-a(href=`/videos${routes.upload}`) Upload
-li
-a(href=routes.userDetail(user.id)) userDetail
-li
-a(href=routes.logout) logout
-
-````
-<br><br>
+  <br><br>
 
 - 2.25 More Controllers
+
 1. videoDetail
 2. log out
-    - log out 누르면 홈페이지로 이동
-    - redirect이용
+   - log out 누르면 홈페이지로 이동
+   - redirect이용
 3. upload
-    - upload하면 만든 영상의 상세페이지로 이동
-    - redirect이용
+   - upload하면 만든 영상의 상세페이지로 이동
+   - redirect이용
 4. 정보를 모두 입력하도록 required=true추가
 
 ```js
@@ -987,282 +991,272 @@ input(type="file", id="file", name="file", required=true)
 input(type="text", placeholder="Title", name="title", required=true)
 textarea(name="description", placeholder="Description", required=true)
 input(type="submit", value="Upload Video")
-````
+```
 
 <br><br><br>
 
 ## 3. MongoDB
 
-<br><br>
-
 - 3.0 MongoDB and Mongoose
-  - 데이터 베이스의 종류 2가지
-    - SQL과 NoSQL
-    - MongoDB는 NoSQL이다.
-  - MongoDB
-    - 가볍고 사용하기 편리하다.
-  - Mongoose
-    - elegant MongoDB object modeling for node.js
-    - 자바스크립트에 MongoDB를 연결하기 위한 Adapter의 역할
+- 데이터 베이스의 종류 2가지
+  - SQL과 NoSQL
+  - MongoDB는 NoSQL이다.
+- MongoDB
+  - 가볍고 사용하기 편리하다.
+- Mongoose
+  - elegant MongoDB object modeling for node.js
+  - 자바스크립트에 MongoDB를 연결하기 위한 Adapter의 역할
 
 <br><br>
 
 - 3.1 Connecting to MongoDB
 
-  1. dotenv설치
-     - 데이터베이스에서 숨기고 싶은 것을 넣는 곳
-  2. db.js작성
+1. dotenv설치
+   - 데이터베이스에서 숨기고 싶은 것을 넣는 곳
+2. db.js작성
 
-  ```js
-  import mongoose from "mongoose";
+```js
+import mongoose from "mongoose";
 
-  mongoose.connect(
-    //database가 저장되어 있는 곳
-    //"mongodb://localhost:포트번호/Database이름"
-    "mongodb://127.0.0.1:27017/wetube",
-    {
-      //새로운 버전이 나왔을 때 어떻게 할 것인지에 대한 것
-      useNewUrlParser: true,
-      useFindAndModify: false,
-    }
-  );
+mongoose.connect(
+  //database가 저장되어 있는 곳
+  //"mongodb://localhost:포트번호/Database이름"
+  "mongodb://127.0.0.1:27017/wetube",
+  {
+    //새로운 버전이 나왔을 때 어떻게 할 것인지에 대한 것
+    useNewUrlParser: true,
+    useFindAndModify: false,
+  }
+);
 
-  const db = mongoose.connection;
+const db = mongoose.connection;
 
-  const handleOpen = () => console.log("✅ Connected to DB");
-  const handleError = () => console.log("❌");
+const handleOpen = () => console.log("✅ Connected to DB");
+const handleError = () => console.log("❌");
 
-  db.once("open", handleOpen);
-  db.on("error", handleError);
-  ```
+db.once("open", handleOpen);
+db.on("error", handleError);
+```
 
-  <br><br>
+<br><br>
 
 - 3.2 Configuring Dot Env
 
-  1. .env파일 생성
-  2. db.js 수정
-     - dotenv.config()를 사용해 .env파일 안에 있는 정보를 불러올 수 있음.
-  3. init.js 수정
+1. .env파일 생성
+2. db.js 수정
+   - dotenv.config()를 사용해 .env파일 안에 있는 정보를 불러올 수 있음.
+3. init.js 수정
 
-  ```js
-  //.env
-  MONGO_URL = "mongodb://127.0.0.1:27017/wetube";
-  PORT = 4000;
-  ```
+```js
+//.env
+MONGO_URL = "mongodb://127.0.0.1:27017/wetube";
+PORT = 4000;
 
+//db.js
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-    //db.js
-    import mongoose from "mongoose";
-    import dotenv from "dotenv";
-    dotenv.config();
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+});
 
-    mongoose.connect(
-      process.env.MONGO_URL,
-      {
-        useNewUrlParser: true,
-        useFindAndModify: false
-      }
-    );
+const db = mongoose.connection;
 
-    const db = mongoose.connection;
+const handleOpen = () => console.log("✅ Connected to DB");
+const handleError = () => console.log("❌");
 
-    const handleOpen = () => console.log("✅ Connected to DB");
-    const handleError = () => console.log("❌")
+db.once("open", handleOpen);
+db.on("error", handleError);
 
-    db.once("open", handleOpen);
-    db.on("error", handleError);
+//init.js
+import "./db";
+import app from "./app";
+import dotenv from "dotenv";
+dotenv.config();
 
+const PORT = process.env.PORT || 5000;
 
-    //init.js
-    import "./db";
-    import app from "./app";
-    import dotenv from "dotenv";
-    dotenv.config();
+const handleListening = () =>
+  console.log(`Listening on: http://localhost:${PORT}`);
 
-    const PORT = process.env.PORT || 5000;
-
-    const handleListening = () => console.log(`Listening on: http://localhost:${PORT}`);
-
-    app.listen(PORT, handleListening);
-    ```
+app.listen(PORT, handleListening);
+```
 
 <br><br>
 
 - 3.3 Video Model
 
-  1. models폴더 생성
-  2. Video.js파일 생성
+1. models폴더 생성
+2. Video.js파일 생성
 
-  ```js
-  import mongoose from "mongoose";
+```js
+import mongoose from "mongoose";
 
-  const VideoSchema = new mongoose.Schema({
-    fileUrl: {
-      type: String,
-      required: "File URL is required",
-    },
-    title: {
-      type: String,
-      required: "Title is required",
-    },
-    description: String,
-    views: {
-      type: Number,
-      default: 0,
-    },
-    createAt: {
-      type: Date,
-      default: Date.now,
-    },
-  });
+const VideoSchema = new mongoose.Schema({
+  fileUrl: {
+    type: String,
+    required: "File URL is required",
+  },
+  title: {
+    type: String,
+    required: "Title is required",
+  },
+  description: String,
+  views: {
+    type: Number,
+    default: 0,
+  },
+  createAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-  const model = mongoose.model("Video", VideoSchema);
-  export default model;
-  ```
+const model = mongoose.model("Video", VideoSchema);
+export default model;
+```
 
-  <br><br>
+<br><br>
 
 - 3.4 Comment Model
 
-  1. Comment.js생성
-  2. Video.js와 Comment.js의 연결
-     - 어떻게 연결할 것인가?
-     - 두 가지 방법
-     - 첫 번째: Comment.js에 Video의 id를 넘겨준다.
-     - 두 번째: Video.js에 Commnet의 id를 넘겨준다.
+1. Comment.js생성
+2. Video.js와 Comment.js의 연결
+   - 어떻게 연결할 것인가?
+   - 두 가지 방법
+   - 첫 번째: Comment.js에 Video의 id를 넘겨준다.
+   - 두 번째: Video.js에 Commnet의 id를 넘겨준다.
 
-  ```js
-  import mongoose from "mongoose";
+```js
+import mongoose from "mongoose";
 
-  const CommentSchema = new mongoose.Schema({
-    text: {
-      type: String,
-      required: "Text is required",
-    },
-    createAt: {
-      type: Date,
-      default: Date.now,
-    },
-    video: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Video",
-    },
-  });
+const CommentSchema = new mongoose.Schema({
+  text: {
+    type: String,
+    required: "Text is required",
+  },
+  createAt: {
+    type: Date,
+    default: Date.now,
+  },
+  video: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Video",
+  },
+});
 
-  const model = mongoose.model("Comment", CommentSchema);
-  export default model;
-  ```
+const model = mongoose.model("Comment", CommentSchema);
+export default model;
+```
 
 <br><br>
 
 - 3.5 Home Controller Finished
 
-  1. videoController.js 수정
-     - async와 await? Video의 모든 내용을 가져올 때까지 다른 것들을 못하게 막는다. (왜냐하면 자바스크립트는 기본적으로 여러일을 동시에 시행하기 때문에 아직 Video들의 정보를 다 가져오지 않았는 데 다른 함수를 실행하다가 Video를 만날 수 있기 때문!)
-     - await는 성공하든 실패하는 끝나면 계속 수행한다. 따라서 try, catch문으로 error를 잡아햐한다. 그래야 에러가 발생하더라도 화면을 보여줄 수 있다.
+1. videoController.js 수정
+   - async와 await? Video의 모든 내용을 가져올 때까지 다른 것들을 못하게 막는다. (왜냐하면 자바스크립트는 기본적으로 여러일을 동시에 시행하기 때문에 아직 Video들의 정보를 다 가져오지 않았는 데 다른 함수를 실행하다가 Video를 만날 수 있기 때문!)
+   - await는 성공하든 실패하는 끝나면 계속 수행한다. 따라서 try, catch문으로 error를 잡아햐한다. 그래야 에러가 발생하더라도 화면을 보여줄 수 있다.
 
-  ```js
-  import Video from "../models/Video";
+```js
+import Video from "../models/Video";
 
-  export const home = async (req, res) => {
-    try {
-      const videos = await Video.find();
-      res.render("home", { pageTitle: "Home", videos });
-    } catch (error) {
-      console.log(error);
-      res.render("home", { pageTitle: "Home", videos: [] });
-    }
-  };
-  ```
+export const home = async (req, res) => {
+  try {
+    const videos = await Video.find();
+    res.render("home", { pageTitle: "Home", videos });
+  } catch (error) {
+    console.log(error);
+    res.render("home", { pageTitle: "Home", videos: [] });
+  }
+};
+```
 
-  <br><br>
+<br><br>
 
 - 3.6 Uploading and Creating a Video
 
-  1. 파일 자체를 저장하는 것이 아니라 파일의 위치를 저장하는 것이다.
-  2. 비디오만 업로드 할 수 있게 하기
-     - input(type="file", id="file", name="file", required=true, accept="video/\*")
-  3. multer
-     - file을 upload하고 URL을 반환하는 middleware
-     - github 사용법 보고 사용합시다.
+1. 파일 자체를 저장하는 것이 아니라 파일의 위치를 저장하는 것이다.
+2. 비디오만 업로드 할 수 있게 하기
+   - input(type="file", id="file", name="file", required=true, accept="video/\*")
+3. multer
+   - file을 upload하고 URL을 반환하는 middleware
+   - github 사용법 보고 사용합시다.
 
-  ```js
-  //middlewares.js
-  import routes from "./routes";
-  import multer from "multer"
+```js
+//middlewares.js
+import routes from "./routes";
+import multer from "multer";
 
-  const multerVideo = multer({ dest: 'videos' });
+const multerVideo = multer({ dest: "videos" });
 
-  export const localMiddleware = (req, res, next) => {
-    // 로컬에 추가하기
-    res.locals.siteName = 'WeTube';
-    res.locals.routes = routes;
-    res.locals.user = {
-      isAuthenticated: true,
-      id: 1,
-    }
-    next();
-  ```
+export const localMiddleware = (req, res, next) => {
+  // 로컬에 추가하기
+  res.locals.siteName = "WeTube";
+  res.locals.routes = routes;
+  res.locals.user = {
+    isAuthenticated: true,
+    id: 1,
+  };
+  next();
 
-
-    //VideoController.js
-    export const postUpload = async (req, res) => {
+  //VideoController.js
+  export const postUpload = async (req, res) => {
     const {
       body: { title, description },
-      file: { path }
+      file: { path },
     } = req;
     const newVideo = await Video.create({
       fileUrl: path,
       title,
-      description
+      description,
     });
     res.redirect(routes.videoDetail(newVideo.id));
-
-}
+  };
 };
 
-    export const uploadVideo = multerVideo.single("videoFile");
-    ```
+export const uploadVideo = multerVideo.single("videoFile");
+```
 
 <br><br>
 
 - 3.7 Uploading and Creating a Video Part Two
-  1. 업로드는 됐지만 재생이 안됨. (link가 망가졌다고 함..)
-     - const multerVideo = multer({ dest: 'uploads/videos' });이렇게 바꿔야함.
-     - 참고로 /uploads/videos이렇게 입력하면 C드라이브 바로 밑에 폴더가 생김
-  2. Video 수정하는 방법
-     - 터미널에 mongo를 타이핑하고 엔터
-     - use wetube
-     - show collections
-     - db.videos.remove({})
-     - app.js에 app.use("/uploads", express.static("uploads")); 추가
-     - 의미: /uploads URL로 가면 uploads라는 폴더 안으로 들어간다.
-  3. 지금은 영상을 업로드할 때 영상정보가 우리의 서버로 오는데 매우 좋지 않다. 누군가 용량이 매우 큰 영상을 올리면 서버가 다운될 수 있음.
-     - 나중에 바꿀 것임
+
+1. 업로드는 됐지만 재생이 안됨. (link가 망가졌다고 함..)
+   - const multerVideo = multer({ dest: 'uploads/videos' });이렇게 바꿔야함.
+   - 참고로 /uploads/videos이렇게 입력하면 C드라이브 바로 밑에 폴더가 생김
+2. Video 수정하는 방법
+   - 터미널에 mongo를 타이핑하고 엔터
+   - use wetube
+   - show collections
+   - db.videos.remove({})
+   - app.js에 app.use("/uploads", express.static("uploads")); 추가
+   - 의미: /uploads URL로 가면 uploads라는 폴더 안으로 들어간다.
+3. 지금은 영상을 업로드할 때 영상정보가 우리의 서버로 오는데 매우 좋지 않다. 누군가 용량이 매우 큰 영상을 올리면 서버가 다운될 수 있음.
+   - 나중에 바꿀 것임
 
 <br><br>
 
 - 3.8 Getting Video by ID
 
-  1. Video의 정보 가져오기
-  2. 영상을 클릭했을 때 비디오 정보 보여주기
+1. Video의 정보 가져오기
+2. 영상을 클릭했을 때 비디오 정보 보여주기
 
-  ```js
-  //videoController.js
-  export const videoDetail = async (req, res) => {
-    const {
-      params: { id },
-    } = req;
-    try {
-      const video = await Video.findById(id);
-      res.render("videoDetail", { pageTitle: "Video Detail", video });
-    } catch (error) {
-      console.log(error);
-      res.redirect(routes.home);
-    }
-  };
-  ```
+```js
+//videoController.js
+export const videoDetail = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const video = await Video.findById(id);
+    res.render("videoDetail", { pageTitle: "Video Detail", video });
+  } catch (error) {
+    console.log(error);
+    res.redirect(routes.home);
+  }
+};
 
 //videoDetail.pug
 extends layouts/main
@@ -1289,6 +1283,7 @@ p.video_description=video.description
 <br><br>
 
 - 3.11 Installing ESLint
+
 1. 최신 비디오가 위에 오도록 비디오 정렬함.
 2. eslint란 무엇인가
 3. npm install eslint
@@ -1296,14 +1291,13 @@ p.video_description=video.description
 <br><br>
 
 - 3.12 Searching Videos
-1. regular expression을 사용해 손쉽게 searching을 합시다.
 
+1. regular expression을 사용해 손쉽게 searching을 합시다.
 
 <br>
 ## Webpack
 - 4.0 Introduction to Webpack
-  1. 모듈 번들러
-  2. 설치
-      - webpack-cli는 터미널에서 webpack을 사용할 수 있게 해준다.
-
-```
+1. 모듈 번들러
+2. 설치
+    - webpack-cli는 터미널에서 webpack을 사용할 수 있게 해준다.
+`````

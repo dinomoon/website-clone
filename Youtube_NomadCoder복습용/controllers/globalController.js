@@ -1,4 +1,9 @@
-export const home = (req, res) => res.render("home");
-export const search = (req, res) => res.render("search");
-export const signIn = (req, res) => res.render("signIn");
-export const signUp = (req, res) => res.render("signUp");
+export const home = (req, res) => res.render("home", { title: "Home" });
+export const search = (req, res) => {
+  const {
+    query: { term },
+  } = req;
+  res.render("search", { title: "Search", term });
+};
+export const signIn = (req, res) => res.render("signIn", { title: "Sign In" });
+export const signUp = (req, res) => res.render("signUp", { title: "Sign Up" });

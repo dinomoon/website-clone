@@ -1,4 +1,9 @@
 extends layouts/main
 
 block content
-  h1 signIn
+  form(action=routes.signIn, method="post")
+    span ID
+    input(type="text")
+    span PASSWORD
+    input(type="password")
+    button(type="submit") Sign In

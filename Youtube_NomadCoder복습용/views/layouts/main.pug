@@ -1,10 +1,19 @@
 doctype html
 html
   head
-  
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU", crossorigin="anonymous")
+    title #{title} | MunTube
   body
     header
-      h1 Header
+      .header__column
+        a(href=routes.home)
+          <i class="fab fa-youtube"></i>
+      .header__column
+        form(action=routes.search, method="get")
+          input(type="text", placeholder="searching for..", name="term")
+      .header__column
+        a(href=routes.signIn) Sign In
+        a(href=routes.signUp) Sign Up
     main
       block content
     footer

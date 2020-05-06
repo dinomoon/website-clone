@@ -1,4 +1,13 @@
 extends layouts/main
 
 block content
-  h1 signUp
+  form(action=routes.signUp, method="post")
+    span ID
+    input(type="text")
+    span E-MAIL
+    input(type="email")
+    span PASSWORD
+    input(type="password" name="password")
+    span Confirm PASSWORD
+    input(type="password" name="password_confirm")
+    button(type="submit") Sign Up
