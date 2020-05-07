@@ -1,0 +1,9 @@
+extends layouts/main
+
+block content
+  form(action=`${routes.videos}${routes.videoDetail}`, method="post")
+    label(for="file") Video File
+    input(type="file", id="file", name="videoFile", accept="video/*", required=true)
+    input(type="text", placeholder="title")
+    textarea(placeholder="description")
+    button(type="submit") 등록

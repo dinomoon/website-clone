@@ -12,8 +12,18 @@ html
         form(action=routes.search, method="get")
           input(type="text", placeholder="searching for..", name="term")
       .header__column
-        a(href=routes.signIn) Sign In
-        a(href=routes.signUp) Sign Up
+        //- ul
+        //-   li
+        //-     a(href=routes.signIn) Sign In
+        //-   li
+        //-     a(href=routes.signUp) Sign Up
+        ul
+          li
+            a(href=`${routes.videos}${routes.upload}`) Upload
+          li
+            a(href=`${routes.users}${routes.profileEdit}`) Profile Edit
+          li
+            a(href=routes.home) Sign Out
     main
       block content
     footer

@@ -1,4 +1,6 @@
 extends layouts/main
 
 block content
-  h1 userDetail
+  .form-container
+    form(action=`${routes.users}${routes.userDetail}`, method="post")
+      label(for="avatar") Avatar

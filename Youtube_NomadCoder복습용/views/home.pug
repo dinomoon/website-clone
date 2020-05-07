@@ -1,4 +1,7 @@
 extends layouts/main
 
 block content
-  h1 home
+  each video in videos
+    a(href=routes.videoDetail(video.id))
+      h2=video.title
+      video(src=video.videoFile, constols=true)
