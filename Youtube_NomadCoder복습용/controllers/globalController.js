@@ -1,6 +1,6 @@
-import { videos } from "../db";
-
-export const home = (req, res) => res.render("home", { title: "Home", videos });
+export const home = async (req, res) => {
+  res.render("home", { title: "Home" });
+};
 export const search = (req, res) => {
   const {
     query: { term },

@@ -3,8 +3,8 @@ extends layouts/main
 block content
   form(action=routes.signIn, method="post")
     span ID
-    input(type="text")
+    input(type="text" required=true)
     span PASSWORD
-    input(type="password")
+    input(type="password" required=true)
     button(type="submit") Sign In
   include layouts/socialLogin

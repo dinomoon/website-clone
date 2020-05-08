@@ -8,4 +8,4 @@ block content
       input(type="text", placeholder="Name", name="name")
       input(type="email", placeholder="Email", name="email")
       input(type="submit", value="Update Profile")
-    a.form-container__link(href=`${routes.users}${routes.changePassword}`) Change Password
+    a.form-container__link(href=routes.changePassword(1234)) Change Password

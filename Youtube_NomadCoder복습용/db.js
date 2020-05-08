@@ -1,8 +1,16 @@
-export const videos = [
-  {
-    id: 1234,
-    title: "BigBuckBunny",
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-  },
-];
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+
+mongoose.connect("mongodb://127.0.0.1:27017/MunTube", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+});
+
+const db = mongoose.connection;
+
+const handleOpen = () => console.log("✅ Connected to DB");
+const handleError = () => console.error.bind(console, "connection error:");
+
+db.once("open", handleOpen);
+db.on("error", handleError);
