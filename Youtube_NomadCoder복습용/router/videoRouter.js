@@ -2,9 +2,11 @@ import express from "express";
 import routes from "../routes";
 import {
   videoDetail,
-  videoEdit,
+  getVideoEdit,
+  postVideoEdit,
   getUpload,
   postUpload,
+  videoDelete,
 } from "../controllers/videoController";
 import { multerMiddleware } from "../localMiddleware";
 
@@ -14,6 +16,10 @@ videoRouter.get(routes.upload, getUpload);
 videoRouter.post(routes.upload, multerMiddleware, postUpload);
 
 videoRouter.get(routes.videoDetail(), videoDetail);
-videoRouter.get(routes.videoEdit, videoEdit);
+
+videoRouter.get(routes.videoEdit(), getVideoEdit);
+videoRouter.post(routes.videoEdit(), postVideoEdit);
+
+videoRouter.get(routes.videoDelete(), videoDelete);
 
 export default videoRouter;

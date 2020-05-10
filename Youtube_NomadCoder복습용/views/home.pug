@@ -1,7 +1,12 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
-  //- each video in videos
-  //-   a(href=routes.videoDetail(video.id))
-  //-     h2=video.title
-  //-     video(src=video.videoFile, constols=true)
+  each video in videos
+    a(href=routes.videoDetail(video.id))
+      +videoBlock({
+        fileUrl: video.fileUrl,
+        title: video.title,
+        description: video.description,
+        views: video.views
+      })
