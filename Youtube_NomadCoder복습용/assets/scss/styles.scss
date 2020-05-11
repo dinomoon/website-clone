@@ -14,10 +14,17 @@ a {
 
 body {
   margin: 0;
+  background-color: antiquewhite;
+  color: #000;
   main {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
     .videoBlock {
-      color: orange;
-      background-color: orange;
+      video {
+        width: 320px;
+      }
+      margin: 0 20px;
     }
   }
 }
@@ -27,16 +34,19 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: #fff;
   .header__column {
     a {
-      margin-left: 20px;
       .fa-youtube {
+        margin-left: 20px;
         font-size: 24px;
         color: #e74c3c;
       }
     }
-
+    input {
+      width: 300px;
+      text-align: right;
+    }
     ul {
       display: flex;
       li {
@@ -44,4 +54,8 @@ header {
       }
     }
   }
+}
+
+footer {
+  text-align: center;
 }
