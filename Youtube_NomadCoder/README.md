@@ -1300,4 +1300,5 @@ p.video_description=video.description
 1. 모듈 번들러
 2. 설치
     - webpack-cli는 터미널에서 webpack을 사용할 수 있게 해준다.
-`````
+
+이후 내용은 블로그에 정리되어있다.
