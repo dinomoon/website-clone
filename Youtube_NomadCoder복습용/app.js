@@ -8,6 +8,8 @@ import globalRouter from "./router/globalRouter";
 import videoRouter from "./router/videoRouter";
 import userRouter from "./router/userRouter";
 import localMiddleware from "./localMiddleware";
+import passport from "passport";
+import "./passport";
 
 const app = express();
 
@@ -18,6 +20,9 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(localMiddleware);
 

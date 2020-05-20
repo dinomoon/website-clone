@@ -1,6 +1,7 @@
 import Video from "../models/Video";
 import User from "../models/User";
 import routes from "../routes";
+import passport from "passport";
 
 export const home = async (req, res) => {
   try {
@@ -25,11 +26,16 @@ export const search = async (req, res) => {
   }
   res.render("search", { title: "Search", term, videos });
 };
-export const signIn = (req, res) => res.render("signIn", { title: "Sign In" });
+export const getSignIn = (req, res) =>
+  res.render("signIn", { title: "Sign In" });
+export const postSignIn = passport.authenticate("local", {
+  failureRedirect: routes.signIn,
+  successRedirect: routes.home,
+});
 
 export const getSignUp = (req, res) =>
   res.render("signUp", { title: "Sign Up" });
-export const postSignUp = async (req, res) => {
+export const postSignUp = async (req, res, next) => {
   const {
     body: { name, email, password, password_confirm },
   } = req;
@@ -43,9 +49,10 @@ export const postSignUp = async (req, res) => {
         email,
       });
       await User.register(user, password);
-      res.redirect(routes.home);
+      next();
     } catch (error) {
       console.log(error);
+      res.redirect(routes.home);
     }
   }
 };

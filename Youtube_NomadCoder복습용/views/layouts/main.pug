@@ -14,17 +14,18 @@ html
           input(type="text", placeholder="searching for..", name="term")
       .header__column
         ul
-          li
-            a(href=routes.signIn) Sign In
-          li
-            a(href=routes.signUp) Sign Up
-        ul
-          li
-            a(href=`${routes.videos}${routes.upload}`) Upload
-          li
-            a(href=routes.profileEdit(1234)) Profile Edit
-          li
-            a(href=routes.home) Sign Out
+          if !user.isAuthenticated
+            li
+              a(href=routes.signIn) Sign In
+            li
+              a(href=routes.signUp) Sign Up
+          else
+            li
+              a(href=`${routes.videos}${routes.upload}`) Upload
+            li
+              a(href=routes.profileEdit(1234)) Profile Edit
+            li
+              a(href=routes.home) Sign Out
     main
       block content
     script(src="/static/main.js")
