@@ -12,10 +12,12 @@ import passport from "passport";
 import session from "express-session";
 import "./passport";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
+import MongoStore from "connect-mongo";
 dotenv.config();
 
 const app = express();
-
+const CokieStore = MongoStore(session);
 app.set("view engine", "pug");
 
 app.use(helmet());
@@ -29,6 +31,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
+    store: new CokieStore({ mongooseConnection: mongoose.connection }),
   })
 );
 app.use(passport.initialize());
