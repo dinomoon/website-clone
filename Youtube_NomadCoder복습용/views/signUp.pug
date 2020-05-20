@@ -3,9 +3,9 @@ extends layouts/main
 block content
   form(action=routes.signUp, method="post")
     span ID
-    input(type="text")
+    input(type="text" name="name")
     span E-MAIL
-    input(type="email")
+    input(type="email" name="email")
     span PASSWORD
     input(type="password" name="password")
     span Confirm PASSWORD

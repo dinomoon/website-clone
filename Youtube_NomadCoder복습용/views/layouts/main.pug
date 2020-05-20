@@ -13,11 +13,11 @@ html
         form(action=routes.search, method="get")
           input(type="text", placeholder="searching for..", name="term")
       .header__column
-        //- ul
-        //-   li
-        //-     a(href=routes.signIn) Sign In
-        //-   li
-        //-     a(href=routes.signUp) Sign Up
+        ul
+          li
+            a(href=routes.signIn) Sign In
+          li
+            a(href=routes.signUp) Sign Up
         ul
           li
             a(href=`${routes.videos}${routes.upload}`) Upload
