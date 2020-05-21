@@ -89,3 +89,18 @@ export const githubLogin = passport.authenticate("github");
 export const postGithubLogIn = (req, res) => {
   res.redirect(routes.home);
 };
+
+export const facebookLogin = passport.authenticate("facebook");
+
+export const facebookLoginCallback = (
+  accessToken,
+  refreshToken,
+  profile,
+  cb
+) => {
+  console.log(accessToken, refreshToken, profile, cb);
+};
+
+export const postFacebookLogin = (req, res) => {
+  res.redirect(routes.home);
+};

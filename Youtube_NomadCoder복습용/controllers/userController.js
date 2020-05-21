@@ -3,8 +3,17 @@ export const me = (req, res) => {
   console.log(req.user);
 };
 
-export const profile = (req, res) =>
-  res.render("profile", { title: "profile" });
+export const profile = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    const user = await User.findById(id);
+    res.render("profile", { pageTitle: "profile", user });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
 
 export const profileEdit = (req, res) =>
   res.render("profileEdit", { title: "profile-edit" });
