@@ -56,3 +56,12 @@ export const postSignUp = async (req, res, next) => {
     }
   }
 };
+
+export const logout = (req, res) => {
+  req.logout();
+  res.redirect(routes.home);
+};
+
+export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
+  console.log(accessToken, refreshToken, profile, cb);
+};
