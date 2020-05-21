@@ -6,8 +6,10 @@ const LOGOUT = "/logout";
 
 // users
 const USERS = "/users";
+const PROFILE = "/:id";
 const PROFILE_EDIT = "/:id/edit";
 const CHANGE_PASSWORD = "/:id/change-password";
+const ME = "/me";
 
 // videos
 const VIDEOS = "/videos";
@@ -26,6 +28,13 @@ const routes = {
   signUp: SIGNUP,
   logout: LOGOUT,
   users: USERS,
+  profile: (id) => {
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return PROFILE;
+    }
+  },
   profileEdit: (id) => {
     if (id) {
       return `/users/${id}/edit`;
@@ -40,6 +49,7 @@ const routes = {
       return CHANGE_PASSWORD;
     }
   },
+  me: ME,
   videos: VIDEOS,
   upload: UPLOAD,
   videoDetail: (id) => {

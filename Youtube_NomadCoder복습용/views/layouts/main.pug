@@ -14,7 +14,7 @@ html
           input(type="text", placeholder="searching for..", name="term")
       .header__column
         ul
-          if !user
+          if !loggedUser
             li
               a(href=routes.signIn) Sign In
             li
@@ -23,7 +23,7 @@ html
             li
               a(href=`${routes.videos}${routes.upload}`) Upload
             li
-              a(href=routes.profileEdit(1234)) Profile Edit
+              a(href=routes.me) Profile
             li
               a(href=routes.logout) Sign Out
     main

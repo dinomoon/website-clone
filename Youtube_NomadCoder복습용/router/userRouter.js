@@ -1,6 +1,6 @@
 import express from "express";
 import routes from "../routes";
-import { profileEdit, changePassword } from "../controllers/userController";
+import { profileEdit, changePassword, me } from "../controllers/userController";
 import { onlyPrivate } from "../localMiddleware";
 
 const userRouter = express.Router();

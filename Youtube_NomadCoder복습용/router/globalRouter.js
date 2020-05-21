@@ -13,6 +13,7 @@ import {
 } from "../controllers/globalController";
 import { onlyPublic, onlyPrivate } from "../localMiddleware";
 import passport from "passport";
+import { me } from "../controllers/userController";
 
 const globalRouter = express.Router();
 
@@ -34,4 +35,6 @@ globalRouter.get(
   passport.authenticate("github", { failureRedirect: "/login" }),
   postGithubLogIn
 );
+globalRouter.get(routes.me, onlyPrivate, me);
+
 export default globalRouter;
