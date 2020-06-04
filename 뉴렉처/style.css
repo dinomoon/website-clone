@@ -4,6 +4,12 @@
   height: 70px;
   background-color: aliceblue;
 }
+.container {
+  width: 960px;
+  height: inherit;
+  margin: 0 auto;
+  background-color: #0066ff44;
+}
 
 #visual {
   height: 170px;
