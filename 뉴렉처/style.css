@@ -1,0 +1,21 @@
+@import url("reset.css");
+
+#header {
+  height: 70px;
+  background-color: aliceblue;
+}
+
+#visual {
+  height: 170px;
+  background-color: orange;
+}
+
+#content {
+  height: 300px;
+  background-color: yellow;
+}
+
+#footer {
+  height: 100px;
+  background-color: antiquewhite;
+}
