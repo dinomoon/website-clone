@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -11,6 +12,10 @@ a {
 ul,
 ol {
   list-style: none;
+}
+
+address {
+  font-style: normal;
 }
 
 #wrap {
@@ -59,7 +64,7 @@ ol {
   line-height: 30px;
 }
 
-#wrap header nav ul li:after {
+#wrap header nav ul li a:after {
   content: "";
   display: block;
   width: 5px;
@@ -71,10 +76,10 @@ ol {
   top: 13px;
 }
 
-#wrap header nav ul li:hover a {
+#wrap header nav ul li a:hover {
   color: #ed3140;
 }
-#wrap header nav ul li:hover:after {
+#wrap header nav ul li a:hover:after {
   background-color: #ed3140;
 }
 
@@ -91,4 +96,56 @@ header .logo_box {
 
 header .logo_box img {
   width: 100px;
+}
+
+footer {
+  width: 180px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0 20px 30px 20px;
+  font-size: 12px;
+  color: #7e7e7e;
+  z-index: 12;
+  line-height: 1.2em;
+}
+
+footer address {
+  margin-bottom: 15px;
+}
+
+footer > a {
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: -31px;
+  transition: 0.4s;
+}
+
+footer > a.face {
+  background: url("./image/social_b_facebook.png") no-repeat;
+  right: 18px;
+}
+
+footer > a.face:hover {
+  background: url("./image/social_b_facebook_hover.png") no-repeat;
+}
+
+footer > a.twit {
+  background: url("./image/social_b_twitter.png") no-repeat;
+  right: 48px;
+}
+
+footer > a.twit:hover {
+  background: url("./image/social_b_twitter_hover.png") no-repeat;
+}
+
+footer > a.instar {
+  background: url("./image/social_b_instar.png") no-repeat;
+  right: 80px;
+}
+
+footer > a.instar:hover {
+  background: url("./image/social_b_instar_hover.png") no-repeat;
 }
