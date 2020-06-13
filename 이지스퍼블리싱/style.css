@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  padding-right: 180px;
+}
+
+#wrap > h1 {
+  font-size: 0;
+}
+
+#wrap header {
+  width: 180px;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: url(./image/menu_bg1.png) repeat-y;
+  z-index: 11;
+}
+
+#wrap header nav {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap header nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#wrap header nav ul li {
+  margin: 0 0 10px 30px;
+  position: relative;
+  padding-left: 15px;
+}
+
+#wrap header nav ul li a {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+#wrap header nav ul li:after {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
+
+#wrap header nav ul li:hover a {
+  color: #ed3140;
+}
+#wrap header nav ul li:hover:after {
+  background-color: #ed3140;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+}
+
+header .logo_box {
+  position: absolute;
+  right: 35px;
+  top: 75px;
+}
+
+header .logo_box img {
+  width: 100px;
+}
