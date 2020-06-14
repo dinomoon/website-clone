@@ -87,7 +87,7 @@ address {
   width: 100%;
   height: 100%;
   position: relative;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
@@ -96,6 +96,28 @@ address {
   height: 100%;
   position: absolute;
   overflow: hidden;
+  transition: all 1s;
+}
+
+#container .content.current {
+  left: 0 !important;
+  width: 100%;
+}
+
+#container .content.prev {
+  left: -100% !important;
+  width: 100%;
+}
+
+#container .content.next {
+  left: 100% !important;
+  width: 100%;
+}
+
+#container .content.current h2,
+#container .content.current:before,
+#container .content.current .conbox:before {
+  opacity: 0;
 }
 
 #container #menu1 {
