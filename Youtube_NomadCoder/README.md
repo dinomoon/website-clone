@@ -646,8 +646,6 @@ html
                input(type="password", name="password", placeholder="Password")
                input(type="submit",value="Log In")
            include partials/socialLogin
-   ```
-
 
     //socialLogin.pug
     .social-login
@@ -659,7 +657,7 @@ html
         span
             i.fab.fa-facebook
         |Continue with Facebook
-    ```
+   ```
 
 <br><br>
 
@@ -698,8 +696,6 @@ html
 
   export default userRouter;
   ```
-
-````
 
 <br><br>
 
@@ -882,20 +878,20 @@ views: video.views
    };
    ```
 
-    ```pug
-    //globalRouter.js
-    import express from "express";
-    import routes from "../routes";
-    import { home, search } from "../controllers/videoController";
-    import { getJoin, postJoin, logout } from "../controllers/userController";
+   ```pug
+   //globalRouter.js
+   import express from "express";
+   import routes from "../routes";
+   import { home, search } from "../controllers/videoController";
+   import { getJoin, postJoin, logout } from "../controllers/userController";
 
-    const globalRouter = express.Router();
+   const globalRouter = express.Router();
 
-    globalRouter.get(routes.join, getJoin);
-    globalRouter.post(routes.join, postJoin);
+   globalRouter.get(routes.join, getJoin);
+   globalRouter.post(routes.join, postJoin);
 
-    export default globalRouter;
-    ```
+   export default globalRouter;
+   ```
 
 <br><br>
 
@@ -1311,4 +1307,7 @@ p.video_description=video.description
     - webpack-cli는 터미널에서 webpack을 사용할 수 있게 해준다.
 
 이후 내용은 블로그에 정리되어있다.
-````
+
+```
+
+```
