@@ -428,10 +428,12 @@ export default globalRouter;
   <br><br>
 
 - 2.14 Layouts with Pug
+
   1. views폴더 안에 layouts폴더를 만들고 main.pug파일을 만듦
   2. 모든 파일에 공통으로 사용될 layout임
   3. block content 부분이 파일마다 다른 부분
   4. 각 파일에서 main.pug를 extends로 받는다.
+
   ```pug
   // main.pug
   doctype html
@@ -447,14 +449,13 @@ export default globalRouter;
         span &copy Wetube
   ```
 
-```
-// home.pug
-extends layouts/main
+  ```pug
+  // home.pug
+  extends layouts/main
 
-block content
-h1 Hello Friends~!
-
-```
+  block content
+  h1 Hello Friends~!
+  ```
 
 <br><br>
 
@@ -633,18 +634,19 @@ html
            include partials/socialLogin
    ```
 
+   ```pug
+   //login.pug
+   extends layouts/main
 
-    //login.pug
-    extends layouts/main
-
-    block content
-        p Login
-        .form__container
-            form(action="routes.login", method="post")
-                input(type="email", name="email", placeholder="Email")
-                input(type="password", name="password", placeholder="Password")
-                input(type="submit",value="Log In")
-            include partials/socialLogin
+   block content
+       p Login
+       .form__container
+           form(action="routes.login", method="post")
+               input(type="email", name="email", placeholder="Email")
+               input(type="password", name="password", placeholder="Password")
+               input(type="submit",value="Log In")
+           include partials/socialLogin
+   ```
 
 
     //socialLogin.pug
@@ -657,7 +659,7 @@ html
         span
             i.fab.fa-facebook
         |Continue with Facebook
-    ````
+    ```
 
 <br><br>
 
@@ -695,10 +697,11 @@ html
   userRouter.get(routes.changePassword, changePassword);
 
   export default userRouter;
-
   ```
 
-  <br><br>
+````
+
+<br><br>
 
 - 2.21 Home Controller
 
@@ -879,7 +882,7 @@ views: video.views
    };
    ```
 
-
+    ```pug
     //globalRouter.js
     import express from "express";
     import routes from "../routes";
@@ -892,7 +895,7 @@ views: video.views
     globalRouter.post(routes.join, postJoin);
 
     export default globalRouter;
-    ````
+    ```
 
 <br><br>
 
@@ -1308,3 +1311,4 @@ p.video_description=video.description
     - webpack-cli는 터미널에서 webpack을 사용할 수 있게 해준다.
 
 이후 내용은 블로그에 정리되어있다.
+````
