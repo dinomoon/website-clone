@@ -248,52 +248,52 @@ app.listen(PORT, handleListening);
      - 세 가지를 모두 분리해야함
   2. routers라는 폴더를 만들고 안에 userRouter, videoRouter, globalRouter를 만듦.
 
-```javascript
-//app.js
-//const express = require("express");
-import express from "express"; //바벨 덕분에 가능!!
-import morgan from "morgan";
-import helmet from "helmet";
-import cookieParesr from "cookie-parser";
-import bodyParser from "body-parser";
-import userRouter from "./routers/userRouter";
-import videoRouter from "./routers/videoRouter";
-import globalRouter from "./routers/globalRouter";
-const app = express();
+  ```javascript
+  //app.js
+  //const express = require("express");
+  import express from "express"; //바벨 덕분에 가능!!
+  import morgan from "morgan";
+  import helmet from "helmet";
+  import cookieParesr from "cookie-parser";
+  import bodyParser from "body-parser";
+  import userRouter from "./routers/userRouter";
+  import videoRouter from "./routers/videoRouter";
+  import globalRouter from "./routers/globalRouter";
+  const app = express();
 
-app.use(cookieParesr());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet());
-app.use(morgan("dev"));
+  app.use(cookieParesr());
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(helmet());
+  app.use(morgan("dev"));
 
-app.use("/", globalRouter);
-app.use("/users", userRouter);
-app.use("/videos", videoRouter);
+  app.use("/", globalRouter);
+  app.use("/users", userRouter);
+  app.use("/videos", videoRouter);
 
-export default app;
+  export default app;
 
-//globalRouter.js
-import express from "express";
+  //globalRouter.js
+  import express from "express";
 
-const globalRouter = express.Router();
+  const globalRouter = express.Router();
 
-export default globalRouter;
+  export default globalRouter;
 
-//userRouter.js
-import express from "express";
+  //userRouter.js
+  import express from "express";
 
-const userRouter = express.Router();
+  const userRouter = express.Router();
 
-export default userRouter;
+  export default userRouter;
 
-//videoRouter.js
-import express from "express";
+  //videoRouter.js
+  import express from "express";
 
-const videoRouter = express.Router();
+  const videoRouter = express.Router();
 
-export default videoRouter;
-```
+  export default videoRouter;
+  ```
 
 <br><br>
 
@@ -342,45 +342,47 @@ export default videoRouter;
   };
   ```
 
-//app.js
-import routes from "./routes"; //routes임포트
+  ```js
+  //app.js
+  import routes from "./routes"; //routes임포트
 
-//routes값들로 URL변경
-app.use(routes.home, globalRouter);
-app.use(routes.users, userRouter);
-app.use(routes.videos, videoRouter);
+  //routes값들로 URL변경
+  app.use(routes.home, globalRouter);
+  app.use(routes.users, userRouter);
+  app.use(routes.videos, videoRouter);
 
-export default app;
+  export default app;
 
-//globalRouter.js
-import express from "express";
-import routes from "../routes";
+  //globalRouter.js
+  import express from "express";
+  import routes from "../routes";
 
-const globalRouter = express.Router();
+  const globalRouter = express.Router();
 
-globalRouter.get(routes.home, (req, res) => res.send('<h1>Home!!</h1>'))
+  globalRouter.get(routes.home, (req, res) => res.send("<h1>Home!!</h1>"));
 
-export default globalRouter;
-
-````
+  export default globalRouter;
+  ```
 
 <br><br>
 
 - 2.11 MVC Pattern Part Three (Controller만들기 그리고 완성)
+
 1. controllers폴더 만들고 안에 userController.js와 videoController.js만듦
-    - route에서 실행부분을 따로 정리하기 위해서!
-    - 따로 정리하는 이유? 복잡해질 수 있기 때문에!
-    - controller -> function that look for the data!
+   - route에서 실행부분을 따로 정리하기 위해서!
+   - 따로 정리하는 이유? 복잡해질 수 있기 때문에!
+   - controller -> function that look for the data!
 2. controller를 사용해서 router를 수정함
+
 ```javascript
 //videoController.js
-export const home = (req, res) => res.send('home');
-export const search = (req, res) => res.send('search');
+export const home = (req, res) => res.send("home");
+export const search = (req, res) => res.send("search");
 
 //userController.js
-export const join = (req, res) => res.send('join');
-export const login = (req, res) => res.send('login');
-export const logout = (req, res) => res.send('logout');
+export const join = (req, res) => res.send("join");
+export const login = (req, res) => res.send("login");
+export const logout = (req, res) => res.send("logout");
 
 //globalRouter.js
 import express from "express";
@@ -397,7 +399,7 @@ globalRouter.get(routes.logout, logout);
 globalRouter.get(routes.search, search);
 
 export default globalRouter;
-````
+```
 
 <br><br>
 
@@ -445,17 +447,21 @@ export default globalRouter;
         span &copy Wetube
   ```
 
+```
 // home.pug
 extends layouts/main
 
 block content
 h1 Hello Friends~!
 
-````
+```
 
 <br><br>
+
 - 2.15 Partials with Pug
+
 1. views폴더안에 partials폴더를 만들고 그 안에 header와 footer와 같이 나눠질 수 있는 부분들을 파일로 만든다.
+
 ```pug
 //header.pug
 header.header
@@ -488,7 +494,7 @@ html
     main
       block content
     include ../partials/footer
-````
+```
 
 <br><br>
 
