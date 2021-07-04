@@ -1,416 +1,1262 @@
-/* header */
-header {
-  border-bottom: 1px solid #c6c6c6;
-}
-header .container {
-  width: 970px;
-  height: 49px;
-  margin: 0 auto;
-}
-header img {
-  position: absolute;
-  top: 12px;
-}
-header ul {
-  float: right;
-}
-header ul li {
-  float: left;
-}
-header ul li a {
-  display: inline-block;
-  width: 82px;
-  height: 49px;
-  background: url(images/new2_gnb.png);
-  vertical-align: top;
-}
-
-header ul li a.i1 {
-  background-position: 0 0;
-}
-header ul li a.i2 {
-  background-position: -82px 0;
-}
-header ul li a.i3 {
-  background-position: -164px 0;
-}
-header ul li a.i4 {
-  background-position: -246px 0;
-}
-header ul li a.i5 {
-  background-position: -328px 0;
-}
-header ul li a.i6 {
-  background-position: -410px 0;
-}
-header ul li a.i7 {
-  background-position: -492px 0;
-}
-
-/* banner */
-main #banner .container {
+/* 스킵 네비게이션 */
+.skip {
   position: relative;
-  color: white;
-  width: 970px;
-  margin: 0 auto;
-  font-size: 14px;
-  font-weight: bold;
-  z-index: 2;
 }
-main #banner .bm_left {
+.skip a {
   position: absolute;
   left: 0;
-  top: 30px;
-}
-main #banner .bm_left .menu {
-  border: 1px solid;
+  top: -100px;
+  width: 140px;
+  background: #333;
+  text-align: center;
+  color: #fff;
   padding: 8px;
-  color: #999;
-  font-size: 12px;
-  margin-right: 10px;
 }
-main #banner .bm_left .menu:hover {
-  color: white;
+.skip a:focus {
+  top: 0;
 }
-main #banner .bm_right {
+
+/* 헤더 */
+#header {
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+#header .container {
+  position: relative;
+  width: 1100px;
+  height: 91px;
+  margin: 0 auto;
+}
+#header .logo a {
+  position: absolute;
+  left: 50%;
+  top: 23px;
+  transform: translateX(-50%);
+  display: block;
+  width: 140px;
+  height: 47px;
+  text-indent: -9999px;
+  background: url(images/logo-white.png);
+}
+
+#header .util-area {
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #888;
+}
+#header .util-area .left-link {
+  position: absolute;
+  left: 0;
+  top: 17px;
+}
+#header .util-area .left-link a {
+  float: left;
+  margin-right: 20px;
+}
+#header .util-area .right-link {
   position: absolute;
   right: 0;
-  top: 30px;
+  top: 17px;
 }
-main #banner .split {
-  margin: 0 12px;
-  border-right: 1px solid #fff;
-  vertical-align: middle;
-  height: 13px;
+#header .util-area .right-link a {
+  float: left;
+  margin-left: 20px;
 }
-main #banner .timetable {
-  margin: 0 5px 0 20px;
-  background-color: #c5c5c5;
-  color: #351f67;
-  padding: 10px 20px;
-}
-main #banner .quick {
-  background-color: #351f67;
-  padding: 10px 20px;
+#header .util-area .left-link a:hover,
+#header .util-area .right-link a:hover {
+  text-decoration: underline;
 }
 
-main #banner .banner-disc-wrapper {
-  width: 970px;
-  margin: 200px auto;
-  color: white;
-  text-shadow: 1px 1px 1px #000;
-}
-main #banner .banner-disc-wrapper .content {
-  display: inline-block;
-}
-main #banner .banner-disc-wrapper .content strong {
-  font-size: 36px;
-  font-weight: 100;
-}
-main #banner .banner-disc-wrapper .content em {
-  display: block;
-  font-size: 18px;
-  padding: 5px 0 20px 0;
-  border-bottom: 1px solid #999;
-}
-main #banner .banner-disc-wrapper .content span {
-  font-size: 24px;
-  font-weight: 100;
-}
-
-main #banner .swiper-wrapper {
+#header .link-area {
   position: relative;
-  height: 600px;
+  width: 1100px;
+  margin: 0 auto;
+}
+#header .link-area a {
+  display: block;
+  position: absolute;
+  top: 42px;
+  width: 36px;
+  height: 36px;
+  font-size: 0;
+  line-height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#header .link-area .sitemap {
+  background-image: url(images/ico-sitemap-white.png);
+}
+#header .link-area .search {
+  background-image: url(images/ico-search-white.png);
+  left: 40px;
+}
+#header .link-area .timetable {
+  background-image: url(images/ico-schedule-white.png);
+  right: 40px;
+}
+#header .link-area .mymega {
+  background-image: url(images/ico-mymega-white.png);
+  right: 0;
 }
 
-main #banner .swiper-slide {
+#header #gnb > ul {
+  position: relative;
+  width: 1100px;
+}
+#header #gnb > ul > li > a {
+  display: block;
   position: absolute;
+  top: 54px;
+  height: 38px;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+}
+#header #gnb > ul > li > a:hover {
+  border-bottom: 3px solid #fff;
+}
+#header #gnb > ul > li > a:hover + .gnb-depth2 {
+  display: block;
+}
+#header #gnb .movie {
+  background-image: url(images/gnb-txt-movie-white.png);
+  left: 166px;
+  width: 31px;
+}
+#header #gnb .reserve {
+  background-image: url(images/gnb-txt-reserve-white.png);
+  left: 256px;
+  width: 31px;
+}
+#header #gnb .theater {
+  background-image: url(images/gnb-txt-theater-white.png);
+  left: 345px;
+  width: 31px;
+}
+#header #gnb .event {
+  background-image: url(images/gnb-txt-event-white.png);
+  right: 347px;
+  width: 45px;
+}
+#header #gnb .store {
+  background-image: url(images/gnb-txt-store-white.png);
+  right: 241px;
+  width: 45px;
+}
+#header #gnb .benefit {
+  background-image: url(images/gnb-txt-benefit-white.png);
+  right: 150px;
+  width: 31px;
+}
+#header #gnb .gnb-depth2 {
+  position: absolute;
+  top: 90px;
+  z-index: 10;
+  color: #fff;
+  font-size: 14px;
+  display: none;
+  height: 40px;
+  padding: 10px;
+}
+#header #gnb .gnb-depth2.movie-snb {
+  left: 80px;
+}
+#header #gnb .gnb-depth2.movie-snb:hover {
+  display: block;
+}
+#header #gnb .gnb-depth2.reserve-snb {
+  left: 150px;
+}
+#header #gnb .gnb-depth2.reserve-snb:hover {
+  display: block;
+}
+#header #gnb .gnb-depth2.theater-snb {
+  left: 300px;
+}
+#header #gnb .gnb-depth2.theater-snb:hover {
+  display: block;
+}
+#header #gnb .gnb-depth2.event-snb {
+  right: 240px;
+}
+#header #gnb .gnb-depth2.event-snb:hover {
+  display: block;
+}
+#header #gnb .gnb-depth2.benefit-snb {
+  right: 80px;
+}
+#header #gnb .gnb-depth2.benefit-snb:hover {
+  display: block;
+}
+#header #gnb .gnb-depth2 ul li {
+  float: left;
+  margin-right: 10px;
+}
+#header #gnb .gnb-depth2 ul li a:hover {
+  text-decoration: underline;
+}
+
+/* main */
+/* section01 */
+#main #section01 {
+  position: relative;
+  height: 880px;
+  padding: 0 0 80px 0;
+  background-color: #000;
+}
+#main #section01 .cont-area {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 1100px;
+  margin: 0 auto;
+}
+#main #section01 .cont-area .tab-sorting {
+  margin: 74px 0 20px 0;
+  text-align: center;
+}
+#main #section01 .cont-area .tab-sorting button {
+  border: 0;
+  margin: 0 18px;
+  padding: 0 0 5px 0;
+  background-color: transparent;
+  color: #aaa;
+  font-size: 16px;
+}
+#main #section01 .cont-area .tab-sorting button:hover {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+#main #section01 .cont-area .tab-sorting button:focus {
+  outline: 1px dotted #000;
+}
+#main #section01 .cont-area .tab-sorting button.on {
+  color: #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+#main #section01 .cont-area .more-movie {
+  position: absolute;
+  right: 0;
+  top: 82px;
+  color: #aaa;
+  font-size: 15px;
+}
+#main #section01 .cont-area .more-movie:hover {
+  text-decoration: underline;
+}
+#main #section01 .cont-area .main-movie-list ol li {
+  float: left;
+  width: 245px;
+  margin-left: 40px;
+}
+#main #section01 .cont-area .main-movie-list ol li:first-child {
+  margin: 0;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 352px;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info .wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #fff;
+  padding: 25px;
+  display: none;
+  font-size: 15px;
+  transition: all 0.2s ease-in-out;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info .wrap .summary {
+  height: 150px;
+  overflow: hidden;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info .rank {
+  position: absolute;
+  z-index: 1;
+  color: white;
+  padding: 10px 0 0 15px;
+  font-size: 2em;
+  font-style: italic;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info img {
+  transition: all 0.2s ease-in-out;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info img.poster {
+  width: 100%;
+  height: 352px;
+  border-radius: 5px;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info:hover img {
+  opacity: 0.2;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info:hover .rank {
+  opacity: 0.2;
+}
+#main #section01 .cont-area .main-movie-list .movie-list-info:hover .wrap {
+  display: block;
+}
+#main #section01 .cont-area .main-movie-list .btn-util {
+  margin-top: 8px;
+  position: relative;
+  padding: 0 0 0 85px;
+}
+#main #section01 .cont-area .main-movie-list .btn-util .btn-like {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 36px;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #000;
+}
+#main #section01 .cont-area .main-movie-list .btn-util .btn-like i {
+  margin-right: 5px;
+}
+#main #section01 .cont-area .main-movie-list .btn-util .case {
+  height: 36px;
+  color: #fff;
+  border-radius: 5px;
+}
+#main #section01 .cont-area .main-movie-list .btn-util .case .button {
+  float: left;
+  text-align: center;
+  line-height: 36px;
+  width: 100%;
+}
+#main #section01 .cont-area .main-movie-list .btn-util .case.col2 .btn1 {
+  background-color: #037b94;
+  border-radius: 4px 0 0 4px;
+  width: 50%;
+}
+#main #section01 .cont-area .main-movie-list .btn-util .case .btn1 {
+  background-color: #037b94;
+  border-radius: 4px;
+}
+#main #section01 .cont-area .main-movie-list .btn-util .case.col2 .btn2 {
+  background-color: #01586b;
+  border-radius: 0 4px 4px 0;
+  width: 50%;
+}
+#main #section01 .cont-area .search-link {
+  margin: 80px 0 0 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+}
+#main #section01 .cont-area .search-link .cell {
+  float: left;
+  width: 25%;
+  color: white;
+  text-align: center;
+  border-left: 1px solid #423e3e;
+}
+#main #section01 .cont-area .search-link .cell a:hover {
+  text-decoration: underline;
+}
+#main #section01 .cont-area .search-link .cell:first-child {
+  border: none;
+}
+#main #section01 .cont-area .search-link .search {
+  border-bottom: 1px solid #423e3e;
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 30px;
+}
+#main #section01 .cont-area .search-link .search .input-text {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  line-height: 25px;
+  font-size: 16px;
+}
+#main #section01 .cont-area .search-link .search .input-text:active {
+  border: 1px solid #000;
+}
+#main #section01 .cont-area .search-link .search .btn {
+  display: block;
+  width: 30px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0;
+  line-height: 0;
+  border: 0;
+  background-color: transparent;
+}
+#main #section01 .cont-area .search-link .search .btn .ico-search {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-search-white.png);
+  vertical-align: middle;
+}
+#main #section01 .cont-area .search-link .schedule {
+  display: inline-block;
+  width: 24px;
+  height: 26px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-schedule-main.png);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+#main #section01 .cont-area .search-link .boxoffice {
+  display: inline-block;
+  width: 26px;
+  height: 24px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-boxoffice-main.png);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+#main #section01 .cont-area .search-link .quickreserve {
+  display: inline-block;
+  width: 29px;
+  height: 25px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-quick-reserve-main.png);
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* section02 */
+#main #section02.main-benefit {
+  overflow: hidden;
+  position: relative;
+  min-height: 1148px;
+  padding: 0 0 100px 0;
+}
+#main #section02.main-benefit:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 513px;
+  bottom: 0;
+  background-color: #503396;
+}
+#main #section02.main-benefit .wrap {
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+#main #section02.main-benefit .tit-util {
+  padding: 50px 0 0 0;
+}
+#main #section02.main-benefit .tit-util .tit {
+  float: left;
+}
+#main #section02.main-benefit .tit-util .btn-more {
+  float: right;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(https://img.megabox.co.kr/static/pc/images/common/btn/btn-more-cross-purple.png)
+    no-repeat;
+  font-size: 0;
+  line-height: 0;
+  margin-top: 14px;
+}
+#main #section02.main-benefit .slider {
+  overflow: hidden;
+  position: relative;
+  width: 687px;
+  height: 325px;
+  background-color: #fff;
+}
+#main #section02.main-benefit .slider .slider-view {
+  position: absolute;
+  height: 325px;
+  font-size: 0;
+  line-height: 0;
+}
+#main #section02.main-benefit .slider .slider-view .cell {
+  width: 934px;
+  height: 325px;
+}
+#main #section02.main-benefit .slider .slider-view .cell .position {
+  overflow: hidden;
+  position: relative;
   width: 100%;
   height: 100%;
+  transition: top 0.5s;
 }
-
-/* main #banner .swiper-container .swiper-slide {position: relative; width: 970px;} */
-main #banner .swiper-container .banner01 {
-  background: url(images/banner01.jpg) no-repeat 0 -60px;
-  background-size: cover;
+#main #section02.main-benefit .slider .slider-view .cell .position a {
+  display: block;
 }
-main #banner .swiper-container .banner02 {
-  background: url(images/banner02.jpg);
-  background-size: cover;
+#main #section02.main-benefit .slider .slider-view .cell .position .txt {
+  position: absolute;
+  left: 0;
+  transition: top 0.5s ease;
 }
-main #banner .swiper-container .banner03 {
-  background: url(images/banner03.jpg);
-  background-size: cover;
+#main #section02.main-benefit .slider .slider-view .cell .position .txt a {
+  width: 300px;
+  height: 230px;
 }
-main #banner .swiper-container .banner04 {
-  background: url(images/banner04.jpg);
-  background-size: cover;
+#main #section02.main-benefit .slider .slider-view .cell .position .txt a img {
+  max-width: 300px;
+  max-height: 230px;
 }
-
-/* movies */
-main #movies {
-  background-color: #f2f2f2;
-  padding: 70px 0 80px;
+#main #section02.main-benefit .slider .slider-view .cell .position .bg {
+  position: absolute;
+  top: 0;
+  transition: left 0.5s;
 }
-main #movies .container {
-  width: 970px;
-  margin: 0 auto;
+#main #section02.main-benefit .slider .slider-control {
+  position: absolute;
+  left: 0;
+  bottom: 42px;
 }
-main #movies .tabs {
-  width: 640px;
-  height: 50px;
-  margin: 0 auto;
-  text-align: center;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-}
-main #movies .tabs span {
+#main #section02.main-benefit .slider .slider-control .page {
   float: left;
-  width: 160px;
-  font-size: 15px;
-  line-height: 50px;
-  border-right: 1px solid #ccc;
-  box-sizing: border-box;
+  width: 190px;
+  height: 2px;
+  background-color: #ebebeb;
+  margin-top: 5px;
 }
-main #movies .tabs .clicked {
-  background-color: #666;
-  color: white;
+#main #section02.main-benefit .slider .slider-control .page span {
+  float: left;
+  height: 100%;
 }
-main #movies .tabs span:hover {
-  background-color: #666;
-  color: white;
-  cursor: pointer;
+#main #section02.main-benefit .slider .slider-control .page .on {
+  background-color: #503396;
 }
-main #movies .tabcontent {
+#main #section02.main-benefit .slider .slider-control .util {
+  float: left;
+  padding: 0 10px 0 15px;
+}
+#main #section02.main-benefit .slider .slider-control button {
+  float: left;
+  border: 0;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  font-size: 0;
+  line-height: 0;
+  height: 12px;
+  margin-left: 8px;
+}
+#main #section02.main-benefit .slider .slider-control .util .btn-prev {
+  width: 7px;
+  background-image: url(images/btn-benefit-slider-prev.png);
+}
+#main #section02.main-benefit .slider .slider-control .util .btn-next {
+  width: 7px;
+  background-image: url(images/btn-benefit-slider-next.png);
+}
+#main #section02.main-benefit .slider .slider-control .util .btn-play {
   display: none;
+  width: 6px;
+  background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-slider-play.png);
+}
+#main #section02.main-benefit .slider .slider-control .util .btn-pause {
+  display: none;
+  width: 6px;
+  background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-slider-pause.png);
+}
+#main #section02.main-benefit .slider .slider-control .util .btn-play.on {
+  display: block;
+}
+#main #section02.main-benefit .slider .slider-control .util .btn-pause.on {
+  display: block;
+}
+#main #section02.main-benefit .slider .slider-control .page-count {
+  float: left;
+  line-height: 14px;
+  color: #444;
 }
 
-main #movies .movie {
-  margin: 0 -10px;
-  margin-top: 50px;
+#main #section02.main-benefit .brn-ad {
+  position: relative;
+  min-width: 1100px;
 }
-main #movies .movie > div {
+#main #section02.main-benefit .brn-ad .banner .size {
+  float: left;
+  width: 441px;
+  height: 204px;
+  font-size: 0;
+  line-height: 0;
+  margin-right: 20px;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2);
+}
+#main #section02.main-benefit .brn-ad .banner .size.small {
+  width: 204px;
+  height: 204px;
+}
+#main #section02.main-benefit .brn-ad .banner img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+#main #section02.main-benefit .brn-ad .ad-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#main #section02.main-benefit .brn-ad .ad-img img {
+  vertical-align: top;
+  border-radius: 5px;
+}
+#main #section02.main-benefit .menu-link {
+  padding: 50px 0 0 0;
+  color: #fff;
+}
+#main #section02.main-benefit .menu-link .cell {
+  float: left;
+  width: 20%;
+  display: block;
+}
+#main #section02.main-benefit .menu-link .cell a {
+  display: block;
+  padding: 60px 0 0 0;
+  text-align: center;
+  background-repeat: no-repeat;
+}
+#main #section02.main-benefit .menu-link .cell.vip a {
+  background-image: url(images/ico-vip-main.png);
+  background-position: center 2px;
+}
+#main #section02.main-benefit .menu-link .cell.membership a {
+  background-image: url(images/ico-membership-main.png);
+  background-position: center 2px;
+}
+#main #section02.main-benefit .menu-link .cell.card a {
+  background-image: url(images/ico-card-main.png);
+  background-position: center 2px;
+}
+#main #section02.main-benefit .menu-link .cell.event a {
+  background-image: url(images/ico-event-main.png);
+  background-position: center 2px;
+}
+#main #section02.main-benefit .menu-link .cell.store a {
+  background-image: url(images/ico-store-main.png);
+  background-position: center 2px;
+}
+#main #section02.main-benefit .grand-open {
+  overflow: hidden;
+  position: relative;
+  min-width: 1100px;
+  margin: 50px 0 0 0;
+  border-top: 1px solid #5c419d;
+}
+#main #section02.main-benefit .grand-open .tit {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  color: #fff;
+}
+#main #section02.main-benefit .grand-open .tit span {
+  display: block;
+}
+#main #section02.main-benefit .grand-open .tit strong {
+  font-size: 1.6em;
+  padding: 15px 0 0 0;
+  line-height: 1.1;
+  display: block;
+}
+#main #section02.main-benefit .grand-open .open-cont {
+  padding: 50px 0 0 373px;
+  color: #fff;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-pagination {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 190px;
+  width: 160px;
+  color: #fff;
+}
+.main-benefit .grand-open:before,
+.main-benefit .grand-open:after {
+  content: '';
+  display: table;
+}
+#main
+  #section02.main-benefit
+  .grand-open
+  .open-pagination
+  .swiper-pagination-bullet {
+  float: left;
+  width: 20%;
+  height: 2px;
+}
+#main
+  #section02.main-benefit
+  .grand-open
+  .open-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-control {
+  position: absolute;
+  left: 175px;
+  top: 184px;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-control button {
+  background-color: transparent;
+  border: 0;
+  text-indent: -9999px;
+  display: block;
+  height: 12px;
+  float: left;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-control .open-prev {
+  width: 20px;
+  background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-theater-prev.png);
+  background-repeat: no-repeat;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-control .open-next {
+  width: 20px;
+  background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-theater-next.png);
+  background-repeat: no-repeat;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-control .open-pause {
+  width: 20px;
+  background-image: url(https://www.megabox.co.kr/static/pc/images/main/btn-benefit-theater-pause.png);
+  background-repeat: no-repeat;
+}
+#main #section02.main-benefit .grand-open .open-cont .count-num {
+  position: absolute;
+  left: 240px;
+  top: 180px;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper a {
+  display: block;
+  position: relative;
+  width: 204px;
+  height: 204px;
+  background-image: url(images/bg-theater-new.jpg);
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper a:hover {
+  background-color: #fff;
+  background-image: none;
+  color: #01738b;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper a:hover img {
+  opacity: 0;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .label {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40px;
+  background-color: #01738b;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .area {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  text-align: center;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .area strong {
+  font-size: 1.4em;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper .date {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+}
+#main #section02.main-benefit .grand-open .open-cont .open-swiper img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 204px;
+  height: 204px;
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* section03 */
+#main #section03 {
+  position: relative;
+  min-height: 840px;
+  background-color: #252451;
+}
+#main #section03 .wrap {
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+}
+#main #section03 .wrap .tit-util {
+  padding: 50px 0 40px 0;
+}
+#main #section03 .wrap .tit-util h2 {
+  float: left;
+  color: #fff;
+  font-size: 2em;
+}
+#main #section03 .wrap .tit-util a {
+  float: right;
+  color: #aaa;
+  display: block;
+  padding-top: 10px;
+}
+#main #section03 .wrap .curr-img {
+  position: absolute;
+  width: 100%;
+}
+#main #section03 .wrap .curr-img .bage.film {
+  background: url(https://www.megabox.co.kr/static/pc/images/main/bg-bage-curation-film.png)
+    no-repeat 0 0;
+}
+#main #section03 .wrap .curr-img .bage {
+  position: absolute;
+  width: 123px;
+  height: 135px;
+  font-size: 0;
+  line-height: 0;
+  top: -10px;
+}
+#main #section03 .wrap .curr-img .img {
+  padding-left: 20px;
+}
+#main #section03 .wrap .curr-img .img a {
+  display: block;
+  width: 300px;
+  height: 430px;
+}
+#main #section03 .wrap .curr-img .img a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+#main #section03 .wrap .curr-img .btn-group {
+  width: 300px;
+  padding: 10px 0 0 0;
+  text-align: center;
+  margin: 0 0 0 20px;
+  font-size: 1.3em;
+}
+#main #section03 .wrap .curr-img .btn-group .left {
+  float: left;
+  width: calc(50% - 5px);
+}
+#main #section03 .wrap .curr-img .btn-group .left .button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 4px;
+}
+#main #section03 .wrap .curr-img .btn-group .right {
+  float: right;
+  width: calc(50% - 5px);
+}
+#main #section03 .wrap .curr-img .btn-group .right .button {
+  background-color: #037b94;
+  border-radius: 4px;
+}
+#main #section03 .wrap .curr-img .btn-group .button {
+  display: block;
+  height: 50px;
+  line-height: 48px;
+  color: #fff;
+}
+#main #section03 .wrap .curr-img .info {
+  position: absolute;
+  left: 370px;
+  top: 0;
+  color: #fff;
+  width: calc(100% - 370px);
+}
+#main #section03 .wrap .curr-img .info .txt {
+  font-size: 1.3em;
+  padding-bottom: 10px;
+}
+#main #section03 .wrap .curr-img .info .tit {
+  font-size: 2.2em;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+#main #section03 .wrap .curr-img .info .summary {
+  padding-top: 20px;
+  line-height: 1.4;
+}
+/* #main #section03 .wrap .curr-img .list {padding: 310px 0 0 370px; background-color: orange;} */
+#main #section03 .wrap .curr-img .list {
+  position: absolute;
+  left: 370px;
+  top: 324px;
+}
+#main #section03 .wrap .curr-img .list ul {
+  position: relative;
+  margin: 0 -10px;
+}
+#main #section03 .wrap .curr-img .list ul li {
   float: left;
   width: 25%;
   padding: 0 8px;
-  box-sizing: border-box;
 }
-main #movies .movie a {
-  display: inline-block;
+#main #section03 .wrap .curr-img .list ul li a {
+  position: relative;
+  color: #fff;
+  text-align: center;
 }
-main #movies .movie a img {
+#main #section03 .wrap .curr-img .list ul li a .bage {
+  position: absolute;
+  left: 10px;
+  top: -5px;
+  display: block;
+  width: 35px;
+  height: 50px;
+  font-size: 0;
+  line-height: 0;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+#main #section03 .wrap .curr-img .list ul li a .bage.film {
+  background-image: url(https://www.megabox.co.kr/static/pc/images/main/bg-bage-curation-film-m.png);
+}
+#main #section03 .wrap .curr-img .list ul li a .bage.classic {
+  background-image: url(https://www.megabox.co.kr/static/pc/images/main/bg-bage-curation-classic-m.png);
+}
+#main #section03 .wrap .curr-img .list ul li .img {
+  padding: 0;
+  height: 244px;
+}
+#main #section03 .wrap .curr-img .list ul li .img img {
+  border-radius: 10px;
   width: 100%;
-  vertical-align: top;
+  height: 100%;
 }
-main #movies .movie .disc {
-  background-color: #fff;
-  padding: 15px;
-  position: relative;
-  border-style: solid;
-  border-color: #ccc;
-  border-width: 0 1px 1px 1px;
-}
-main #movies .movie .disc h3 {
-  font-size: 20px;
-  font-weight: bold;
+#main #section03 .wrap .curr-img .list ul li a .tit {
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
-  margin: 10px 0 15px 0;
-}
-main #movies .movie .disc a {
-  display: inline-block;
-  width: 97px;
-  height: 46px;
-  background: url(images/btn_movie.png);
-}
-main #movies .movie .disc .reserve {
-  background-position: -150px 0;
-  position: absolute;
-  right: 15px;
-}
-main #movies .movie .disc .detail:hover {
-  background-position: 0 -50px;
-}
-main #movies .movie .disc .reserve:hover {
-  background-position: -150px -50px;
-}
-main #movies .movie span {
-  display: inline-block;
-  width: 21px;
-  height: 21px;
-  background: url(images/btn_movie.png);
-  margin-right: 15px;
-  vertical-align: middle;
-}
-main #movies .movie .age_15 {
-  background-position: -90px -200px;
-}
-main #movies .movie .age_all {
-  background-position: 0 -200px;
-}
-main #movies .movie.content {
-  display: block;
-}
-
-/* event */
-main #event {
-  padding: 70px 0 80px;
-}
-main #event .container {
-  width: 970px;
-  margin: 0 auto;
-  position: relative;
-}
-main #event .container h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-main #event .event_left,
-.event_right {
-  display: inline-block;
-  font-size: 0;
-  vertical-align: top;
-}
-main #event .event_right {
-  position: absolute;
-  right: 0;
-}
-
-/* new_open */
-main #new_open {
-  height: 500px;
-  background: url(images/open_bg.jpg) center center;
   overflow: hidden;
-  background-attachment: fixed;
+  padding-top: 10px;
 }
-main #new_open img {
-  display: block;
-  margin: 0 auto;
-  margin-top: 100px;
-}
-/* main #new_open .container {display: inline-block;} */
 
-/* alliance_event */
-main #alliance_event {
-  padding: 70px 0 80px;
+#main #section04.main-info {
+  padding: 0 0 50px 0;
 }
-main #alliance_event .container {
-  position: relative;
-  width: 970px;
+#main #section04.main-info h2.tit {
+  width: 1100px;
   margin: 0 auto;
+  padding: 50px 0 40px 0;
 }
-main #alliance_event .container h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
+#main #section04.main-info .info-special {
+  width: 1100px;
+  margin: 0 auto;
+  text-align: center;
 }
-main #alliance_event .left,
-.right {
-  display: inline-block;
+#main #section04.main-info .info-special a {
+  vertical-align: top;
   font-size: 0;
+  line-height: 0;
+  display: inline-block;
+  width: 170px;
+  height: 170px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 170px 340px;
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 0 0 0 16px;
 }
-main #alliance_event .right {
-  position: absolute;
-  right: 0;
+#main #section04.main-info .info-special a:hover {
+  background-position: 0 -170px;
 }
-
-/* service */
-main #service {
-  padding: 0 0 80px 0;
+#main #section04.main-info .info-special .butique {
+  background-image: url(images/bg-main-megainfo-boutique.png);
 }
-main #service .container {
-  width: 970px;
+#main #section04.main-info .info-special .mx {
+  background-image: url(images/bg-main-megainfo-mx.png);
+}
+#main #section04.main-info .info-special .comfort {
+  background-image: url(images/bg-main-megainfo-comfort.png);
+}
+#main #section04.main-info .info-special .mega-kids-box {
+  background-image: url(images/bg-main-megainfo-kids.png);
+}
+#main #section04.main-info .info-special .the-first-club {
+  background-image: url(images/bg-main-megainfo-first.png);
+}
+#main #section04.main-info .info-notice {
+  margin-top: 50px;
+  border: 1px solid #e2e2e2;
+  border-width: 1px 0;
+}
+#main #section04.main-info .info-notice .wrap {
+  display: block;
+  width: 1100px;
+  position: relative;
   margin: 0 auto;
+  padding: 0 175px 0 95px;
 }
-main #service .container .tabcontent {
-  font-size: 14px;
+#main #section04.main-info .info-notice .wrap .tit {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-main #service .container .tabcontent div {
-  margin: 10px 0;
+#main #section04.main-info .info-notice .wrap .link {
+  position: relative;
 }
-main #service .container .tabcontent span {
+#main #section04.main-info .info-notice .wrap .link:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  margin-top: -7px;
+  width: 1px;
+  height: 14px;
+  background-color: #e2e2e2;
+}
+#main #section04.main-info .info-notice .wrap .link a {
+  display: inline-block;
+}
+#main #section04.main-info .info-notice .wrap .link a strong {
+  color: #01738b;
+}
+#main #section04.main-info .info-notice .wrap .date {
+  position: absolute;
+  right: 95px;
+  top: 0;
   color: #666;
 }
-main #service .container .noticeBtnWrapper {
-  border-bottom: 1px solid #ddd;
+#main #section04.main-info .info-notice .wrap .more {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 85px;
+  text-align: center;
 }
-main #service .container button {
-  float: left;
-  border: none;
-  outline: none;
-  padding: 8px 16px;
-  cursor: pointer;
+#main #section04.main-info .info-notice .wrap .more:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -7px;
+  width: 1px;
+  height: 14px;
+  background-color: #e2e2e2;
 }
-main #service .container button.clicked {
-  background-color: #ddd;
+#main #section04.main-info .info-notice .wrap .more i {
+  margin-left: 5px;
 }
-main #service .container .row {
-  margin: 0 -20px;
+#main #section04.main-info .info-notice .wrap > p {
+  height: 60px;
+  line-height: 60px;
 }
-main #service .container .col {
-  float: left;
-  width: 33.333333%;
-  padding: 0 20px;
-  box-sizing: border-box;
+#main #section04.main-info .info-notice .wrap:before,
+#main #section04.main-info .info-notice .wrap:after {
+  content: '';
+  display: table;
 }
-main #service .container h3 {
-  display: inline-block;
-  margin-bottom: 15px;
+#main #section04.main-info .info-notice a:hover {
+  text-decoration: underline;
 }
-main #service .container .plus {
-  float: right;
+#main #section04.main-info .info-link {
+  width: 1100px;
+  padding: 50px 0;
+  margin: 0 auto;
 }
-main #service .container .underline {
-  border-bottom: 1px solid #ccc;
+#main #section04.main-info .info-link a:hover {
+  text-decoration: underline;
 }
-main #service .container .card {
-  width: 100px;
-  height: 58px;
-  vertical-align: top;
-  margin-right: 10px;
+#main #section04.main-info .info-link .table {
+  display: table;
+  width: 100%;
 }
-main #service .container .disc {
-  display: inline-block;
+#main #section04.main-info .info-link .table .cell {
+  display: table-cell;
+  width: 16.6%;
+  text-align: center;
 }
-main #service .container .disc h5 {
-  font-size: 14px;
-  margin-bottom: 10px;
+#main #section04.main-info .info-link .iconset {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 8px;
 }
-main #service .container .disc p {
-  margin-bottom: -4px;
+#main #section04.main-info .info-link .ico-main-customer {
+  width: 46px;
+  height: 46px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-customer.png);
 }
-main #service .container .disc p,
-span {
-  font-size: 12px;
+#main #section04.main-info .info-link .ico-main-faq {
+  width: 50px;
+  height: 46px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-faq.png);
 }
-main #service .container .padding_t_b_18 {
-  padding: 18px 0;
+#main #section04.main-info .info-link .ico-main-qna {
+  width: 43px;
+  height: 43px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-qna.png);
+}
+#main #section04.main-info .info-link .ico-main-group {
+  width: 50px;
+  height: 38px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-group.png);
+}
+#main #section04.main-info .info-link .ico-main-lost {
+  width: 51px;
+  height: 39px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-lost.png);
+}
+#main #section04.main-info .info-link .ico-main-boutique {
+  width: 48px;
+  height: 40px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-main-boutique.png);
 }
 
 /* footer */
-footer {
-  padding: 30px 0 40px;
-  background-color: #221f1f;
-  color: #999;
-  font-size: 12px;
+#footer {
+  position: relative;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8fa;
+  font-size: 13px;
 }
-footer .container {
-  width: 970px;
+#footer .footer-top {
+  width: 1100px;
   margin: 0 auto;
+  padding: 30px 0;
+  color: #666;
 }
-footer .container .logo {
-  margin-bottom: 20px;
+#footer .inner-wrap:after,
+.inner-wrap:before {
+  content: '';
+  display: table;
+  clear: both;
 }
-footer .container .sub_category {
-  margin-bottom: 20px;
+#footer .fnb {
+  float: left;
 }
-footer .container .company {
-  line-height: 18px;
-  margin-bottom: 20px;
+#footer .fnb li {
+  float: left;
+  margin-right: 14px;
+  line-height: 30px;
 }
-footer .split {
-  margin: 0 6px;
-  border-right: 1px solid #999;
+#footer .fnb li.privacy {
+  font-weight: 700;
+  color: #222;
+}
+#footer .footer-top .looking-theather {
+  overflow: hidden;
+  float: right;
+  display: block;
+  width: 106px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #d8d9db;
+  border-radius: 30px;
+}
+#footer .footer-top .iconset {
+  display: inline-block;
   vertical-align: middle;
+  margin-right: 4px;
+}
+#footer .footer-top .ico-footer-search {
+  width: 15px;
+  height: 15px;
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-footer-search.png);
+}
+#footer .footer-top .fnb a:hover {
+  text-decoration: underline;
+}
+
+#footer .footer-bottom {
+  color: #444;
+}
+#footer .footer-bottom {
+  width: 1100px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+#footer .footer-bottom .ci {
+  overflow: hidden;
+  float: left;
+  margin-right: 20px;
+  width: 150px;
+  height: 50px;
+  text-indent: -9999px;
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ci/logo-opacity.png);
+}
+#footer .footer-bottom .footer-info {
+  float: left;
+}
+#footer .footer-bottom address {
+  display: inline-block;
+}
+#footer .footer-bottom p {
+  display: inline-block;
+}
+#footer .footer-bottom p.copy {
+  display: block;
+}
+#footer .footer-bottom .footer-sns {
+  float: right;
+}
+#footer .footer-bottom .footer-sns a {
+  float: left;
+  display: block;
+  width: 32px;
+  height: 30px;
+  margin-left: 5px;
+  font-size: 0;
+  line-height: 0;
+}
+#footer .footer-bottom .footer-sns a i {
+  display: block;
+  width: 32px;
+  height: 30px;
+}
+#footer .footer-bottom .footer-sns .iconset {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#footer .footer-bottom .footer-sns .ico-twitter {
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-twitter.png);
+}
+#footer .footer-bottom .footer-sns .ico-facebook {
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-facebook.png);
+}
+#footer .footer-bottom .footer-sns .ico-instagram {
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-instagram.png);
+}
+#footer .footer-bottom .footer-sns .ico-googleplay {
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-googleplay.png);
+}
+#footer .footer-bottom .footer-sns .ico-appstore {
+  background-image: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-appstore.png);
+}
+
+/* 기타 */
+h2.tit {
+  font-weight: 400;
+  color: #351f66;
+  font-size: 2em;
+}
+.ico-more-corss {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  margin-top: -4px;
+  vertical-align: middle;
+}
+.ico-more-corss.gray {
+  background: url(https://img.megabox.co.kr/static/pc/images/common/ico/ico-more-cross-gray.png);
+}
+.button {
+  cursor: pointer;
 }
