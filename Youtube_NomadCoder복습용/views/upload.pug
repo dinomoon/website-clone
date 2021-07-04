@@ -1,9 +1,0 @@
-extends layouts/main
-
-block content
-  form(action=`${routes.videos}${routes.upload}`, method="post", enctype="multipart/form-data")
-    label(for="file") Video File
-    input(type="file" id="file" name="videoFile" accept="video/*" required=true)
-    input(type="text", placeholder="title", name="title" required=true)
-    textarea(placeholder="description", name="description" required=true)
-    button(type="submit") 등록
